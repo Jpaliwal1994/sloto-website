@@ -10,17 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-      if (!window.IntersectionObserver) {
-        var els = document.querySelectorAll('.fade-up');
-        for (var i = 0; i < els.length; i++) { els[i].classList.add('visible'); }
-        return;
-      }
+      if (!window.IntersectionObserver) { return; }
+      var els = document.querySelectorAll('.fade-up');
+      for (var i = 0; i < els.length; i++) { els[i].classList.add('animate'); }
       var obs = new IntersectionObserver(function(entries) {
         for (var i = 0; i < entries.length; i++) {
           if (entries[i].isIntersecting) { entries[i].target.classList.add('visible'); }
         }
       }, { threshold: 0.1 });
-      var els = document.querySelectorAll('.fade-up');
       for (var i = 0; i < els.length; i++) { obs.observe(els[i]); }
     });
   </script>
@@ -107,8 +104,9 @@
     .footer-links a:hover { color: var(--black); }
     .footer-copy { font-size: 0.82rem; color: var(--text-muted); }
 
-    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.animate { opacity: 0; transform: translateY(24px); }
+    .fade-up.animate.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 900px) {
       html, body { overflow-x: hidden; }

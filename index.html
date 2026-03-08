@@ -8,22 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-      if (!window.IntersectionObserver) {
-        var els = document.querySelectorAll('.fade-up');
-        for (var i = 0; i < els.length; i++) { els[i].classList.add('visible'); }
-        return;
-      }
-      var obs = new IntersectionObserver(function(entries) {
-        for (var i = 0; i < entries.length; i++) {
-          if (entries[i].isIntersecting) { entries[i].target.classList.add('visible'); }
-        }
-      }, { threshold: 0.1 });
-      var els = document.querySelectorAll('.fade-up');
-      for (var i = 0; i < els.length; i++) { obs.observe(els[i]); }
-    });
-  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -131,7 +116,7 @@
     .section { padding: 100px 48px; }
     .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
     .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 800; letter-spacing: -0.035em; color: var(--black); margin-bottom: 16px; }
-    .section-sub { font-size: 1rem; color: var(--text-muted); max-width: 480px; line-height: 1.65; font-weight: 300; }
+    .section-sub { font-size: 1rem; color: var(--text-muted); max-width: 100%; line-height: 1.65; font-weight: 300; }
 
     .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
     .step-card { background: var(--grey); border-radius: 24px; padding: 36px 32px; position: relative; overflow: hidden; transition: transform 0.3s; }
@@ -201,8 +186,6 @@
     .footer-links a:hover { color: var(--black); }
     .footer-copy { font-size: 0.82rem; color: var(--text-muted); }
 
-    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -250,7 +233,7 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-badge">Now live in Dublin</div>
-      <h1 class="hero-title">Find parking in Dublin.<br><em>Before you drive.</em></h1>
+      <h1 class="hero-title">Find parking in Dublin.  <em>Before you drive.</em></h1>
       <p class="hero-subtitle">Sloto shows you every parking option across Dublin in real time — free or paid, near or far. Plan before you leave. Park without the stress.</p>
       <div class="hero-actions">
         <a href="https://play.google.com/store" class="btn-store">
@@ -313,25 +296,25 @@
 
   <!-- HOW IT WORKS -->
   <section class="section" id="how">
-    <div class="fade-up">
+    <div >
       <span class="section-label">Simple by design</span>
-      <h2 class="section-title">Find parking<br>in 3 steps</h2>
-      <p class="section-sub">No guessing. No circling the block. Sloto does the work so you don't have to.</p>
+      <h2 class="section-title">Find parking in 3 steps</h2>
+      <p class="section-sub" style="max-width:100%;">No guessing. No circling the block. Sloto does the work so you don't have to.</p>
     </div>
     <div class="how-grid">
-      <div class="step-card fade-up">
+      <div class="step-card">
         <div class="step-number" data-n="1">Step one</div>
         <span class="step-icon">🗺️</span>
         <h3 class="step-title">Open the map</h3>
         <p class="step-desc">See hundreds of parking spots across Dublin, colour-coded in real time — green for free, red for paid. Know what to expect before you leave.</p>
       </div>
-      <div class="step-card fade-up" style="transition-delay:0.1s">
+      <div class="step-card" >
         <div class="step-number" data-n="2">Step two</div>
         <span class="step-icon">📍</span>
         <h3 class="step-title">Pick your spot</h3>
         <p class="step-desc">Tap any location for full details — hours, rates, availability, and live crowd reports from other drivers. Then tap Navigate.</p>
       </div>
-      <div class="step-card fade-up" style="transition-delay:0.2s">
+      <div class="step-card" >
         <div class="step-number" data-n="3">Step three</div>
         <span class="step-icon">🔔</span>
         <h3 class="step-title">Park & relax</h3>
@@ -342,28 +325,28 @@
 
   <!-- FEATURES -->
   <section class="features-section" id="features">
-    <div class="fade-up">
+    <div >
       <span class="section-label">Everything you need</span>
       <h2 class="section-title">Built for Dublin drivers</h2>
       <p class="section-sub">Designed around how people actually park in the city — not how parking apps think they do.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card fade-up">
+      <div class="feature-card">
         <div class="feature-icon">⏰</div>
         <h3 class="feature-title">Live parking status</h3>
         <p class="feature-desc">Every spot updates in real time. See what's free and what's paid right now — including Sundays and Irish bank holidays.</p>
       </div>
-      <div class="feature-card fade-up" style="transition-delay:0.1s">
+      <div class="feature-card" >
         <div class="feature-icon">📍</div>
         <h3 class="feature-title">Remember where you parked</h3>
         <p class="feature-desc">Tap "I Parked Here" and get walking directions back to your car, no matter how far you walked afterwards.</p>
       </div>
-      <div class="feature-card fade-up" style="transition-delay:0.15s">
+      <div class="feature-card" >
         <div class="feature-icon">👥</div>
         <h3 class="feature-title">Crowd reports</h3>
         <p class="feature-desc">Drivers report live availability — Plenty, A Few, or Full — so you know what to expect before you even arrive.</p>
       </div>
-      <div class="feature-card fade-up" style="transition-delay:0.2s">
+      <div class="feature-card" >
         <div class="feature-icon">⭐</div>
         <h3 class="feature-title">Save your favourites</h3>
         <p class="feature-desc">Star your go-to spots and they appear pinned at the top of your Nearby list, every single time.</p>
@@ -373,12 +356,12 @@
 
   <!-- MAP PREVIEW -->
   <section class="map-preview-section">
-    <div class="fade-up">
+    <div >
       <span class="section-label">Across the city</span>
-      <h2 class="section-title">Hundreds of parking<br>locations, mapped</h2>
+      <h2 class="section-title">Hundreds of parking  locations, mapped</h2>
       <p class="section-sub">Sloto covers Dublin city centre and beyond. Every spot colour-coded, every detail at your fingertips.</p>
     </div>
-    <div class="map-container fade-up">
+    <div class="map-container">
       <div class="map-placeholder">
         <div class="preview-road" style="top:28%;left:0;right:0;height:14px;transform:rotate(-3deg);border-radius:4px;"></div>
         <div class="preview-road" style="top:52%;left:0;right:0;height:10px;transform:rotate(2deg);border-radius:4px;"></div>
@@ -415,12 +398,12 @@
 
   <!-- TESTIMONIALS -->
   <section class="testimonials-section">
-    <div class="fade-up">
+    <div >
       <span class="section-label">Early users love it</span>
-      <h2 class="section-title">Real Dublin drivers,<br>real results</h2>
+      <h2 class="section-title">Real Dublin drivers,  real results</h2>
     </div>
     <div class="testimonials-grid">
-      <div class="testimonial-card fade-up">
+      <div class="testimonial-card">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"I used to spend 20 minutes driving around Ranelagh every morning. Now I open Sloto and I'm parked in under 5. It's embarrassingly useful."</p>
         <div class="testimonial-author">
@@ -428,7 +411,7 @@
           <div><div class="author-name">Siobhán C.</div><div class="author-location">Ranelagh, Dublin 6</div></div>
         </div>
       </div>
-      <div class="testimonial-card fade-up" style="transition-delay:0.1s">
+      <div class="testimonial-card" >
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"The parking alert is a game changer. I forgot I parked at a meter once — €80 fine. Never again. This app has already saved me more than I can count."</p>
         <div class="testimonial-author">
@@ -436,7 +419,7 @@
           <div><div class="author-name">Darragh O'B.</div><div class="author-location">Dún Laoghaire</div></div>
         </div>
       </div>
-      <div class="testimonial-card fade-up" style="transition-delay:0.2s">
+      <div class="testimonial-card" >
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Simple, fast, no faff. I recommended it to everyone in my office. Half of them are on it now. Perfect for anyone commuting into the city."</p>
         <div class="testimonial-author">
@@ -449,8 +432,8 @@
 
   <!-- CTA -->
   <section class="cta-section" id="download">
-    <div class="fade-up">
-      <h2 class="section-title">Know where you're parking<br>before you leave.</h2>
+    <div >
+      <h2 class="section-title">Know where you're parking  before you leave.</h2>
       <p class="section-sub">Download Sloto free. Available on Android and iOS.</p>
       <div class="cta-store-buttons">
         <a href="https://play.google.com/store" class="btn-store-white">
