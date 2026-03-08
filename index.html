@@ -191,20 +191,30 @@
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; text-align: center; }
-      .hero-subtitle { margin: 0 auto 40px; }
-      .hero-actions { justify-content: center; }
+
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; text-align: center; gap: 40px; }
+      .hero-subtitle { margin: 0 auto 32px; }
+      .hero-actions { justify-content: center; flex-direction: column; align-items: center; gap: 10px; }
+      .btn-store { width: 100%; max-width: 280px; justify-content: center; }
+      .btn-secondary { margin-left: 0; margin-top: 4px; }
       .hero-visual { order: -1; }
-      .phone-shell { width: 220px; height: 440px; }
-      .float-badge-1 { right: 0; }
-      .float-badge-2 { left: 0; }
+      .phone-shell { width: 200px; height: 400px; }
+      .float-badge { font-size: 0.7rem; padding: 8px 12px; }
+      .float-badge-1 { right: -10px; top: 60px; }
+      .float-badge-2 { left: -10px; bottom: 120px; }
+
       .section, .features-section, .map-preview-section, .testimonials-section, .cta-section { padding: 60px 24px; }
       .how-grid, .testimonials-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
       .features-grid .feature-card { border-radius: 0 !important; }
       .features-grid .feature-card:first-child { border-radius: 20px 20px 0 0 !important; }
       .features-grid .feature-card:last-child { border-radius: 0 0 20px 20px !important; }
+
+      .cta-store-buttons { flex-direction: column; align-items: center; }
+      .btn-store-white { width: 100%; max-width: 280px; justify-content: center; }
+
       footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
     }
   </style>
 </head>
