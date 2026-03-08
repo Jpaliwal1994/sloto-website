@@ -7,7 +7,23 @@
   <meta name="description" content="Sloto is building the go-to parking app for Dublin drivers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!window.IntersectionObserver) {
+        var els = document.querySelectorAll('.fade-up');
+        for (var i = 0; i < els.length; i++) { els[i].classList.add('visible'); }
+        return;
+      }
+      var obs = new IntersectionObserver(function(entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { entries[i].target.classList.add('visible'); }
+        }
+      }, { threshold: 0.1 });
+      var els = document.querySelectorAll('.fade-up');
+      for (var i = 0; i < els.length; i++) { obs.observe(els[i]); }
+    });
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -19,7 +35,7 @@
     body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
 
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(255,255,255,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--green); text-decoration: none; letter-spacing: -0.03em; }
+    .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--green); text-decoration: none; letter-spacing: -0.03em; }
     .nav-logo span { color: var(--black); }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--black); font-size: 0.9rem; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
@@ -29,32 +45,32 @@
     .page-hero { padding: 140px 48px 80px; background: var(--black); color: var(--white); position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(26,122,60,0.2) 0%, transparent 70%); }
     .page-hero-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #43a047; margin-bottom: 20px; }
-    .page-hero-title { font-family: 'Syne', sans-serif; font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; max-width: 700px; margin-bottom: 24px; }
+    .page-hero-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; max-width: 700px; margin-bottom: 24px; }
     .page-hero-title em { font-style: normal; color: #43a047; }
     .page-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.65; font-weight: 300; }
 
     .section { padding: 80px 48px; }
     .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
-    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 800; letter-spacing: -0.035em; color: var(--black); margin-bottom: 16px; }
+    .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 800; letter-spacing: -0.035em; color: var(--black); margin-bottom: 16px; }
     .section-sub { font-size: 1rem; color: var(--text-muted); max-width: 520px; line-height: 1.65; font-weight: 300; margin-bottom: 48px; }
 
     .traction-section { background: var(--grey); padding: 80px 48px; }
     .traction-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; border-radius: 20px; overflow: hidden; }
     .traction-card { background: var(--white); padding: 36px 28px; transition: background 0.2s; }
     .traction-card:hover { background: var(--green-pale); }
-    .traction-number { font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--green); letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+    .traction-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--green); letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
     .traction-label { font-size: 0.88rem; color: var(--text-muted); font-weight: 400; line-height: 1.4; }
 
     .opportunity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .opp-visual { background: var(--grey); border-radius: 24px; padding: 40px; position: relative; overflow: hidden; }
     .opp-visual::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%); }
     .opp-stat { margin-bottom: 28px; }
-    .opp-stat-value { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 4px; }
+    .opp-stat-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 4px; }
     .opp-stat-label { font-size: 0.85rem; color: var(--text-muted); }
     .opp-bar { height: 8px; background: rgba(0,0,0,0.08); border-radius: 4px; margin-top: 8px; overflow: hidden; }
     .opp-bar-fill { height: 100%; background: var(--green); border-radius: 4px; }
     .opp-list { list-style: none; }
-    .opp-list li { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.55; padding-left: 0; border-left: 3px solid var(--green); padding-left: 14px; }
+    .opp-list li { display: flex; align-items: flex-start; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.55; border-left: 3px solid var(--green); padding-left: 14px; }
 
     .model-section { background: var(--black); padding: 80px 48px; color: var(--white); }
     .model-section .section-title { color: var(--white); }
@@ -64,7 +80,7 @@
     .model-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px 28px; transition: border-color 0.3s; width: 100%; box-sizing: border-box; }
     .model-card:hover { border-color: rgba(26,122,60,0.5); }
     .model-card-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #43a047; margin-bottom: 12px; }
-    .model-card-value { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 8px; word-break: break-word; }
+    .model-card-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.6rem; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 8px; word-break: break-word; }
     .model-card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.55; font-weight: 300; }
 
     .roadmap-section { padding: 80px 48px; }
@@ -75,17 +91,17 @@
     .timeline-dot.done { background: var(--green); color: white; }
     .timeline-dot.next { background: var(--grey); border: 2px solid rgba(0,0,0,0.1); }
     .timeline-phase { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
-    .timeline-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .timeline-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
     .timeline-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; max-width: 560px; }
 
     .contact-section { background: var(--green); padding: 80px 48px; color: white; text-align: center; }
     .contact-section .section-title { color: white; max-width: 600px; margin: 0 auto 16px; }
     .contact-section .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto 40px; text-align: center; }
-    .contact-email { display: inline-block; background: white; color: var(--green); font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; padding: 18px 36px; border-radius: 14px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(0,0,0,0.15); }
+    .contact-email { display: inline-block; background: white; color: var(--green); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; padding: 18px 36px; border-radius: 14px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(0,0,0,0.15); }
     .contact-email:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
 
     footer { padding: 40px 48px; border-top: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--green); text-decoration: none; }
+    .footer-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--green); text-decoration: none; }
     .footer-links { display: flex; gap: 24px; list-style: none; }
     .footer-links a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--black); }
@@ -112,7 +128,7 @@
     }
   </style>
 </head>
-<body onload="initFade()">
+<body>
 
   <nav>
     <a href="index.html" class="nav-logo">sloto<span>.</span></a>
@@ -280,26 +296,6 @@
     </ul>
     <p class="footer-copy">&#169; 2026 Sloto. Made in Dublin.</p>
   </footer>
-
-  <noscript></noscript>
-  <script type="text/javascript">
-  function initFade() {
-    if (!window.IntersectionObserver) {
-      var els = document.querySelectorAll('.fade-up');
-      for (var i = 0; i < els.length; i++) { els[i].classList.add('visible'); }
-      return;
-    }
-    var obs = new IntersectionObserver(function(entries) {
-      for (var i = 0; i < entries.length; i++) {
-        if (entries[i].isIntersecting) {
-          entries[i].target.classList.add('visible');
-        }
-      }
-    }, { threshold: 0.1 });
-    var els = document.querySelectorAll('.fade-up');
-    for (var i = 0; i < els.length; i++) { obs.observe(els[i]); }
-  }
-  </script>
 
 </body>
 </html>
