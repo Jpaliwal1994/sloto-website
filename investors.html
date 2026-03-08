@@ -54,8 +54,7 @@
     .opp-bar { height: 8px; background: rgba(0,0,0,0.08); border-radius: 4px; margin-top: 8px; overflow: hidden; }
     .opp-bar-fill { height: 100%; background: var(--green); border-radius: 4px; }
     .opp-list { list-style: none; }
-    .opp-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.55; }
-    .opp-list li::before { content: 'to'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .opp-list li { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.55; padding-left: 0; border-left: 3px solid var(--green); padding-left: 14px; }
 
     .model-section { background: var(--black); padding: 80px 48px; color: var(--white); }
     .model-section .section-title { color: var(--white); }
@@ -113,7 +112,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="initFade()">
 
   <nav>
     <a href="index.html" class="nav-logo">sloto<span>.</span></a>
@@ -138,8 +137,8 @@
     </div>
     <div class="traction-grid fade-up">
       <div class="traction-card">
-        <div class="traction-number">Live</div>
-        <div class="traction-label">App is live and available to download today</div>
+        <div class="traction-number">Early Access</div>
+        <div class="traction-label">App in hands of real Dublin drivers, gathering feedback before public launch</div>
       </div>
       <div class="traction-card">
         <div class="traction-number">2</div>
@@ -231,32 +230,32 @@
         <div class="timeline-dot done">&#10003;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Done - Q1 2026</div>
-          <div class="timeline-title">Android app live</div>
-          <div class="timeline-desc">Full-featured app launched on Android - real-time parking map, crowd reporting, car tracker, push notifications, and Google Sign-In.</div>
+          <div class="timeline-title">Early access beta launched</div>
+          <div class="timeline-desc">App in the hands of real Dublin drivers - gathering feedback and iterating before public launch.</div>
         </div>
       </div>
       <div class="timeline-item fade-up">
         <div class="timeline-dot next">&#8987;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Next - Q2 2026</div>
-          <div class="timeline-title">iOS launch + user growth</div>
-          <div class="timeline-desc">Ship on the App Store, first marketing push, referral mechanic, and in-app ratings to build social proof and organic growth.</div>
+          <div class="timeline-title">Android public launch</div>
+          <div class="timeline-desc">Full public launch on Google Play, first marketing push, referral mechanic, and in-app ratings to build social proof and organic growth.</div>
         </div>
       </div>
       <div class="timeline-item fade-up">
         <div class="timeline-dot next">&#8987;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Q3 2026</div>
-          <div class="timeline-title">Monetisation + expansion</div>
-          <div class="timeline-desc">Introduce a premium subscription tier once we have a meaningful user base. Begin expansion to Cork and Galway.</div>
+          <div class="timeline-title">iOS launch + monetisation</div>
+          <div class="timeline-desc">Ship on the App Store and introduce a premium subscription tier once we have a meaningful user base.</div>
         </div>
       </div>
       <div class="timeline-item fade-up">
         <div class="timeline-dot next">&#8987;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Q4 2026</div>
-          <div class="timeline-title">B2B fleet product</div>
-          <div class="timeline-desc">Team plans for delivery companies, field sales, and any business with drivers on the road in Irish cities every day.</div>
+          <div class="timeline-title">B2B fleet product + expansion</div>
+          <div class="timeline-desc">Team plans for delivery companies and field sales teams. Begin expansion to Cork and Galway.</div>
         </div>
       </div>
     </div>
@@ -282,15 +281,24 @@
     <p class="footer-copy">&#169; 2026 Sloto. Made in Dublin.</p>
   </footer>
 
-  <script>
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
+  <noscript></noscript>
+  <script type="text/javascript">
+  function initFade() {
+    if (!window.IntersectionObserver) {
+      var els = document.querySelectorAll('.fade-up');
+      for (var i = 0; i < els.length; i++) { els[i].classList.add('visible'); }
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          entries[i].target.classList.add('visible');
+        }
+      }
     }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(function(el) {
-      observer.observe(el);
-    });
+    var els = document.querySelectorAll('.fade-up');
+    for (var i = 0; i < els.length; i++) { obs.observe(els[i]); }
+  }
   </script>
 
 </body>
