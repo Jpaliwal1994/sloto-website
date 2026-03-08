@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sloto — Find parking in Dublin. Before you drive.</title>
+  <meta name="description" content="Sloto helps Dublin drivers explore parking options before they leave. See what's available, plan your route, and park with confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #1a7a3c; --green-light: #25a352; --green-pale: #e8f5ed;
+      --green-glow: rgba(26,122,60,0.15); --black: #0d0d0d; --white: #ffffff;
+      --grey: #f4f4f2; --text-muted: #6b7280;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px; background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--green); text-decoration: none; letter-spacing: -0.03em; }
+    .nav-logo span { color: var(--black); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--black); font-size: 0.9rem; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { background: var(--green) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 100px; opacity: 1 !important; font-weight: 600 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--green-light) !important; }
+
+    .hero {
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 120px 48px 80px; gap: 64px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(26,122,60,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-pale); color: var(--green); font-size: 0.8rem;
+      font-weight: 600; padding: 6px 14px; border-radius: 100px;
+      margin-bottom: 28px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: ''; width: 8px; height: 8px; background: var(--green-light);
+      border-radius: 50%; animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
+    .hero-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.8rem, 4.5vw, 4.2rem); line-height: 1.05; letter-spacing: -0.04em; color: var(--black); margin-bottom: 24px; }
+    .hero-title em { font-style: normal; color: var(--green); }
+    .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); line-height: 1.65; max-width: 440px; margin-bottom: 40px; font-weight: 300; }
+
+    .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+    .btn-store {
+      display: inline-flex; align-items: center; gap: 10px; background: var(--black);
+      color: var(--white); text-decoration: none; padding: 13px 20px; border-radius: 14px;
+      font-size: 0.88rem; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    }
+    .btn-store:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.22); }
+    .btn-store-label { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; }
+    .btn-store-sub { font-size: 0.67rem; font-weight: 400; opacity: 0.65; text-transform: uppercase; letter-spacing: 0.04em; }
+    .btn-store-name { font-size: 0.9rem; font-weight: 700; }
+
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; margin-left: 4px; }
+    .btn-secondary:hover { color: var(--black); }
+
+    /* PHONE */
+    .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
+    .phone-shell {
+      width: 280px; height: 560px; background: var(--black); border-radius: 44px; padding: 12px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05) inset;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+    .phone-screen { width: 100%; height: 100%; background: #0f1a12; border-radius: 34px; overflow: hidden; position: relative; }
+    .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 28px; background: var(--black); border-radius: 0 0 18px 18px; z-index: 10; }
+    .phone-map-bg {
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(26,122,60,0.05) 0px, transparent 1px, transparent 28px), repeating-linear-gradient(90deg, rgba(26,122,60,0.05) 0px, transparent 1px, transparent 28px), linear-gradient(160deg, #0f1a12 0%, #142b1a 100%);
+      position: relative; overflow: hidden;
+    }
+    .map-road { position: absolute; background: rgba(255,255,255,0.07); border-radius: 2px; }
+    .phone-header { position: absolute; top: 36px; left: 0; right: 0; padding: 12px 16px; z-index: 5; }
+    .phone-search { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 10px 14px; display: flex; align-items: center; gap: 8px; font-size: 0.72rem; color: rgba(255,255,255,0.6); }
+    .map-dot { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgba(0,0,0,0.3); animation: dotPulse 3s ease-in-out infinite; }
+    .map-dot.free { background: #43a047; }
+    .map-dot.paid { background: #e53935; animation-delay: 0.5s; }
+    .map-dot.free-2 { background: #43a047; animation-delay: 1s; }
+    .map-dot.free-3 { background: #43a047; animation-delay: 1.5s; }
+    .map-dot.paid-2 { background: #e53935; animation-delay: 0.3s; }
+    @keyframes dotPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+    .phone-bottom-sheet { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,26,18,0.96); backdrop-filter: blur(20px); border-radius: 20px 20px 0 0; padding: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .sheet-handle { width: 32px; height: 3px; background: rgba(255,255,255,0.2); border-radius: 2px; margin: 0 auto 12px; }
+    .sheet-tag { display: inline-block; background: rgba(67,160,71,0.2); color: #43a047; font-size: 0.6rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; margin-bottom: 6px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .sheet-street { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; color: white; margin-bottom: 4px; }
+    .sheet-meta { font-size: 0.62rem; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+    .sheet-btn { background: var(--green); color: white; border: none; border-radius: 10px; padding: 10px; width: 100%; font-size: 0.7rem; font-weight: 600; cursor: pointer; }
+    .float-badge { position: absolute; background: white; border-radius: 14px; padding: 10px 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; gap: 8px; animation: badgeFloat 3s ease-in-out infinite; }
+    .badge-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .float-badge-1 { top: 80px; right: -20px; animation-delay: 0.5s; }
+    .float-badge-2 { bottom: 160px; left: -30px; animation-delay: 1.5s; }
+    @keyframes badgeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+    .section { padding: 100px 48px; }
+    .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 800; letter-spacing: -0.035em; color: var(--black); margin-bottom: 16px; }
+    .section-sub { font-size: 1rem; color: var(--text-muted); max-width: 480px; line-height: 1.65; font-weight: 300; }
+
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .step-card { background: var(--grey); border-radius: 24px; padding: 36px 32px; position: relative; overflow: hidden; transition: transform 0.3s; }
+    .step-card:hover { transform: translateY(-4px); }
+    .step-card::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background: var(--green-glow); }
+    .step-number { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--green); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    .step-number::before { content: attr(data-n); background: var(--green); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0; }
+    .step-icon { font-size: 2.2rem; margin-bottom: 20px; display: block; }
+    .step-title { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .step-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
+
+    .features-section { background: var(--black); color: var(--white); padding: 100px 48px; }
+    .features-section .section-title { color: var(--white); }
+    .features-section .section-label { color: #43a047; }
+    .features-section .section-sub { color: rgba(255,255,255,0.5); }
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 56px; border-radius: 20px; overflow: hidden; }
+    .feature-card { background: #141414; padding: 40px 36px; transition: background 0.3s; }
+    .feature-card:hover { background: #1a1a1a; }
+    .feature-card:nth-child(1) { border-radius: 20px 0 0 0; }
+    .feature-card:nth-child(2) { border-radius: 0 20px 0 0; }
+    .feature-card:nth-child(3) { border-radius: 0 0 0 20px; }
+    .feature-card:nth-child(4) { border-radius: 0 0 20px 0; }
+    .feature-icon { width: 48px; height: 48px; background: var(--green-glow); border: 1px solid rgba(26,122,60,0.3); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 20px; }
+    .feature-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.02em; }
+    .feature-desc { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.65; font-weight: 300; }
+
+    .map-preview-section { padding: 100px 48px; background: var(--grey); }
+    .map-container { margin-top: 56px; border-radius: 24px; overflow: hidden; height: 420px; position: relative; }
+    .map-placeholder {
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, transparent 1px, transparent 40px), linear-gradient(160deg, #0f1a12 0%, #162b1a 50%, #0d1f10 100%);
+      position: relative; overflow: hidden;
+    }
+    .preview-road { position: absolute; background: rgba(255,255,255,0.06); }
+    .preview-dot { position: absolute; width: 18px; height: 18px; border-radius: 50%; border: 3px solid rgba(0,0,0,0.25); }
+    .preview-dot.f { background: #43a047; }
+    .preview-dot.p { background: #e53935; }
+    .map-overlay { position: absolute; top: 24px; left: 24px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 14px; padding: 16px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .map-overlay-title { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 6px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .map-stats-overlay { position: absolute; bottom: 24px; right: 24px; display: flex; gap: 12px; }
+    .map-stat-chip { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 100px; padding: 10px 18px; font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+
+    .testimonials-section { padding: 100px 48px; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .testimonial-card { border: 1px solid rgba(0,0,0,0.08); border-radius: 20px; padding: 32px 28px; transition: border-color 0.3s, transform 0.3s; }
+    .testimonial-card:hover { border-color: var(--green); transform: translateY(-3px); }
+    .stars { color: #f59e0b; font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonial-text { font-size: 0.95rem; line-height: 1.7; color: var(--black); margin-bottom: 20px; font-style: italic; font-weight: 300; }
+    .testimonial-author { display: flex; align-items: center; gap: 10px; }
+    .author-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: white; }
+    .author-name { font-size: 0.85rem; font-weight: 600; }
+    .author-location { font-size: 0.75rem; color: var(--text-muted); }
+
+    .cta-section { padding: 100px 48px; background: var(--green); color: var(--white); text-align: center; }
+    .cta-section .section-title { color: var(--white); max-width: 640px; margin: 0 auto 16px; }
+    .cta-section .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto 40px; text-align: center; }
+    .cta-store-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn-store-white { display: inline-flex; align-items: center; gap: 10px; background: var(--white); color: var(--black); text-decoration: none; padding: 13px 20px; border-radius: 14px; font-size: 0.88rem; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(0,0,0,0.15); }
+    .btn-store-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+
+    footer { padding: 40px 48px; border-top: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--green); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    .footer-copy { font-size: 0.82rem; color: var(--text-muted); }
+
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; text-align: center; }
+      .hero-subtitle { margin: 0 auto 40px; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { order: -1; }
+      .phone-shell { width: 220px; height: 440px; }
+      .float-badge-1 { right: 0; }
+      .float-badge-2 { left: 0; }
+      .section, .features-section, .map-preview-section, .testimonials-section, .cta-section { padding: 60px 24px; }
+      .how-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .features-grid .feature-card { border-radius: 0 !important; }
+      .features-grid .feature-card:first-child { border-radius: 20px 20px 0 0 !important; }
+      .features-grid .feature-card:last-child { border-radius: 0 0 20px 20px !important; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">sloto<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="investors.html">Investors</a></li>
+      <li><a href="#download" class="nav-cta">Get the app</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Now live in Dublin</div>
+      <h1 class="hero-title">Find parking in Dublin.<br><em>Before you drive.</em></h1>
+      <p class="hero-subtitle">Sloto shows you every parking option across Dublin in real time — free or paid, near or far. Plan before you leave. Park without the stress.</p>
+      <div class="hero-actions">
+        <a href="https://play.google.com/store" class="btn-store">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.4c.3.18.63.27.97.27.36 0 .72-.1 1.04-.3l13.1-7.57-2.87-2.87-12.24 10.47zm-1.18-19.9v17c0 .4.1.76.27 1.07L14.1 9.05 2.27 2.43A2.04 2.04 0 002 3.5zM20.8 10.3l-2.6-1.5-3.16 3.16 3.16 3.16 2.63-1.52A2.06 2.06 0 0022 12.02c0-.74-.41-1.4-1.2-1.72zM4.15.9C3.83.7 3.47.6 3.1.6c-.34 0-.67.1-.97.27L14.1 10.95l2.87-2.87L4.15.9z"/></svg>
+          <div class="btn-store-label">
+            <span class="btn-store-sub">Get it on</span>
+            <span class="btn-store-name">Google Play</span>
+          </div>
+        </a>
+        <a href="https://apps.apple.com" class="btn-store">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div class="btn-store-label">
+            <span class="btn-store-sub">Download on the</span>
+            <span class="btn-store-name">App Store</span>
+          </div>
+        </a>
+        <a href="#how" class="btn-secondary">See how it works →</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone-shell">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="phone-map-bg">
+            <div class="map-road" style="top:30%;left:0;right:0;height:8px;transform:rotate(-5deg);"></div>
+            <div class="map-road" style="top:55%;left:0;right:0;height:6px;transform:rotate(3deg);"></div>
+            <div class="map-road" style="top:0;bottom:0;left:35%;width:7px;transform:rotate(2deg);"></div>
+            <div class="map-road" style="top:0;bottom:0;left:65%;width:5px;transform:rotate(-3deg);"></div>
+            <div class="map-dot free" style="top:38%;left:20%;"></div>
+            <div class="map-dot paid" style="top:44%;left:50%;"></div>
+            <div class="map-dot free-2" style="top:52%;left:72%;"></div>
+            <div class="map-dot free-3" style="top:28%;left:58%;"></div>
+            <div class="map-dot paid-2" style="top:60%;left:30%;"></div>
+          </div>
+          <div class="phone-header">
+            <div class="phone-search">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              Search parking…
+            </div>
+          </div>
+          <div class="phone-bottom-sheet">
+            <div class="sheet-handle"></div>
+            <div class="sheet-tag">✓ Available now</div>
+            <div class="sheet-street">Merrion Square North</div>
+            <div class="sheet-meta">Free until 19:00 · 14 bays available</div>
+            <button class="sheet-btn">Navigate Here</button>
+          </div>
+        </div>
+      </div>
+      <div class="float-badge float-badge-1">
+        <div class="badge-dot" style="background:#43a047;"></div>
+        47 spots nearby
+      </div>
+      <div class="float-badge float-badge-2">
+        <span>🔔</span> Parking alert set
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="fade-up">
+      <span class="section-label">Simple by design</span>
+      <h2 class="section-title">Find parking<br>in 3 steps</h2>
+      <p class="section-sub">No guessing. No circling the block. Sloto does the work so you don't have to.</p>
+    </div>
+    <div class="how-grid">
+      <div class="step-card fade-up">
+        <div class="step-number" data-n="1">Step one</div>
+        <span class="step-icon">🗺️</span>
+        <h3 class="step-title">Open the map</h3>
+        <p class="step-desc">See hundreds of parking spots across Dublin, colour-coded in real time — green for free, red for paid. Know what to expect before you leave.</p>
+      </div>
+      <div class="step-card fade-up" style="transition-delay:0.1s">
+        <div class="step-number" data-n="2">Step two</div>
+        <span class="step-icon">📍</span>
+        <h3 class="step-title">Pick your spot</h3>
+        <p class="step-desc">Tap any location for full details — hours, rates, availability, and live crowd reports from other drivers. Then tap Navigate.</p>
+      </div>
+      <div class="step-card fade-up" style="transition-delay:0.2s">
+        <div class="step-number" data-n="3">Step three</div>
+        <span class="step-icon">🔔</span>
+        <h3 class="step-title">Park & relax</h3>
+        <p class="step-desc">Tap "I Parked Here" and Sloto sends you an alert 15 minutes before paid hours kick in. Never get caught out again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="fade-up">
+      <span class="section-label">Everything you need</span>
+      <h2 class="section-title">Built for Dublin drivers</h2>
+      <p class="section-sub">Designed around how people actually park in the city — not how parking apps think they do.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">⏰</div>
+        <h3 class="feature-title">Live parking status</h3>
+        <p class="feature-desc">Every spot updates in real time. See what's free and what's paid right now — including Sundays and Irish bank holidays.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.1s">
+        <div class="feature-icon">📍</div>
+        <h3 class="feature-title">Remember where you parked</h3>
+        <p class="feature-desc">Tap "I Parked Here" and get walking directions back to your car, no matter how far you walked afterwards.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.15s">
+        <div class="feature-icon">👥</div>
+        <h3 class="feature-title">Crowd reports</h3>
+        <p class="feature-desc">Drivers report live availability — Plenty, A Few, or Full — so you know what to expect before you even arrive.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.2s">
+        <div class="feature-icon">⭐</div>
+        <h3 class="feature-title">Save your favourites</h3>
+        <p class="feature-desc">Star your go-to spots and they appear pinned at the top of your Nearby list, every single time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP PREVIEW -->
+  <section class="map-preview-section">
+    <div class="fade-up">
+      <span class="section-label">Across the city</span>
+      <h2 class="section-title">Hundreds of parking<br>locations, mapped</h2>
+      <p class="section-sub">Sloto covers Dublin city centre and beyond. Every spot colour-coded, every detail at your fingertips.</p>
+    </div>
+    <div class="map-container fade-up">
+      <div class="map-placeholder">
+        <div class="preview-road" style="top:28%;left:0;right:0;height:14px;transform:rotate(-3deg);border-radius:4px;"></div>
+        <div class="preview-road" style="top:52%;left:0;right:0;height:10px;transform:rotate(2deg);border-radius:4px;"></div>
+        <div class="preview-road" style="top:68%;left:0;right:0;height:8px;border-radius:4px;"></div>
+        <div class="preview-road" style="top:0;bottom:0;left:20%;width:12px;transform:rotate(1deg);border-radius:4px;"></div>
+        <div class="preview-road" style="top:0;bottom:0;left:45%;width:10px;transform:rotate(-2deg);border-radius:4px;"></div>
+        <div class="preview-road" style="top:0;bottom:0;left:68%;width:8px;border-radius:4px;"></div>
+        <div class="preview-road" style="top:0;bottom:0;left:82%;width:6px;border-radius:4px;"></div>
+        <div class="preview-dot f" style="top:22%;left:15%;"></div>
+        <div class="preview-dot f" style="top:35%;left:28%;"></div>
+        <div class="preview-dot p" style="top:40%;left:42%;"></div>
+        <div class="preview-dot f" style="top:25%;left:55%;"></div>
+        <div class="preview-dot f" style="top:48%;left:60%;"></div>
+        <div class="preview-dot p" style="top:58%;left:35%;"></div>
+        <div class="preview-dot f" style="top:62%;left:72%;"></div>
+        <div class="preview-dot f" style="top:32%;left:80%;"></div>
+        <div class="preview-dot p" style="top:70%;left:50%;"></div>
+        <div class="preview-dot f" style="top:18%;left:68%;"></div>
+        <div class="preview-dot f" style="top:75%;left:20%;"></div>
+        <div class="preview-dot p" style="top:45%;left:85%;"></div>
+      </div>
+      <div class="map-overlay">
+        <div class="map-overlay-title">Live map legend</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#43a047;"></div> Free to park now</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e53935;"></div> Paid parking active</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#1565c0;"></div> Your location</div>
+      </div>
+      <div class="map-stats-overlay">
+        <div class="map-stat-chip"><span style="color:#43a047;">●</span> Spots available now</div>
+        <div class="map-stat-chip">📍 Dublin</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="fade-up">
+      <span class="section-label">Early users love it</span>
+      <h2 class="section-title">Real Dublin drivers,<br>real results</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I used to spend 20 minutes driving around Ranelagh every morning. Now I open Sloto and I'm parked in under 5. It's embarrassingly useful."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#1a7a3c;">SC</div>
+          <div><div class="author-name">Siobhán C.</div><div class="author-location">Ranelagh, Dublin 6</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up" style="transition-delay:0.1s">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The parking alert is a game changer. I forgot I parked at a meter once — €80 fine. Never again. This app has already saved me more than I can count."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#1565c0;">DO</div>
+          <div><div class="author-name">Darragh O'B.</div><div class="author-location">Dún Laoghaire</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up" style="transition-delay:0.2s">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Simple, fast, no faff. I recommended it to everyone in my office. Half of them are on it now. Perfect for anyone commuting into the city."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#e53935;">AM</div>
+          <div><div class="author-name">Aoife M.</div><div class="author-location">Clontarf, Dublin 3</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="download">
+    <div class="fade-up">
+      <h2 class="section-title">Know where you're parking<br>before you leave.</h2>
+      <p class="section-sub">Download Sloto free. Available on Android and iOS.</p>
+      <div class="cta-store-buttons">
+        <a href="https://play.google.com/store" class="btn-store-white">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.4c.3.18.63.27.97.27.36 0 .72-.1 1.04-.3l13.1-7.57-2.87-2.87-12.24 10.47zm-1.18-19.9v17c0 .4.1.76.27 1.07L14.1 9.05 2.27 2.43A2.04 2.04 0 002 3.5zM20.8 10.3l-2.6-1.5-3.16 3.16 3.16 3.16 2.63-1.52A2.06 2.06 0 0022 12.02c0-.74-.41-1.4-1.2-1.72zM4.15.9C3.83.7 3.47.6 3.1.6c-.34 0-.67.1-.97.27L14.1 10.95l2.87-2.87L4.15.9z"/></svg>
+          <div class="btn-store-label">
+            <span class="btn-store-sub" style="color:#555;">Get it on</span>
+            <span class="btn-store-name">Google Play</span>
+          </div>
+        </a>
+        <a href="https://apps.apple.com" class="btn-store-white">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div class="btn-store-label">
+            <span class="btn-store-sub" style="color:#555;">Download on the</span>
+            <span class="btn-store-name">App Store</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="/" class="footer-logo">sloto.</a>
+    <ul class="footer-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="investors.html">Investors</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Sloto. Made in Dublin. 🇮🇪</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
