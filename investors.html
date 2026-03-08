@@ -286,7 +286,7 @@
     <div class="fade-up">
       <h2 class="section-title">Interested in Sloto?</h2>
       <p class="section-sub">We're open to conversations with angels, early-stage investors, and strategic partners. Reach out directly — we respond fast.</p>
-      <a href="/cdn-cgi/l/email-protection#58303d343437182b34372c3776313d" class="contact-email"><span class="__cf_email__" data-cfemail="dfb7bab3b3b09facb3b0abb0f1b6ba">[email&#160;protected]</span></a>
+      <a href="mailto:hello@sloto.ie" class="contact-email">hello@sloto.ie</a>
       <p style="margin-top:20px;font-size:0.82rem;color:rgba(255,255,255,0.5);">We respond within 24 hours.</p>
     </div>
   </section>
@@ -302,5 +302,11 @@
     <p class="footer-copy">© 2026 Sloto. Made in Dublin. 🇮🇪</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const observer = new IntersectionObserver((entrie
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
