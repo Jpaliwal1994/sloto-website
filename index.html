@@ -128,6 +128,25 @@
     .step-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
     .step-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
 
+    /* AI STEP CARD */
+    .step-card.ai-card { background: var(--black); color: white; border: 1px solid rgba(26,122,60,0.3); }
+    .step-card.ai-card::after { background: rgba(26,122,60,0.15); width: 200px; height: 200px; }
+    .step-card.ai-card .step-number { color: #43a047; }
+    .step-card.ai-card .step-title { color: white; }
+    .step-card.ai-card .step-desc { color: rgba(255,255,255,0.5); }
+    .ai-search-demo { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 16px; margin: 20px 0 16px; font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px; }
+    .ai-search-demo svg { flex-shrink: 0; opacity: 0.5; }
+    .ai-typing { overflow: hidden; white-space: nowrap; border-right: 2px solid #43a047; animation: typing 3s steps(35) infinite, blink 0.7s step-end infinite; max-width: 100%; }
+    @keyframes typing { 0%, 100% { width: 0; } 30%, 70% { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+    .ai-results { display: flex; flex-direction: column; gap: 8px; }
+    .ai-result-chip { background: rgba(26,122,60,0.15); border: 1px solid rgba(26,122,60,0.25); border-radius: 10px; padding: 8px 12px; font-size: 0.78rem; color: rgba(255,255,255,0.8); display: flex; justify-content: space-between; align-items: center; animation: fadeSlideIn 0.4s ease forwards; opacity: 0; }
+    .ai-result-chip:nth-child(1) { animation-delay: 0.5s; }
+    .ai-result-chip:nth-child(2) { animation-delay: 0.8s; }
+    .ai-result-chip:nth-child(3) { animation-delay: 1.1s; }
+    @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .chip-badge { font-size: 0.68rem; background: var(--green); color: white; padding: 2px 7px; border-radius: 100px; font-weight: 600; }
+
     .features-section { background: var(--black); color: var(--white); padding: 100px 48px; }
     .features-section .section-title { color: var(--white); }
     .features-section .section-label { color: #43a047; }
@@ -232,9 +251,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">Now live in Dublin</div>
-      <h1 class="hero-title">Find parking in Dublin.  <em>Before you drive.</em></h1>
-      <p class="hero-subtitle">Sloto shows you every parking option across Dublin in real time — free or paid, near or far. Plan before you leave. Park without the stress.</p>
+      <div class="hero-badge">AI-powered parking for Dublin</div>
+      <h1 class="hero-title">Just ask. <em>Find parking instantly.</em></h1>
+      <p class="hero-subtitle">Type "cheapest parking near the Aviva" and Sloto's AI finds your best options in seconds. 1,000+ spots mapped across Dublin — free or paid, near or far.</p>
       <div class="hero-actions">
         <a href="https://play.google.com/store" class="btn-store">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.4c.3.18.63.27.97.27.36 0 .72-.1 1.04-.3l13.1-7.57-2.87-2.87-12.24 10.47zm-1.18-19.9v17c0 .4.1.76.27 1.07L14.1 9.05 2.27 2.43A2.04 2.04 0 002 3.5zM20.8 10.3l-2.6-1.5-3.16 3.16 3.16 3.16 2.63-1.52A2.06 2.06 0 0022 12.02c0-.74-.41-1.4-1.2-1.72zM4.15.9C3.83.7 3.47.6 3.1.6c-.34 0-.67.1-.97.27L14.1 10.95l2.87-2.87L4.15.9z"/></svg>
@@ -272,24 +291,24 @@
           <div class="phone-header">
             <div class="phone-search">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              Search parking…
+              Ask AI about parking...
             </div>
           </div>
           <div class="phone-bottom-sheet">
             <div class="sheet-handle"></div>
-            <div class="sheet-tag">✓ Available now</div>
+            <div class="sheet-tag">🤖 AI result · Best value</div>
             <div class="sheet-street">Merrion Square North</div>
-            <div class="sheet-meta">Free until 19:00 · 14 bays available</div>
+            <div class="sheet-meta">Free until 19:00 · 5 min walk · €0</div>
             <button class="sheet-btn">Navigate Here</button>
           </div>
         </div>
       </div>
       <div class="float-badge float-badge-1">
         <div class="badge-dot" style="background:#43a047;"></div>
-        47 spots nearby
+        1,000+ spots mapped
       </div>
       <div class="float-badge float-badge-2">
-        <span>🔔</span> Parking alert set
+        <span>🤖</span> AI found 3 options
       </div>
     </div>
   </section>
@@ -302,19 +321,24 @@
       <p class="section-sub" style="max-width:100%;">No guessing. No circling the block. Sloto does the work so you don't have to.</p>
     </div>
     <div class="how-grid">
-      <div class="step-card">
+      <div class="step-card ai-card">
         <div class="step-number" data-n="1">Step one</div>
-        <span class="step-icon">🗺️</span>
-        <h3 class="step-title">Open the map</h3>
-        <p class="step-desc">See hundreds of parking spots across Dublin, colour-coded in real time — green for free, red for paid. Know what to expect before you leave.</p>
+        <span class="step-icon">🤖</span>
+        <h3 class="step-title">Ask the AI</h3>
+        <div class="ai-search-demo">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span id="step-query"></span><span style="color:#43a047;animation:blink-step 0.7s step-end infinite;">|</span>
+        </div>
+        <div id="step-results" style="height:138px;overflow:hidden;margin-top:12px;"></div>
+        <p class="step-desc" style="margin-top:16px;">Type anything in plain English. Sloto's AI finds your 3 best options with walking time and cost — in seconds.</p>
       </div>
-      <div class="step-card" >
+      <div class="step-card">
         <div class="step-number" data-n="2">Step two</div>
         <span class="step-icon">📍</span>
         <h3 class="step-title">Pick your spot</h3>
-        <p class="step-desc">Tap any location for full details — hours, rates, availability, and live crowd reports from other drivers. Then tap Navigate.</p>
+        <p class="step-desc">Tap any result for full details — hours, rates, live crowd reports from other drivers, and a countdown to when paid parking kicks in. Then tap Navigate.</p>
       </div>
-      <div class="step-card" >
+      <div class="step-card">
         <div class="step-number" data-n="3">Step three</div>
         <span class="step-icon">🔔</span>
         <h3 class="step-title">Park & relax</h3>
@@ -332,24 +356,24 @@
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">⏰</div>
-        <h3 class="feature-title">Live parking status</h3>
-        <p class="feature-desc">Every spot updates in real time. See what's free and what's paid right now — including Sundays and Irish bank holidays.</p>
+        <div class="feature-icon">🤖</div>
+        <h3 class="feature-title">AI parking search</h3>
+        <p class="feature-desc">Just ask in plain English — "free parking near Rathmines" or "cheapest spot near the Aviva". Our AI finds your 3 best options with walking time and cost breakdown.</p>
       </div>
-      <div class="feature-card" >
-        <div class="feature-icon">📍</div>
-        <h3 class="feature-title">Remember where you parked</h3>
-        <p class="feature-desc">Tap "I Parked Here" and get walking directions back to your car, no matter how far you walked afterwards.</p>
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3 class="feature-title">1,000+ spots mapped</h3>
+        <p class="feature-desc">Dublin city centre, south Dublin, north Dublin — every on-street spot colour-coded by zone and price. Free on Sundays and Irish bank holidays automatically.</p>
       </div>
-      <div class="feature-card" >
+      <div class="feature-card">
         <div class="feature-icon">👥</div>
-        <h3 class="feature-title">Crowd reports</h3>
-        <p class="feature-desc">Drivers report live availability — Plenty, A Few, or Full — so you know what to expect before you even arrive.</p>
+        <h3 class="feature-title">Live crowd reports</h3>
+        <p class="feature-desc">Drivers report live availability — Plenty, A Few, or Full — so you know what to expect before you even arrive. Updates in real time.</p>
       </div>
-      <div class="feature-card" >
-        <div class="feature-icon">⭐</div>
-        <h3 class="feature-title">Save your favourites</h3>
-        <p class="feature-desc">Star your go-to spots and they appear pinned at the top of your Nearby list, every single time.</p>
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3 class="feature-title">Parking expiry alerts</h3>
+        <p class="feature-desc">Tap "I Parked Here" and get a notification 15 minutes before paid hours kick in. Plus walking directions back to your car, no matter how far you wandered.</p>
       </div>
     </div>
   </section>
@@ -358,8 +382,8 @@
   <section class="map-preview-section">
     <div >
       <span class="section-label">Across the city</span>
-      <h2 class="section-title">Hundreds of parking  locations, mapped</h2>
-      <p class="section-sub">Sloto covers Dublin city centre and beyond. Every spot colour-coded, every detail at your fingertips.</p>
+      <h2 class="section-title">1,000+ parking locations, mapped</h2>
+      <p class="section-sub">Sloto covers Dublin city centre, south Dublin and north Dublin. Every spot colour-coded by zone and price, every detail at your fingertips.</p>
     </div>
     <div class="map-container">
       <div class="map-placeholder">
@@ -433,8 +457,8 @@
   <!-- CTA -->
   <section class="cta-section" id="download">
     <div >
-      <h2 class="section-title">Know where you're parking  before you leave.</h2>
-      <p class="section-sub">Download Sloto free. Available on Android and iOS.</p>
+      <h2 class="section-title">The smartest way to park in Dublin.</h2>
+      <p class="section-sub">AI-powered search. 1,000+ spots mapped. Free to download.</p>
       <div class="cta-store-buttons">
         <a href="https://play.google.com/store" class="btn-store-white">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.4c.3.18.63.27.97.27.36 0 .72-.1 1.04-.3l13.1-7.57-2.87-2.87-12.24 10.47zm-1.18-19.9v17c0 .4.1.76.27 1.07L14.1 9.05 2.27 2.43A2.04 2.04 0 002 3.5zM20.8 10.3l-2.6-1.5-3.16 3.16 3.16 3.16 2.63-1.52A2.06 2.06 0 0022 12.02c0-.74-.41-1.4-1.2-1.72zM4.15.9C3.83.7 3.47.6 3.1.6c-.34 0-.67.1-.97.27L14.1 10.95l2.87-2.87L4.15.9z"/></svg>
@@ -464,7 +488,88 @@
     </ul>
     <p class="footer-copy">© 2026 Sloto. Made in Dublin. 🇮🇪</p>
   </footer>
-
-
+  <style>
+    @keyframes blink-step { 50% { opacity: 0; } }
+    .step-result { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; opacity: 0; transform: translateX(-8px); transition: opacity 0.35s ease, transform 0.35s ease; }
+    .step-result.visible { opacity: 1; transform: translateX(0); }
+    .step-result-name { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .step-result-badge { font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+    .sr-free { background: rgba(26,122,60,0.35); color: #43a047; }
+    .sr-paid { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.55); }
+    .sr-best { background: #1a7a3c; color: white; }
+  </style>
+  <script>
+    var stepSearches = [
+      {
+        query: "free parking near the Aviva Stadium",
+        results: [
+          { name: "Lansdowne Road", badge: "Free", cls: "sr-free" },
+          { name: "Clyde Road", badge: "Free", cls: "sr-free" },
+          { name: "Haddington Road", badge: "Free", cls: "sr-free" }
+        ]
+      },
+      {
+        query: "cheapest parking near Grafton Street",
+        results: [
+          { name: "Harcourt Street", badge: "€0.90/hr", cls: "sr-best" },
+          { name: "Clonmel Street", badge: "€1.20/hr", cls: "sr-paid" },
+          { name: "Stephen's Lane", badge: "€2.00/hr", cls: "sr-paid" }
+        ]
+      },
+      {
+        query: "parking near Croke Park on Sunday",
+        results: [
+          { name: "Clonliffe Road", badge: "Free", cls: "sr-free" },
+          { name: "Drumcondra Road", badge: "Free", cls: "sr-free" },
+          { name: "Russell Street", badge: "Free", cls: "sr-free" }
+        ]
+      }
+    ];
+    var stepIdx = 0;
+    function stepType(text, cb) {
+      var el = document.getElementById('step-query');
+      if (!el) return;
+      el.textContent = '';
+      var i = 0;
+      var iv = setInterval(function() {
+        el.textContent += text[i]; i++;
+        if (i >= text.length) { clearInterval(iv); setTimeout(cb, 400); }
+      }, 45);
+    }
+    function stepShow(results, cb) {
+      var c = document.getElementById('step-results');
+      if (!c) return;
+      c.innerHTML = '';
+      results.forEach(function(r, i) {
+        var d = document.createElement('div');
+        d.className = 'step-result';
+        d.innerHTML = '<span class="step-result-name">' + r.name + '</span><span class="step-result-badge ' + r.cls + '">' + r.badge + '</span>';
+        c.appendChild(d);
+        setTimeout(function() { d.classList.add('visible'); }, i * 300);
+      });
+      setTimeout(cb, 2800);
+    }
+    function stepClear(cb) {
+      var el = document.getElementById('step-query');
+      var c = document.getElementById('step-results');
+      if (el) el.textContent = '';
+      if (c) c.innerHTML = '';
+      setTimeout(cb, 400);
+    }
+    function stepRunNext() {
+      var s = stepSearches[stepIdx];
+      stepType(s.query, function() {
+        stepShow(s.results, function() {
+          stepClear(function() {
+            stepIdx = (stepIdx + 1) % stepSearches.length;
+            stepRunNext();
+          });
+        });
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(stepRunNext, 1200);
+    });
+  </script>
 </body>
 </html>

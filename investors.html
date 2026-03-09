@@ -4,23 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sloto - Investors</title>
-  <meta name="description" content="Sloto is building the go-to parking app for Dublin drivers." />
+  <meta name="description" content="Sloto is building the AI-powered parking app for Dublin drivers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-      if (!window.IntersectionObserver) { return; }
-      var els = document.querySelectorAll('.fade-up');
-      for (var i = 0; i < els.length; i++) { els[i].classList.add('animate'); }
-      var obs = new IntersectionObserver(function(entries) {
-        for (var i = 0; i < entries.length; i++) {
-          if (entries[i].isIntersecting) { entries[i].target.classList.add('visible'); }
-        }
-      }, { threshold: 0.1 });
-      for (var i = 0; i < els.length; i++) { obs.observe(els[i]); }
-    });
-  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -39,25 +26,56 @@
     .nav-links a:hover { opacity: 1; }
     .nav-cta { background: var(--green) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 100px; opacity: 1 !important; font-weight: 600 !important; }
 
+    /* HERO */
     .page-hero { padding: 140px 48px 80px; background: var(--black); color: var(--white); position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(26,122,60,0.2) 0%, transparent 70%); }
+    .page-hero::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(26,122,60,0.25) 0%, transparent 70%); animation: pulse-glow 4s ease-in-out infinite; }
+    .page-hero::after { content: ''; position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(26,122,60,0.1) 0%, transparent 70%); animation: pulse-glow 4s ease-in-out infinite reverse; }
+    @keyframes pulse-glow { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } }
+    .page-hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .page-hero-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #43a047; margin-bottom: 20px; }
-    .page-hero-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; max-width: 700px; margin-bottom: 24px; }
+    .page-hero-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 24px; }
     .page-hero-title em { font-style: normal; color: #43a047; }
-    .page-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.65; font-weight: 300; }
+    .page-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.55); line-height: 1.65; font-weight: 300; }
+
+    /* AI DEMO WIDGET */
+    .ai-demo-widget { background: rgba(255,255,255,0.04); border: 1px solid rgba(26,122,60,0.3); border-radius: 24px; padding: 28px; position: relative; overflow: hidden; }
+    .ai-demo-widget::before { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(26,122,60,0.2) 0%, transparent 70%); }
+    .ai-demo-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #43a047; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .ai-demo-footer { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center; }
 
     .section { padding: 80px 48px; }
     .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
     .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 800; letter-spacing: -0.035em; color: var(--black); margin-bottom: 16px; }
-    .section-sub { font-size: 1rem; color: var(--text-muted); max-width: 520px; line-height: 1.65; font-weight: 300; margin-bottom: 48px; }
+    .section-sub { font-size: 1rem; color: var(--text-muted); max-width: 100%; line-height: 1.65; font-weight: 300; margin-bottom: 48px; }
 
+    /* TRACTION */
     .traction-section { background: var(--grey); padding: 80px 48px; }
     .traction-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; border-radius: 20px; overflow: hidden; }
     .traction-card { background: var(--white); padding: 36px 28px; transition: background 0.2s; }
     .traction-card:hover { background: var(--green-pale); }
+    .traction-card.ai-highlight { background: var(--black); }
+    .traction-card.ai-highlight:hover { background: #111; }
+    .traction-card.ai-highlight .traction-number { color: #43a047; }
+    .traction-card.ai-highlight .traction-label { color: rgba(255,255,255,0.5); }
     .traction-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--green); letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
     .traction-label { font-size: 0.88rem; color: var(--text-muted); font-weight: 400; line-height: 1.4; }
 
+    /* AI FEATURE SECTION */
+    .ai-section { background: var(--black); padding: 80px 48px; color: var(--white); position: relative; overflow: hidden; }
+    .ai-section::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(26,122,60,0.15) 0%, transparent 70%); }
+    .ai-section .section-title { color: var(--white); }
+    .ai-section .section-label { color: #43a047; }
+    .ai-section .section-sub { color: rgba(255,255,255,0.5); }
+    .ai-features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1; }
+    .ai-feature-card { border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; padding: 32px 28px; transition: border-color 0.3s, background 0.3s; }
+    .ai-feature-card:hover { border-color: rgba(26,122,60,0.4); background: rgba(26,122,60,0.05); }
+    .ai-feature-icon { width: 48px; height: 48px; background: rgba(26,122,60,0.15); border: 1px solid rgba(26,122,60,0.3); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 20px; }
+    .ai-feature-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 8px; }
+    .ai-feature-desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.65; font-weight: 300; }
+    .ai-feature-card.featured { border-color: rgba(26,122,60,0.4); background: rgba(26,122,60,0.08); grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+    .ai-feature-card.featured .ai-feature-icon { width: 64px; height: 64px; font-size: 1.8rem; flex-shrink: 0; }
+
+    /* OPPORTUNITY */
     .opportunity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .opp-visual { background: var(--grey); border-radius: 24px; padding: 40px; position: relative; overflow: hidden; }
     .opp-visual::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%); }
@@ -69,17 +87,16 @@
     .opp-list { list-style: none; }
     .opp-list li { display: flex; align-items: flex-start; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.55; border-left: 3px solid var(--green); padding-left: 14px; }
 
-    .model-section { background: var(--black); padding: 80px 48px; color: var(--white); }
-    .model-section .section-title { color: var(--white); }
-    .model-section .section-label { color: #43a047; }
-    .model-section .section-sub { color: rgba(255,255,255,0.5); }
+    /* BUSINESS MODEL */
+    .model-section { background: var(--grey); padding: 80px 48px; }
     .model-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .model-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px 28px; transition: border-color 0.3s; width: 100%; box-sizing: border-box; }
-    .model-card:hover { border-color: rgba(26,122,60,0.5); }
-    .model-card-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #43a047; margin-bottom: 12px; }
-    .model-card-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.6rem; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 8px; word-break: break-word; }
-    .model-card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.55; font-weight: 300; }
+    .model-card { background: var(--white); border-radius: 20px; padding: 32px 28px; transition: transform 0.2s; width: 100%; box-sizing: border-box; }
+    .model-card:hover { transform: translateY(-4px); }
+    .model-card-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .model-card-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--black); letter-spacing: -0.03em; margin-bottom: 8px; word-break: break-word; }
+    .model-card-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; font-weight: 300; }
 
+    /* ROADMAP */
     .roadmap-section { padding: 80px 48px; }
     .timeline { margin-top: 40px; position: relative; }
     .timeline::before { content: ''; position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: rgba(0,0,0,0.08); }
@@ -91,9 +108,10 @@
     .timeline-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
     .timeline-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; max-width: 560px; }
 
+    /* CONTACT */
     .contact-section { background: var(--green); padding: 80px 48px; color: white; text-align: center; }
-    .contact-section .section-title { color: white; max-width: 600px; margin: 0 auto 16px; }
-    .contact-section .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto 40px; text-align: center; }
+    .contact-section .section-title { color: white; max-width: 600px; margin: 0 auto 16px; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .contact-section .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto 40px; text-align: center; max-width: 100%; }
     .contact-email { display: inline-block; background: white; color: var(--green); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; padding: 18px 36px; border-radius: 14px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(0,0,0,0.15); }
     .contact-email:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
 
@@ -104,19 +122,17 @@
     .footer-links a:hover { color: var(--black); }
     .footer-copy { font-size: 0.82rem; color: var(--text-muted); }
 
-    .fade-up { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-up.animate { opacity: 0; transform: translateY(24px); }
-    .fade-up.animate.visible { opacity: 1; transform: translateY(0); }
-
     @media (max-width: 900px) {
       html, body { overflow-x: hidden; }
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       .page-hero { padding: 120px 24px 60px; }
-      .section, .traction-section, .model-section, .roadmap-section, .contact-section { padding: 60px 24px; }
+      .page-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .section, .traction-section, .ai-section, .model-section, .roadmap-section, .contact-section { padding: 60px 24px; }
       .traction-grid { grid-template-columns: 1fr; }
       .traction-number { font-size: 2rem; }
-      .opportunity-grid, .model-grid { grid-template-columns: 1fr; }
+      .ai-features-grid, .opportunity-grid, .model-grid { grid-template-columns: 1fr; }
+      .ai-feature-card.featured { grid-template-columns: 1fr; }
       .model-card { width: 100%; }
       .model-card-value { font-size: 1.4rem; }
       .timeline::before { left: 16px; }
@@ -138,52 +154,190 @@
     </ul>
   </nav>
 
+  <!-- HERO -->
   <section class="page-hero">
-    <div class="page-hero-label">For investors and partners</div>
-    <h1 class="page-hero-title">Dublin's parking problem is <em>unsolved.</em><br>We're fixing it.</h1>
-    <p class="page-hero-sub">Sloto is a real-time parking discovery app for Dublin. We're early, moving fast, and looking for the right partners to grow with.</p>
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-hero-label">For investors and partners</div>
+        <h1 class="page-hero-title">The <em>AI-first</em> parking app. Built for Dublin.</h1>
+        <p class="page-hero-sub">Sloto lets drivers find parking with a simple question. 1,000+ spots mapped, AI-powered search, real-time crowd reports. We're early, moving fast, and looking for the right partners.</p>
+      </div>
+      <div class="ai-demo-widget">
+        <div class="ai-demo-label">AI Search — Live demo</div>
+        <div class="ai-demo-search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span id="ai-query"></span><span class="ai-cursor">|</span>
+        </div>
+        <div class="ai-demo-results" id="ai-results"></div>
+        <div class="ai-demo-footer">Powered by Claude &middot; 10 searches/day free</div>
+      </div>
+
+      <style>
+        .ai-cursor { animation: blink-cursor 0.7s step-end infinite; color: #43a047; font-weight: 300; }
+        @keyframes blink-cursor { 50% { opacity: 0; } }
+        .ai-demo-search { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 14px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 10px; margin-bottom: 16px; min-height: 50px; }
+        .ai-demo-search svg { flex-shrink: 0; opacity: 0.4; }
+        .ai-demo-results { height: 220px; overflow: hidden; margin-bottom: 16px; }
+        .ai-demo-result { background: rgba(26,122,60,0.12); border: 1px solid rgba(26,122,60,0.2); border-radius: 12px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; opacity: 0; transform: translateX(-8px); transition: opacity 0.4s ease, transform 0.4s ease; }
+        .ai-demo-result.visible { opacity: 1; transform: translateX(0); }
+        .ai-result-name { font-size: 0.85rem; color: rgba(255,255,255,0.85); font-weight: 500; }
+        .ai-result-meta { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+        .ai-result-badge { font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
+        .badge-free { background: rgba(26,122,60,0.3); color: #43a047; }
+        .badge-paid { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+        .badge-best { background: var(--green); color: white; }
+      </style>
+
+      <script>
+        var searches = [
+          {
+            query: "free parking near the Aviva Stadium",
+            results: [
+              { name: "Lansdowne Road", meta: "3 min walk · Free until 19:00", badge: "Free", type: "badge-free" },
+              { name: "Clyde Road", meta: "5 min walk · Free until 18:30", badge: "Free", type: "badge-free" },
+              { name: "Haddington Road", meta: "6 min walk · Free until 19:00", badge: "Free", type: "badge-free" }
+            ]
+          },
+          {
+            query: "cheapest parking near Grafton Street",
+            results: [
+              { name: "Harcourt Street", meta: "5 min walk · Blue zone", badge: "€0.90/hr", type: "badge-best" },
+              { name: "Clonmel Street", meta: "4 min walk · Orange zone", badge: "€1.20/hr", type: "badge-paid" },
+              { name: "Stephen's Lane", meta: "6 min walk · Green zone", badge: "€2.00/hr", type: "badge-paid" }
+            ]
+          },
+          {
+            query: "parking near Croke Park on Sunday",
+            results: [
+              { name: "Clonliffe Road", meta: "7 min walk · Free on Sundays", badge: "Free", type: "badge-free" },
+              { name: "Drumcondra Road", meta: "5 min walk · Free on Sundays", badge: "Free", type: "badge-free" },
+              { name: "Russell Street", meta: "4 min walk · Free on Sundays", badge: "Free", type: "badge-free" }
+            ]
+          }
+        ];
+
+        var currentSearch = 0;
+
+        function typeQuery(text, callback) {
+          var el = document.getElementById('ai-query');
+          el.textContent = '';
+          var i = 0;
+          var interval = setInterval(function() {
+            el.textContent += text[i];
+            i++;
+            if (i >= text.length) {
+              clearInterval(interval);
+              setTimeout(callback, 400);
+            }
+          }, 45);
+        }
+
+        function showResults(results, callback) {
+          var container = document.getElementById('ai-results');
+          container.innerHTML = '';
+          results.forEach(function(r, i) {
+            var div = document.createElement('div');
+            div.className = 'ai-demo-result';
+            div.innerHTML = '<div><div class="ai-result-name">' + r.name + '</div><div class="ai-result-meta">' + r.meta + '</div></div><span class="ai-result-badge ' + r.type + '">' + r.badge + '</span>';
+            container.appendChild(div);
+            setTimeout(function() { div.classList.add('visible'); }, i * 300);
+          });
+          setTimeout(callback, 2800);
+        }
+
+        function clearAll(callback) {
+          document.getElementById('ai-query').textContent = '';
+          document.getElementById('ai-results').innerHTML = '';
+          setTimeout(callback, 400);
+        }
+
+        function runNext() {
+          var s = searches[currentSearch];
+          typeQuery(s.query, function() {
+            showResults(s.results, function() {
+              clearAll(function() {
+                currentSearch = (currentSearch + 1) % searches.length;
+                runNext();
+              });
+            });
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(runNext, 800);
+        });
+      </script>
+    </div>
   </section>
 
+  <!-- TRACTION -->
   <section class="traction-section">
-    <div class="fade-up">
-      <span class="section-label">Where we are today</span>
-      <h2 class="section-title">Built, live, and growing</h2>
-    </div>
-    <div class="traction-grid fade-up">
+    <span class="section-label">Where we are today</span>
+    <h2 class="section-title">Built, shipped, and iterating</h2>
+    <div class="traction-grid" style="margin-top:40px;">
       <div class="traction-card">
         <div class="traction-number">Early Access</div>
         <div class="traction-label">App in hands of real Dublin drivers, gathering feedback before public launch</div>
       </div>
       <div class="traction-card">
-        <div class="traction-number">2</div>
-        <div class="traction-label">Platforms - Android now, iOS coming soon</div>
+        <div class="traction-number">1,000+</div>
+        <div class="traction-label">Parking spots mapped across Dublin city, south Dublin and north Dublin</div>
       </div>
-      <div class="traction-card">
-        <div class="traction-number">Free</div>
-        <div class="traction-label">Currently free to use - monetisation planned once we have users</div>
+      <div class="traction-card ai-highlight">
+        <div class="traction-number">AI</div>
+        <div class="traction-label">Natural language search powered by Claude — find your best spot just by asking</div>
       </div>
       <div class="traction-card">
         <div class="traction-number">Dublin</div>
-        <div class="traction-label">City centre and wider Dublin area covered at launch</div>
+        <div class="traction-label">Full city coverage at launch — national expansion planned</div>
       </div>
     </div>
   </section>
 
+  <!-- AI SECTION -->
+  <section class="ai-section">
+    <div style="position:relative;z-index:1;">
+      <span class="section-label">Our edge</span>
+      <h2 class="section-title">AI is the product, not a feature</h2>
+      <p class="section-sub">Most parking apps show you a map and make you figure it out. Sloto lets you ask a question and get an answer. That's a fundamentally different experience — and a much stickier one.</p>
+    </div>
+    <div class="ai-features-grid">
+      <div class="ai-feature-card featured">
+        <div class="ai-feature-icon">🤖</div>
+        <div>
+          <div class="ai-feature-title">Natural language search</div>
+          <div class="ai-feature-desc">Drivers type queries like "free parking near the Aviva" or "cheapest spot near Grafton Street" and get 3 ranked results instantly — with walking time, cost analysis, and AI reasoning. Powered by Claude Haiku via a Vercel serverless function. 10 searches per day on the free tier.</div>
+        </div>
+      </div>
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">&#127759;</div>
+        <div class="ai-feature-title">1,000+ spots mapped</div>
+        <div class="ai-feature-desc">Every on-street parking spot across Dublin city, south Dublin, and north Dublin. Zone colour, hourly rate, operating hours, bay count — all bundled at build time. No expensive backend.</div>
+      </div>
+      <div class="ai-feature-card">
+        <div class="ai-feature-icon">&#128101;</div>
+        <div class="ai-feature-title">Live crowd reports</div>
+        <div class="ai-feature-desc">Drivers report availability in real time — Plenty, A Few, or Full. The AI factors this into its recommendations. Reports expire after 60 minutes, keeping data fresh.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY -->
   <section class="section">
     <div class="opportunity-grid">
-      <div class="fade-up">
+      <div>
         <span class="section-label">The opportunity</span>
         <h2 class="section-title">A city of drivers with nowhere to park</h2>
-        <p class="section-sub">Dublin has one of the highest car ownership rates in Europe and a chronic shortage of affordable parking. Drivers waste time and money every single day.</p>
+        <p class="section-sub">Dublin has one of the highest car ownership rates in Europe and a chronic shortage of affordable parking. Drivers waste time and money every single day — and no one has solved it with AI yet.</p>
         <ul class="opp-list">
           <li>Over 1.4 million cars registered in the Greater Dublin Area</li>
           <li>Drivers waste significant time on every trip searching for parking</li>
           <li>Hundreds of thousands of parking fines issued annually - many avoidable</li>
-          <li>No dominant real-time parking discovery app exists in the Irish market</li>
-          <li>A scalable, low-cost data model makes national expansion highly viable</li>
+          <li>No AI-powered parking discovery app exists in the Irish market</li>
+          <li>Sloto already maps 1,000+ spots with AI search — a genuine technical head start</li>
         </ul>
       </div>
-      <div class="opp-visual fade-up">
+      <div class="opp-visual">
         <div class="opp-stat">
           <div class="opp-stat-value">1.4M+</div>
           <div class="opp-stat-label">Cars in Greater Dublin Area</div>
@@ -195,26 +349,25 @@
           <div class="opp-bar"><div class="opp-bar-fill" style="width:60%;"></div></div>
         </div>
         <div class="opp-stat">
-          <div class="opp-stat-value">80+</div>
-          <div class="opp-stat-label">Average parking fine in euros in Dublin city</div>
+          <div class="opp-stat-value">&#8364;80+</div>
+          <div class="opp-stat-label">Average parking fine in Dublin city</div>
           <div class="opp-bar"><div class="opp-bar-fill" style="width:70%;"></div></div>
         </div>
         <div class="opp-stat" style="margin-bottom:0;">
           <div class="opp-stat-value">0</div>
-          <div class="opp-stat-label">Real-time parking apps dominating the Irish market today</div>
+          <div class="opp-stat-label">AI parking apps dominating the Irish market today</div>
           <div class="opp-bar"><div class="opp-bar-fill" style="width:100%;"></div></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- BUSINESS MODEL -->
   <section class="model-section">
-    <div class="fade-up">
-      <span class="section-label">Business model</span>
-      <h2 class="section-title">Free to grow. Built to monetise.</h2>
-      <p class="section-sub">We're focused on building a loyal user base first. Monetisation options are clear and proven - we'll layer them in once we have traction.</p>
-    </div>
-    <div class="model-grid fade-up">
+    <span class="section-label">Business model</span>
+    <h2 class="section-title">Free to grow. Built to monetise.</h2>
+    <p class="section-sub">We're focused on building a loyal user base first. Monetisation options are clear and proven — we'll layer them in once we have traction.</p>
+    <div class="model-grid">
       <div class="model-card">
         <div class="model-card-label">Now</div>
         <div class="model-card-value">Free</div>
@@ -223,32 +376,31 @@
       <div class="model-card">
         <div class="model-card-label">Near-term</div>
         <div class="model-card-value">Subscriptions</div>
-        <div class="model-card-desc">A premium tier for power users - commuters, delivery drivers, field teams. Recurring revenue with low churn: once someone stops paying for parking, they stay.</div>
+        <div class="model-card-desc">A premium tier for power users — commuters, delivery drivers, field teams. Unlimited AI searches, priority results, recurring revenue with low churn.</div>
       </div>
       <div class="model-card">
         <div class="model-card-label">Long-term</div>
         <div class="model-card-value">Expand</div>
-        <div class="model-card-desc">Cork, Galway, Limerick and beyond. The same model works in every Irish city, and the playbook is already proven in Dublin.</div>
+        <div class="model-card-desc">Cork, Galway, Limerick and beyond. The same AI model works in every Irish city — the playbook is already proven in Dublin.</div>
       </div>
     </div>
   </section>
 
+  <!-- ROADMAP -->
   <section class="roadmap-section">
-    <div class="fade-up">
-      <span class="section-label">What's next</span>
-      <h2 class="section-title">Roadmap</h2>
-      <p class="section-sub">We move fast. Here's where we are and where we're going.</p>
-    </div>
+    <span class="section-label">What's next</span>
+    <h2 class="section-title">Roadmap</h2>
+    <p class="section-sub">We move fast. Here's where we are and where we're going.</p>
     <div class="timeline">
-      <div class="timeline-item fade-up">
+      <div class="timeline-item">
         <div class="timeline-dot done">&#10003;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Done - Q1 2026</div>
           <div class="timeline-title">Early access beta launched</div>
-          <div class="timeline-desc">App in the hands of real Dublin drivers - gathering feedback and iterating before public launch.</div>
+          <div class="timeline-desc">App live with real Dublin drivers. AI search, 1,000+ spots mapped, live crowd reports, parking alerts — all shipped and iterating.</div>
         </div>
       </div>
-      <div class="timeline-item fade-up">
+      <div class="timeline-item">
         <div class="timeline-dot next">&#8987;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Next - Q2 2026</div>
@@ -256,32 +408,31 @@
           <div class="timeline-desc">Full public launch on Google Play, first marketing push, referral mechanic, and in-app ratings to build social proof and organic growth.</div>
         </div>
       </div>
-      <div class="timeline-item fade-up">
+      <div class="timeline-item">
         <div class="timeline-dot next">&#8987;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Q3 2026</div>
           <div class="timeline-title">iOS launch + monetisation</div>
-          <div class="timeline-desc">Ship on the App Store and introduce a premium subscription tier once we have a meaningful user base.</div>
+          <div class="timeline-desc">Ship on the App Store and introduce a premium subscription tier — unlimited AI searches, priority results, and advanced alerts.</div>
         </div>
       </div>
-      <div class="timeline-item fade-up">
+      <div class="timeline-item">
         <div class="timeline-dot next">&#8987;</div>
         <div class="timeline-content">
           <div class="timeline-phase">Q4 2026</div>
           <div class="timeline-title">B2B fleet product + expansion</div>
-          <div class="timeline-desc">Team plans for delivery companies and field sales teams. Begin expansion to Cork and Galway.</div>
+          <div class="timeline-desc">Team plans for delivery companies and field sales teams. Begin expansion to Cork and Galway with the same AI-powered model.</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="contact-section">
-    <div class="fade-up">
-      <h2 class="section-title">Interested in Sloto?</h2>
-      <p class="section-sub">We're open to conversations with angels, early-stage investors, and strategic partners. Reach out directly - we respond fast.</p>
-      <a href="mailto:hello@sloto.ie" class="contact-email">hello@sloto.ie</a>
-      <p style="margin-top:20px;font-size:0.82rem;color:rgba(255,255,255,0.5);">We respond within 24 hours.</p>
-    </div>
+    <h2 class="section-title">Interested in Sloto?</h2>
+    <p class="section-sub">We're open to conversations with angels, early-stage investors, and strategic partners. Reach out directly — we respond fast.</p>
+    <a href="/cdn-cgi/l/email-protection#7a121f1616153a0916150e1554131f" class="contact-email"><span class="__cf_email__" data-cfemail="f39b969f9f9cb3809f9c879cdd9a96">[email&#160;protected]</span></a>
+    <p style="margin-top:20px;font-size:0.82rem;color:rgba(255,255,255,0.5);">We respond within 24 hours.</p>
   </section>
 
   <footer>
@@ -290,10 +441,4 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#how">How it works</a></li>
       <li><a href="#">Privacy</a></li>
-      <li><a href="#">Terms</a></li>
-    </ul>
-    <p class="footer-copy">&#169; 2026 Sloto. Made in Dublin.</p>
-  </footer>
-
-</body>
-</html>
+      <li><a href
