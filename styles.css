@@ -1,0 +1,123 @@
+/* ============================================================
+   sloto. — Shared Stylesheet
+   Applies to: index.html, investors.html, legal.html, delete-account.html
+   ============================================================ */
+
+/* RESET & BASE */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0a0a0a;
+  --white:#fff;
+  --green:#22C55E;
+  --gd:#228B22;
+  --red:#EF4444;
+  --gray:#6B7280;
+  --gl:#F5F5F5;
+  --ow:#FAF9F7;
+  --border:#E5E7EB;
+  --f:'Poppins',sans-serif;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:var(--f);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+
+/* NAV — dark variant (index.html, investors.html) */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;height:60px;
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+nav.dark{
+  background:rgba(10,10,10,0.92);
+}
+/* NAV — light variant (legal.html, delete-account.html) */
+nav.light{
+  background:rgba(255,255,255,0.92);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;}
+.nav-logo span{color:var(--gd);}
+nav.dark .nav-logo{color:var(--white);}
+nav.light .nav-logo{color:var(--black);}
+.nav-links{display:none;}
+nav.dark .nav-links a{color:rgba(255,255,255,0.5);}
+nav.light .nav-links a{color:rgba(0,0,0,0.45);}
+nav.dark .nav-links a:hover,
+nav.dark .nav-links a.active{color:var(--white);}
+nav.light .nav-links a:hover,
+nav.light .nav-links a.active{color:var(--black);}
+.nav-launch{
+  padding:7px 14px;border-radius:8px;
+  font-size:0.75rem;font-weight:800;text-decoration:none;white-space:nowrap;
+}
+nav.dark .nav-launch{background:var(--green);color:var(--black);}
+nav.light .nav-launch{background:var(--black);color:var(--white);}
+@media(min-width:768px){
+  nav{padding:0 48px;height:68px;}
+  .nav-logo{font-size:1.55rem;}
+  .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+  .nav-links a{text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s;}
+  .nav-launch{font-size:0.875rem;padding:9px 20px;}
+}
+
+/* FOOTER — dark variant (index.html, investors.html) */
+footer{
+  padding:36px 20px;
+  display:flex;flex-direction:column;gap:20px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+footer.dark{background:#070707;}
+footer.light{background:var(--white);border-top:1px solid rgba(0,0,0,0.07);}
+.footer-logo{font-size:1.3rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;}
+.footer-logo span{color:var(--gd);}
+footer.dark .footer-logo{color:var(--white);}
+footer.light .footer-logo{color:var(--black);}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px 20px;list-style:none;}
+footer.dark .footer-links a{color:rgba(255,255,255,0.35);}
+footer.light .footer-links a{color:var(--gray);}
+.footer-links a{font-size:0.8rem;text-decoration:none;font-weight:500;transition:color 0.2s;}
+footer.dark .footer-links a:hover{color:rgba(255,255,255,0.7);}
+footer.light .footer-links a:hover{color:var(--black);}
+.footer-copy{font-size:0.75rem;}
+footer.dark .footer-copy{color:rgba(255,255,255,0.2);}
+footer.light .footer-copy{color:rgba(0,0,0,0.3);}
+@media(min-width:768px){
+  footer{flex-direction:row;align-items:center;justify-content:space-between;padding:44px 48px;gap:24px;}
+}
+
+/* LAUNCH BADGE */
+.launch-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);
+  border-radius:12px;padding:14px 24px;
+}
+.lb-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.lb-text{font-size:0.95rem;font-weight:700;color:var(--white);}
+.lb-text span{color:var(--green);}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}
+.d2{transition-delay:.2s;}
+.d3{transition-delay:.3s;}
+
+/* SHARED TYPOGRAPHY UTILITIES */
+.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+.eyebrow.dk{color:var(--gd);}
+.sec-title{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.06;}
+.sec-title.bk{color:var(--black);}
+.sec-body{font-size:.9rem;line-height:1.72;margin-top:10px;}
+.sec-body.wh{color:rgba(255,255,255,.42);}
+.sec-body.bk{color:var(--gray);}
+
+/* PAGE HERO (shared by investors.html, legal.html, delete-account.html) */
+.page-hero{padding:96px 20px 48px;background:var(--black);color:var(--white);position:relative;overflow:hidden;}
+.ph-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;display:block;}
+.ph-title{font-size:clamp(1.9rem,6vw,3rem);font-weight:900;letter-spacing:-.04em;line-height:1.02;margin-bottom:10px;}
+.ph-sub{font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.6;}
+@media(min-width:768px){.page-hero{padding:120px 48px 56px;}}
+@media(min-width:1024px){.page-hero{padding:140px 80px 100px;}}
