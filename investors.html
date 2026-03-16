@@ -4,263 +4,300 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>sloto. — Investor Overview</title>
-<meta name="description" content="Sloto is building the go-to parking app for Dublin. Launching April 1st 2026 on iOS and Android."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<meta name="description" content="Sloto is the parking app Dublin was missing. 1,200+ verified spots, freemium model, launching April 1st 2026."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
 <style>
+body{background:#070707;color:#fff;}
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--black:#0a0a0a;--white:#fff;--green:#22C55E;--gd:#228B22;--red:#EF4444;--gray:#6B7280;--gl:#F5F5F5;--ow:#FAF9F7;--border:#E5E7EB;--f:'Poppins',sans-serif;}
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{font-family:var(--f);background:var(--black);color:var(--white);overflow-x:hidden;}
-img{max-width:100%;display:block;}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);}
-.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;color:var(--white);}
-.nav-logo span{color:var(--gd);}
-.nav-links{display:none;}
-.nav-launch{background:var(--green);color:var(--black);padding:7px 14px;border-radius:8px;font-size:0.75rem;font-weight:800;text-decoration:none;white-space:nowrap;}
-@media(min-width:768px){nav{padding:0 48px;height:68px;}.nav-logo{font-size:1.55rem;}.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}.nav-links a{text-decoration:none;color:rgba(255,255,255,0.5);font-size:0.875rem;font-weight:500;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:var(--white);}.nav-launch{font-size:0.875rem;padding:9px 20px;}}
-footer{background:#070707;border-top:1px solid rgba(255,255,255,0.06);padding:36px 20px;display:flex;flex-direction:column;gap:20px;}
-.footer-logo{font-size:1.3rem;font-weight:800;letter-spacing:-0.04em;color:var(--white);text-decoration:none;}
-.footer-logo span{color:var(--gd);}
-.footer-links{display:flex;flex-wrap:wrap;gap:14px 18px;list-style:none;}
-.footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.35);text-decoration:none;font-weight:500;transition:color 0.2s;}
-.footer-links a:hover{color:rgba(255,255,255,0.7);}
-.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
-@media(min-width:768px){footer{flex-direction:row;align-items:center;justify-content:space-between;padding:44px 48px;gap:24px;}}
-.launch-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:12px;padding:14px 24px;}
-.lb-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-.lb-text{font-size:0.95rem;font-weight:700;color:var(--white);}
-.lb-text span{color:var(--green);}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
-.reveal.visible{opacity:1;transform:none;}
-.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+/* HERO */
+.hero{padding:110px 20px 72px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 60% 20%,rgba(34,197,94,.07) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:16px;animation:fadeUp .6s ease both;}
+.hero-title{font-size:clamp(2.4rem,8vw,4.6rem);font-weight:900;letter-spacing:-.05em;line-height:.97;margin-bottom:20px;animation:fadeUp .6s .1s ease both;}
+.hero-title em{font-style:normal;color:var(--green);}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.42);line-height:1.72;max-width:540px;margin-bottom:32px;animation:fadeUp .6s .2s ease both;}
+.hero-sub strong{color:rgba(255,255,255,.75);font-weight:600;}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#000;font-size:.88rem;font-weight:800;padding:13px 24px;border-radius:10px;text-decoration:none;transition:opacity .2s;animation:fadeUp .6s .3s ease both;}
+.hero-cta:hover{opacity:.85;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
 
-body{background:var(--black);color:var(--white);}
+/* SHARED SECTION */
+.sec{padding:72px 20px;max-width:1000px;margin:0 auto;}
+.sec-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+.sec-title{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:900;letter-spacing:-.04em;line-height:1.04;margin-bottom:12px;}
+.sec-sub{font-size:.9rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:520px;margin-bottom:48px;}
 
-/* PAGE HERO */
-.page-hero{padding:100px 20px 64px;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;bottom:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,197,94,0.06) 0%,transparent 65%);pointer-events:none;}
-.ph-inner{position:relative;z-index:1;max-width:680px;}
-.ph-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:var(--green);font-size:0.68rem;font-weight:700;padding:5px 12px;border-radius:100px;margin-bottom:20px;letter-spacing:.1em;text-transform:uppercase;}
-.ph-title{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:900;letter-spacing:-.045em;line-height:.97;margin-bottom:18px;}
-.ph-title em{font-style:normal;color:var(--green);}
-.ph-sub{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:520px;margin-bottom:32px;}
-.ph-sub strong{color:rgba(255,255,255,.85);font-weight:600;}
-.ph-cta{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--black);padding:13px 24px;border-radius:11px;font-size:.9rem;font-weight:800;text-decoration:none;transition:background .2s;}
-.ph-cta:hover{background:#1ea84e;}
-@media(min-width:768px){.page-hero{padding:130px 48px 80px;}}
-@media(min-width:1024px){.page-hero{padding:140px 80px 100px;}}
+/* TRACTION STATS */
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.stat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px 20px;}
+.stat-card-n{font-size:2rem;font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:4px;}
+.stat-card-l{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.5;}
+.stat-card.green{background:rgba(34,197,94,.07);border-color:rgba(34,197,94,.18);}
+.stat-card.green .stat-card-n{color:var(--green);}
 
-/* SECTIONS */
-.inv-sec{padding:64px 20px;}
-.inv-sec.dark{background:#0d0d0d;border-top:1px solid rgba(255,255,255,.05);}
-.inv-sec.white{background:var(--white);color:var(--black);}
-.sec-head{margin-bottom:36px;}
-.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
-.eyebrow.dk{color:var(--gd);}
-.sec-title{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.06;}
-.sec-title.bk{color:var(--black);}
-.sec-body{font-size:.9rem;color:rgba(255,255,255,.42);line-height:1.72;margin-top:10px;}
-.sec-body.bk{color:var(--gray);}
-@media(min-width:768px){.inv-sec{padding:80px 48px;}}
-@media(min-width:1024px){.inv-sec{padding:96px 80px;}}
-
-/* TRACTION GRID */
-.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:18px;overflow:hidden;margin-top:32px;}
-.tr-card{background:#111;padding:28px 22px;}
-.tr-num{font-size:2.2rem;font-weight:900;letter-spacing:-.04em;color:var(--green);line-height:1;margin-bottom:8px;}
-.tr-num.wh{color:var(--white);}
-.tr-lbl{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.5;}
-@media(min-width:600px){.tr-grid{grid-template-columns:repeat(4,1fr);}}
-
-/* PROBLEM/SOLUTION */
-.ps-grid{display:flex;flex-direction:column;gap:2px;border-radius:18px;overflow:hidden;}
-.ps-card{padding:32px 24px;}
-.ps-card.prob{background:#111;}
-.ps-card.sol{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.12);}
-.ps-lbl{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
-.ps-lbl.p{color:rgba(255,255,255,.3);} .ps-lbl.s{color:var(--green);}
-.ps-title{font-size:1.2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:10px;color:var(--white);}
-.ps-body{font-size:.87rem;color:rgba(255,255,255,.42);line-height:1.65;margin-bottom:18px;}
-.ps-items{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.ps-items li{display:flex;align-items:flex-start;gap:8px;font-size:.84rem;color:rgba(255,255,255,.52);line-height:1.5;}
-.ps-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:7px;}
-.ps-dot.r{background:var(--red);} .ps-dot.g{background:var(--green);}
-@media(min-width:768px){.ps-grid{flex-direction:row;}}
+/* PROBLEM / SOLUTION */
+.ps-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+.ps-card{border-radius:14px;padding:28px 24px;}
+.ps-card.problem{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);}
+.ps-card.solution{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);}
+.ps-tag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.ps-card.problem .ps-tag{color:#EF4444;}
+.ps-card.solution .ps-tag{color:var(--green);}
+.ps-card-title{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px;}
+.ps-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ps-list li{font-size:.84rem;color:rgba(255,255,255,.42);line-height:1.6;display:flex;align-items:flex-start;gap:8px;}
+.ps-list li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:7px;}
+.ps-card.problem .ps-list li::before{background:#EF4444;}
+.ps-card.solution .ps-list li::before{background:var(--green);}
 
 /* MARKET STATS */
-.opp-rows{display:flex;flex-direction:column;gap:2px;border-radius:18px;overflow:hidden;margin-top:32px;}
-.opp-row{background:#111;padding:22px 24px;display:flex;align-items:center;gap:20px;}
-.opp-val{font-size:1.8rem;font-weight:900;letter-spacing:-.04em;color:var(--white);min-width:80px;flex-shrink:0;}
-.opp-val.gr{color:var(--green);}
-.opp-desc{font-size:.84rem;color:rgba(255,255,255,.42);line-height:1.5;}
-.opp-bar-w{height:2px;background:rgba(255,255,255,.06);border-radius:2px;margin-top:6px;overflow:hidden;}
-.opp-bar{height:100%;background:var(--green);border-radius:2px;}
+.market-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.market-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px 20px;text-align:center;}
+.market-n{font-size:2rem;font-weight:900;letter-spacing:-.04em;color:var(--green);margin-bottom:6px;}
+.market-l{font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.5;}
 
-/* BIZ MODEL */
-.bm-grid{display:flex;flex-direction:column;gap:2px;border-radius:18px;overflow:hidden;}
-.bm-card{background:var(--ow);padding:28px 24px;}
-.bm-phase{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gd);margin-bottom:12px;}
-.bm-val{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--black);margin-bottom:8px;}
-.bm-desc{font-size:.84rem;color:var(--gray);line-height:1.62;}
-@media(min-width:768px){.bm-grid{flex-direction:row;}}
+/* BUSINESS MODEL */
+.model-steps{display:flex;flex-direction:column;gap:10px;}
+.model-step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px;display:flex;gap:20px;align-items:flex-start;}
+.model-step.active{background:rgba(34,197,94,.07);border-color:rgba(34,197,94,.18);}
+.model-step-tag{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);white-space:nowrap;padding-top:3px;min-width:90px;}
+.model-step.active .model-step-tag{color:var(--green);}
+.model-step-title{font-size:1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;}
+.model-step.active .model-step-title{color:var(--green);}
+.model-step-body{font-size:.83rem;color:rgba(255,255,255,.38);line-height:1.65;}
 
 /* ROADMAP */
-.timeline{padding-left:28px;position:relative;}
-.timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:rgba(255,255,255,.08);}
-.tl-item{position:relative;margin-bottom:36px;}
-.tl-item:last-child{margin-bottom:0;}
-.tl-dot{position:absolute;left:-24px;top:3px;width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.tl-dot.next{background:#1a1a1a;border:1px solid rgba(255,255,255,.15);}
-.tl-phase{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:5px;}
-.tl-title{font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-.02em;}
-.tl-body{font-size:.84rem;color:rgba(255,255,255,.4);line-height:1.62;max-width:520px;}
+.roadmap{display:flex;flex-direction:column;}
+.rm-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.rm-item:last-child{border-bottom:none;}
+.rm-date{font-size:.75rem;font-weight:700;color:var(--green);min-width:80px;padding-top:2px;flex-shrink:0;}
+.rm-title{font-size:.92rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px;}
+.rm-body{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.6;}
 
-/* CONTACT */
-.inv-contact{background:var(--black);padding:80px 20px;text-align:center;border-top:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden;}
-.inv-contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(34,197,94,.05) 0%,transparent 60%);pointer-events:none;}
-.ic-inner{position:relative;z-index:1;}
-.ic-title{font-size:clamp(2rem,6vw,3.5rem);font-weight:900;letter-spacing:-.04em;margin-bottom:14px;}
-.ic-sub{font-size:.9rem;color:rgba(255,255,255,.42);max-width:380px;margin:0 auto 28px;line-height:1.65;}
-.ic-email{display:inline-block;font-size:1.2rem;font-weight:800;color:var(--green);text-decoration:none;letter-spacing:-.02em;border-bottom:2px solid rgba(34,197,94,.3);padding-bottom:2px;transition:border-color .2s;}
-.ic-email:hover{border-color:var(--green);}
-.ic-note{margin-top:12px;font-size:.75rem;color:rgba(255,255,255,.2);}
-@media(min-width:768px){.inv-contact{padding:100px 48px;}}
+/* CTA */
+.cta-sec{padding:72px 20px 100px;text-align:center;}
+.cta-inner{max-width:520px;margin:0 auto;}
+.cta-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;letter-spacing:-.04em;line-height:1.04;margin-bottom:14px;}
+.cta-sub{font-size:.9rem;color:rgba(255,255,255,.38);line-height:1.72;margin-bottom:32px;}
+.cta-email{display:inline-block;font-size:1.1rem;font-weight:800;color:var(--green);text-decoration:none;border-bottom:2px solid rgba(34,197,94,.3);padding-bottom:2px;transition:border-color .2s;}
+.cta-email:hover{border-color:var(--green);}
+.cta-note{margin-top:16px;font-size:.76rem;color:rgba(255,255,255,.2);}
+
+.sec-divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:0;}
+
+@media(min-width:600px){
+  .ps-grid{grid-template-columns:1fr 1fr;}
+  .stat-grid{grid-template-columns:repeat(4,1fr);}
+  .market-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(min-width:768px){
+  .hero{padding:130px 48px 80px;}
+  .sec{padding:80px 48px;}
+  .model-step{gap:28px;}
+}
 </style>
 </head>
 <body>
-<nav><a href="index.html" class="nav-logo">sloto<span>.</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="investors.html" class='active'>Investors</a></li><li><a href="legal.html">Legal</a></li></ul><a href="#launch" class="nav-launch">Launching April 1st →</a></nav>
 
-<section class="page-hero">
-  <div class="ph-inner">
-    <div class="ph-eyebrow">Investor Overview · March 2026</div>
-    <h1 class="ph-title">The parking app<br><em>Dublin was missing.</em></h1>
-    <p class="ph-sub"><strong>1,279 verified on-street spots.</strong> Real-time free vs paid status. One-tap parking. Launching April 1st on iOS and Android.</p>
-    <a href="mailto:hello@sloto.ie" class="ph-cta">Request pitch deck →</a>
-  </div>
+<nav class="dark">
+  <a href="index.html" class="nav-logo">sloto<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Features</a></li>
+    <li><a href="investors.html" class="active">Investors</a></li>
+    <li><a href="legal.html">Legal</a></li>
+  </ul>
+  <a href="#contact" class="nav-launch">Launching April 1st →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Investor Overview · March 2026</p>
+  <h1 class="hero-title">The parking app<br><em>Dublin was missing.</em></h1>
+  <p class="hero-sub"><strong>1,200+ verified on-street spots.</strong> Real-time free vs paid status. One-tap parking. Launching April 1st on iOS and Android.</p>
+  <a href="mailto:hello@sloto.ie" class="hero-cta">Request pitch deck →</a>
 </section>
 
-<!-- TRACTION -->
-<section class="inv-sec dark">
-  <div class="sec-head reveal">
-    <div class="eyebrow">Where we are</div>
-    <h2 class="sec-title">Built, tested, and ready to launch.</h2>
-    <p class="sec-body">The app is complete and in the hands of beta testers right now. Public launch on both stores is April 1st 2026.</p>
-  </div>
-  <div class="tr-grid">
-    <div class="tr-card reveal"><div class="tr-num">1,279</div><div class="tr-lbl">Verified on-street spots mapped across Dublin city centre</div></div>
-    <div class="tr-card reveal d1"><div class="tr-num wh">Apr 1</div><div class="tr-lbl">Public launch on iOS App Store and Google Play simultaneously</div></div>
-    <div class="tr-card reveal d2"><div class="tr-num">5</div><div class="tr-lbl">Parking zones covered — all with correct hourly rates</div></div>
-    <div class="tr-card reveal d3"><div class="tr-num gr">€0</div><div class="tr-lbl">Cost to download. Freemium model — user base first, monetise after</div></div>
-  </div>
-</section>
+<hr class="sec-divider"/>
 
-<!-- PROBLEM / SOLUTION -->
-<section class="inv-sec">
-  <div class="sec-head reveal">
-    <div class="eyebrow">The opportunity</div>
-    <h2 class="sec-title">Dublin parking is genuinely broken.</h2>
-    <p class="sec-body">1.4 million cars. Minutes wasted per trip. €80+ fines. Zero purpose-built apps for Irish on-street parking.</p>
-  </div>
-  <div class="ps-grid reveal">
-    <div class="ps-card prob">
-      <div class="ps-lbl p">The problem</div>
-      <div class="ps-title">Drivers are flying blind</div>
-      <p class="ps-body">Free vs paid depends on day, time, and zone — impossible to memorise. Existing apps show car parks, not street bays.</p>
-      <ul class="ps-items">
-        <li><span class="ps-dot r"></span>No single source of truth for on-street Dublin parking</li>
-        <li><span class="ps-dot r"></span>€80+ average fine when you get it wrong</li>
-        <li><span class="ps-dot r"></span>Google Maps and Apple Maps don't cover street bays</li>
-      </ul>
+<!-- WHERE WE ARE -->
+<section class="sec">
+  <p class="sec-label reveal">Where we are</p>
+  <h2 class="sec-title reveal d1">Built, tested, and<br>ready to launch.</h2>
+  <p class="sec-sub reveal d2">The app is complete and in the hands of beta testers right now. Public launch on both stores is April 1st 2026.</p>
+  <div class="stat-grid">
+    <div class="stat-card green reveal">
+      <div class="stat-card-n">1,200+</div>
+      <div class="stat-card-l">Verified on-street spots mapped across Dublin</div>
     </div>
-    <div class="ps-card sol">
-      <div class="ps-lbl s">The solution</div>
-      <div class="ps-title">sloto. knows the answer</div>
-      <p class="ps-body">1,279 spots with correct zone, rate, and operating hours. Status computed on-device, instantly.</p>
-      <ul class="ps-items">
-        <li><span class="ps-dot g"></span>Free vs paid computed from council data in real time</li>
-        <li><span class="ps-dot g"></span>Crowd reports layer live availability on top</li>
-        <li><span class="ps-dot g"></span>Free Sundays and bank holidays handled automatically</li>
-      </ul>
+    <div class="stat-card reveal d1">
+      <div class="stat-card-n">Apr 1</div>
+      <div class="stat-card-l">Public launch on iOS App Store and Google Play simultaneously</div>
+    </div>
+    <div class="stat-card reveal d2">
+      <div class="stat-card-n">5</div>
+      <div class="stat-card-l">Parking zones covered — all with correct hourly rates</div>
+    </div>
+    <div class="stat-card reveal d3">
+      <div class="stat-card-n">€0</div>
+      <div class="stat-card-l">Cost to download. Freemium model — user base first, monetise after</div>
     </div>
   </div>
 </section>
 
-<!-- MARKET -->
-<section class="inv-sec dark">
-  <div class="sec-head reveal">
-    <div class="eyebrow">Market size</div>
-    <h2 class="sec-title">A massive, underserved market.</h2>
-    <p class="sec-body">Zero dominant competitors in Irish on-street parking. The same model scales directly to Cork, Galway, and Limerick.</p>
-  </div>
-  <div class="opp-rows reveal">
-    <div class="opp-row"><div><div class="opp-val gr">1.4M+</div><div class="opp-desc">Cars registered in Greater Dublin Area<div class="opp-bar-w"><div class="opp-bar" style="width:82%"></div></div></div></div></div>
-    <div class="opp-row"><div><div class="opp-val">7 min</div><div class="opp-desc">Average time wasted searching for parking per trip in Dublin city<div class="opp-bar-w"><div class="opp-bar" style="width:60%"></div></div></div></div></div>
-    <div class="opp-row"><div><div class="opp-val">€80+</div><div class="opp-desc">Average parking fine in Dublin city centre<div class="opp-bar-w"><div class="opp-bar" style="width:70%"></div></div></div></div></div>
-    <div class="opp-row"><div><div class="opp-val gr">0</div><div class="opp-desc">Purpose-built on-street parking apps in the Irish market today<div class="opp-bar-w"><div class="opp-bar" style="width:100%"></div></div></div></div></div>
+<hr class="sec-divider"/>
+
+<!-- THE OPPORTUNITY -->
+<section class="sec">
+  <p class="sec-label reveal">The opportunity</p>
+  <h2 class="sec-title reveal d1">Dublin parking is<br>genuinely broken.</h2>
+  <p class="sec-sub reveal d2">1.4 million cars. Minutes wasted per trip. €80+ fines. Zero purpose-built apps for Irish on-street parking.</p>
+  <div class="ps-grid">
+    <div class="ps-card problem reveal">
+      <div class="ps-tag">The problem</div>
+      <div class="ps-card-title">Drivers are flying blind</div>
+      <ul class="ps-list">
+        <li>Free vs paid depends on day, time, and zone — impossible to memorise. Existing apps show car parks, not street bays.</li>
+        <li>No single source of truth for on-street Dublin parking</li>
+        <li>€80+ average fine when you get it wrong</li>
+        <li>Google Maps and Apple Maps don't cover street bays</li>
+      </ul>
+    </div>
+    <div class="ps-card solution reveal d1">
+      <div class="ps-tag">The solution</div>
+      <div class="ps-card-title">sloto. knows the answer</div>
+      <ul class="ps-list">
+        <li>1,200+ spots with correct zone, rate, and operating hours. Status computed on-device, instantly.</li>
+        <li>Free vs paid computed from council data in real time</li>
+        <li>Crowd reports layer live availability on top</li>
+        <li>Free Sundays and bank holidays handled automatically</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- BIZ MODEL -->
-<section class="inv-sec white">
-  <div class="sec-head reveal">
-    <div class="eyebrow dk">Business model</div>
-    <h2 class="sec-title bk">Free to grow. Built to monetise.</h2>
-    <p class="sec-body bk" style="margin-top:10px;">Build the user base first. Monetisation levers are already designed.</p>
-  </div>
-  <div class="bm-grid reveal">
-    <div class="bm-card"><div class="bm-phase">Now — 2026</div><div class="bm-val">Free</div><p class="bm-desc">Free to download and use. Build the habit, maximise reach before adding paid tiers.</p></div>
-    <div class="bm-card"><div class="bm-phase">Near-term — Q3 2026</div><div class="bm-val">Premium</div><p class="bm-desc">Subscription for power users — commuters, delivery drivers, field teams. Recurring revenue, low churn.</p></div>
-    <div class="bm-card"><div class="bm-phase">Long-term — 2027+</div><div class="bm-val">Expand</div><p class="bm-desc">Cork, Galway, Limerick. Same data model, same app. B2B fleet plans for delivery and field sales teams.</p></div>
+<hr class="sec-divider"/>
+
+<!-- MARKET SIZE -->
+<section class="sec">
+  <p class="sec-label reveal">Market size</p>
+  <h2 class="sec-title reveal d1">A massive,<br>underserved market.</h2>
+  <p class="sec-sub reveal d2">Zero dominant competitors in Irish on-street parking. The same model scales directly to Cork, Galway, and Limerick.</p>
+  <div class="market-grid">
+    <div class="market-card reveal">
+      <div class="market-n">1.4M+</div>
+      <div class="market-l">Cars registered in Greater Dublin Area</div>
+    </div>
+    <div class="market-card reveal d1">
+      <div class="market-n">7 min</div>
+      <div class="market-l">Average time wasted searching for parking per trip in Dublin</div>
+    </div>
+    <div class="market-card reveal d2">
+      <div class="market-n">€80+</div>
+      <div class="market-l">Average parking fine in Dublin</div>
+    </div>
+    <div class="market-card reveal d3">
+      <div class="market-n">0</div>
+      <div class="market-l">Purpose-built on-street parking apps in the Irish market today</div>
+    </div>
   </div>
 </section>
+
+<hr class="sec-divider"/>
+
+<!-- BUSINESS MODEL -->
+<section class="sec">
+  <p class="sec-label reveal">Business model</p>
+  <h2 class="sec-title reveal d1">Free to grow.<br>Built to monetise.</h2>
+  <p class="sec-sub reveal d2">Build the user base first. Monetisation levers are already designed.</p>
+  <div class="model-steps">
+    <div class="model-step active reveal">
+      <div class="model-step-tag">Now — 2026</div>
+      <div>
+        <div class="model-step-title">Free</div>
+        <div class="model-step-body">Free to download and use. Build the habit, maximise reach before adding paid tiers.</div>
+      </div>
+    </div>
+    <div class="model-step reveal d1">
+      <div class="model-step-tag">Near-term — Q3 2026</div>
+      <div>
+        <div class="model-step-title">Premium</div>
+        <div class="model-step-body">Subscription for power users — commuters, delivery drivers, field teams. Recurring revenue, low churn.</div>
+      </div>
+    </div>
+    <div class="model-step reveal d2">
+      <div class="model-step-tag">Long-term — 2027+</div>
+      <div>
+        <div class="model-step-title">Expand</div>
+        <div class="model-step-body">Cork, Galway, Limerick. Same data model, same app. B2B fleet plans for delivery and field sales teams.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sec-divider"/>
 
 <!-- ROADMAP -->
-<section class="inv-sec dark">
-  <div class="sec-head reveal">
-    <div class="eyebrow">Roadmap</div>
-    <h2 class="sec-title">We move fast.</h2>
-  </div>
-  <div class="timeline reveal">
-    <div class="tl-item">
-      <div class="tl-dot next" style="background:var(--green);box-shadow:0 0 0 3px rgba(34,197,94,.2);"></div>
-      <div class="tl-phase" style="color:var(--green);">Up next — April 1st 2026</div>
-      <div class="tl-title">Public launch — iOS &amp; Android</div>
-      <p class="tl-body">Simultaneous launch on the App Store and Google Play. 1,279 spots live, full feature set ready, beta feedback incorporated.</p>
+<section class="sec">
+  <p class="sec-label reveal">Roadmap</p>
+  <h2 class="sec-title reveal d1">We move fast.</h2>
+  <div class="roadmap">
+    <div class="rm-item reveal">
+      <div class="rm-date">Apr 1 2026</div>
+      <div>
+        <div class="rm-title">Public launch — iOS &amp; Android</div>
+        <div class="rm-body">Simultaneous launch on the App Store and Google Play. 1,200+ spots live, full feature set ready, beta feedback incorporated.</div>
+      </div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot next"></div>
-      <div class="tl-phase">Q2 2026</div>
-      <div class="tl-title">First marketing push + referral mechanic</div>
-      <p class="tl-body">Paid acquisition tests to establish CAC, referral mechanic, in-app ratings for social proof and organic growth.</p>
+    <div class="rm-item reveal d1">
+      <div class="rm-date">Q2 2026</div>
+      <div>
+        <div class="rm-title">First marketing push + referral mechanic</div>
+        <div class="rm-body">Paid acquisition tests to establish CAC, referral mechanic, in-app ratings for social proof and organic growth.</div>
+      </div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot next"></div>
-      <div class="tl-phase">Q3 2026</div>
-      <div class="tl-title">Premium subscription launch</div>
-      <p class="tl-body">Introduce the paid tier. Begin establishing MRR and churn data.</p>
+    <div class="rm-item reveal d2">
+      <div class="rm-date">Q3 2026</div>
+      <div>
+        <div class="rm-title">Premium subscription launch</div>
+        <div class="rm-body">Introduce the paid tier. Begin establishing MRR and churn data.</div>
+      </div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot next"></div>
-      <div class="tl-phase">Q4 2026</div>
-      <div class="tl-title">B2B fleet product + city expansion</div>
-      <p class="tl-body">Team plans for delivery companies. Begin mapping Cork and Galway.</p>
+    <div class="rm-item reveal d3">
+      <div class="rm-date">Q4 2026</div>
+      <div>
+        <div class="rm-title">B2B fleet product + city expansion</div>
+        <div class="rm-body">Team plans for delivery companies. Begin mapping Cork and Galway.</div>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="inv-contact" id="launch">
-  <div class="ic-inner reveal">
-    <div class="eyebrow" style="text-align:center;margin-bottom:16px;">Get in touch</div>
-    <h2 class="ic-title">Interested in sloto.?</h2>
-    <p class="ic-sub">Open to conversations with angels, early-stage investors, and strategic partners.</p>
-    <a href="mailto:hello@sloto.ie" class="ic-email">hello@sloto.ie</a>
-    <p class="ic-note">We respond within 24 hours · Dublin, Ireland</p>
   </div>
 </section>
 
-<footer><a href="index.html" class="footer-logo">sloto<span>.</span></a><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="investors.html">Investors</a></li><li><a href="legal.html">Privacy &amp; Terms</a></li><li><a href="delete-account.html">Delete account</a></li></ul><p class="footer-copy">© 2026 Sloto Ltd. Dublin 🇮🇪</p></footer>
-<script>(function(){var e=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){e.forEach(function(x){x.classList.add('visible');});return;}var o=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');o.unobserve(x.target);}});},{threshold:0.07,rootMargin:'0px 0px -24px 0px'});e.forEach(function(x){o.observe(x);});})();</script>
-</body></html>
+<hr class="sec-divider"/>
+
+<!-- GET IN TOUCH -->
+<section class="cta-sec" id="contact">
+  <div class="cta-inner reveal">
+    <h2 class="cta-title">Interested in sloto.?</h2>
+    <p class="cta-sub">Open to conversations with angels, early-stage investors, and strategic partners.</p>
+    <a href="mailto:hello@sloto.ie" class="cta-email">hello@sloto.ie</a>
+    <p class="cta-note">We respond within 24 hours · Dublin, Ireland</p>
+  </div>
+</section>
+
+<footer class="dark">
+  <a href="index.html" class="footer-logo">sloto<span>.</span></a>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="investors.html">Investors</a></li>
+    <li><a href="legal.html">Privacy &amp; Terms</a></li>
+    <li><a href="delete-account.html">Delete account</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Sloto Ltd. Dublin 🇮🇪</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
