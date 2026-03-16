@@ -1,273 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>sloto. — Delete Your Account</title>
-  <meta name="description" content="How to permanently delete your sloto. account and all associated data."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>sloto. — Delete Your Account</title>
+<meta name="description" content="How to permanently delete your sloto. account and all associated data."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --black: #0a0a0a; --white: #ffffff;
-    --green: #22C55E; --green-dark: #228B22;
-    --red: #EF4444; --gray: #6B7280;
-    --gray-light: #F5F5F5; --off-white: #FAF9F7;
-    --border: #E5E7EB; --font: 'Poppins', sans-serif;
-  }
-  html { scroll-behavior: smooth; overflow-x: hidden; }
-  body { font-family: var(--font); background: var(--black); color: var(--white); overflow-x: hidden; }
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 56px; height: 68px;
-    background: rgba(10,10,10,0.9); backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
-  .nav-logo { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.04em; text-decoration: none; color: var(--white); }
-  .nav-logo span { color: var(--green-dark); }
-  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-  .nav-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--white); }
-  .nav-dl { background: var(--white); color: var(--black); padding: 9px 22px; border-radius: 10px; font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
-  .nav-dl:hover { background: #e5e5e5; }
-  footer { background: #070707; border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 56px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
-  .footer-logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.04em; color: var(--white); text-decoration: none; }
-  .footer-logo span { color: var(--green-dark); }
-  .footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.35); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-  .footer-links a:hover { color: rgba(255,255,255,0.7); }
-  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.2); }
-  @media(max-width:768px){nav{padding:0 20px;}.nav-links{display:none;}footer{padding:36px 24px;flex-direction:column;align-items:flex-start;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0a0a0a;--white:#fff;--green:#22C55E;--gd:#228B22;--red:#EF4444;--gray:#6B7280;--gl:#F5F5F5;--ow:#FAF9F7;--border:#E5E7EB;--f:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:var(--f);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.08);}
+.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;}
+.nav-logo span{color:var(--gd);}
+.nav-links{display:none;}
+.nav-launch{padding:7px 14px;border-radius:8px;font-size:0.75rem;font-weight:800;text-decoration:none;white-space:nowrap;}
+@media(min-width:768px){nav{padding:0 48px;height:68px;}.nav-logo{font-size:1.55rem;}.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}.nav-links a{text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s;}.nav-launch{font-size:0.875rem;padding:9px 20px;}}
+footer{border-top:1px solid rgba(0,0,0,0.07);padding:36px 20px;display:flex;flex-direction:column;gap:20px;}
+.footer-logo{font-size:1.3rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;}
+.footer-logo span{color:var(--gd);}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px 18px;list-style:none;}
+.footer-links a{font-size:0.8rem;text-decoration:none;font-weight:500;transition:color 0.2s;}
+.footer-copy{font-size:0.75rem;}
+@media(min-width:768px){footer{flex-direction:row;align-items:center;justify-content:space-between;padding:44px 48px;gap:24px;}}
 
+body{background:var(--white);color:var(--black);min-height:100vh;display:flex;flex-direction:column;}
+nav{background:rgba(255,255,255,0.92);border-bottom:1px solid rgba(0,0,0,0.06);}
+.nav-links a{color:rgba(0,0,0,0.45);}
+.nav-links a:hover{color:var(--black);}
 
-body { background: var(--white); color: var(--black); min-height: 100vh; display: flex; flex-direction: column; }
-nav { background: rgba(255,255,255,0.92); border-bottom: 1px solid rgba(0,0,0,0.06); }
-.nav-logo { color: var(--black); }
-.nav-links a { color: rgba(0,0,0,0.45); }
-.nav-links a:hover { color: var(--black); }
-.nav-dl { background: var(--black); color: var(--white); }
-.nav-dl:hover { background: #222; }
-footer { background: #0a0a0a; }
+.page-hero{padding:96px 20px 48px;background:var(--black);color:var(--white);position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(239,68,68,.05) 0%,transparent 65%);pointer-events:none;}
+.ph-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block;}
+.ph-title{font-size:clamp(1.9rem,6vw,3rem);font-weight:900;letter-spacing:-.04em;line-height:1.02;margin-bottom:10px;}
+.ph-sub{font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.6;max-width:480px;}
+@media(min-width:768px){.page-hero{padding:120px 48px 56px;}}
 
-.page-hero {
-  padding: 120px 80px 72px; background: var(--black); color: var(--white);
-  position: relative; overflow: hidden;
-}
-.page-hero::after {
-  content:''; position:absolute; bottom:-80px; right:-80px; width:400px; height:400px;
-  background: radial-gradient(circle, rgba(239,68,68,0.06) 0%, transparent 65%);
-  pointer-events:none;
-}
-.ph-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #EF4444; margin-bottom: 16px; display: block; }
-.ph-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.02; margin-bottom: 14px; }
-.ph-sub { font-size: 0.95rem; color: rgba(255,255,255,0.45); line-height: 1.65; max-width: 520px; }
+main{flex:1;padding:48px 20px 72px;max-width:680px;}
+@media(min-width:768px){main{padding:56px 48px 88px;}}
+@media(min-width:1024px){main{padding:64px 80px 96px;}}
 
-main { flex: 1; padding: 72px 80px 96px; max-width: 800px; }
-
-.warning-box {
-  background: #FFF2F2; border: 1px solid #FECACA;
-  border-radius: 14px; padding: 20px 24px; margin-bottom: 48px;
-  display: flex; align-items: flex-start; gap: 14px;
-}
-.warning-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
-.warning-text { font-size: 0.9rem; color: #991B1B; line-height: 1.65; }
-.warning-text strong { font-weight: 700; }
-
-.method {
-  margin-bottom: 56px;
-}
-.method-header {
-  display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
-}
-.method-badge {
-  background: var(--black); color: var(--white);
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 5px 12px; border-radius: 6px; flex-shrink: 0;
-}
-.method-badge.recommended { background: var(--green); color: var(--black); }
-.method-title { font-size: 1.2rem; font-weight: 800; color: var(--black); letter-spacing: -0.02em; }
-
-.steps { display: flex; flex-direction: column; gap: 3px; border-radius: 16px; overflow: hidden; }
-.step {
-  background: var(--off-white); padding: 20px 24px;
-  display: flex; align-items: flex-start; gap: 18px;
-  transition: background 0.2s;
-}
-.step:hover { background: #f0ede9; }
-.step-num {
-  width: 32px; height: 32px; border-radius: 50%;
-  background: var(--black); color: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.78rem; font-weight: 800; flex-shrink: 0; margin-top: 1px;
-}
-.step-num.green { background: var(--green); color: var(--black); }
-.step-content { flex: 1; }
-.step-title { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 4px; }
-.step-body { font-size: 0.875rem; color: var(--gray); line-height: 1.6; }
-.step-code {
-  display: inline-block; background: var(--black); color: var(--green);
-  font-family: monospace; font-size: 0.875rem; font-weight: 700;
-  padding: 3px 10px; border-radius: 6px; margin-top: 6px;
-  letter-spacing: 0.05em;
-}
-
-.method-divider {
-  text-align: center; margin: 48px 0;
-  display: flex; align-items: center; gap: 16px;
-}
-.method-divider::before, .method-divider::after {
-  content:''; flex: 1; height: 1px; background: var(--border);
-}
-.method-divider span { font-size: 0.78rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
-
-.what-deleted {
-  background: var(--gray-light); border-radius: 14px; padding: 28px 32px; margin-top: 48px;
-}
-.wd-title { font-size: 0.9rem; font-weight: 700; color: var(--black); margin-bottom: 16px; }
-.wd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.wd-item {
-  display: flex; align-items: flex-start; gap: 8px;
-  font-size: 0.84rem; color: #374151; line-height: 1.5;
-}
-.wd-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 6px; }
-
-.contact-note {
-  margin-top: 48px; padding: 20px 24px;
-  border: 1px solid var(--border); border-radius: 12px;
-  font-size: 0.875rem; color: var(--gray); line-height: 1.65;
-}
-.contact-note a { color: var(--green-dark); font-weight: 600; text-decoration: none; }
-.contact-note a:hover { text-decoration: underline; }
-
-@media(max-width:1024px){
-  .page-hero{padding:120px 40px 60px;}
-  main{padding:52px 40px 80px;}
-}
-@media(max-width:640px){
-  .page-hero{padding:100px 24px 48px;}
-  main{padding:40px 24px 60px;}
-  .wd-grid{grid-template-columns:1fr;}
-}
-  </style>
+.warn-box{background:#FFF2F2;border:1px solid #FECACA;border-radius:12px;padding:16px 20px;margin-bottom:40px;display:flex;align-items:flex-start;gap:12px;}
+.warn-text{font-size:.86rem;color:#991B1B;line-height:1.6;}
+.warn-text strong{font-weight:700;}
+.method{margin-bottom:48px;}
+.method-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.mbadge{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:5px;flex-shrink:0;}
+.mbadge.rec{background:var(--green);color:var(--black);}
+.mbadge.alt{background:var(--black);color:var(--white);}
+.m-title{font-size:1.05rem;font-weight:800;color:var(--black);letter-spacing:-.02em;}
+.steps{display:flex;flex-direction:column;gap:2px;border-radius:14px;overflow:hidden;}
+.step{background:var(--ow);padding:16px 20px;display:flex;align-items:flex-start;gap:14px;}
+.step-n{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:800;flex-shrink:0;margin-top:1px;}
+.step-n.g{background:var(--green);color:var(--black);}
+.step-n.b{background:var(--black);color:var(--white);}
+.step-title{font-size:.9rem;font-weight:700;color:var(--black);margin-bottom:3px;}
+.step-body{font-size:.83rem;color:var(--gray);line-height:1.58;}
+.step-code{display:inline-block;background:var(--black);color:var(--green);font-family:monospace;font-size:.83rem;font-weight:700;padding:2px 8px;border-radius:5px;margin-top:4px;letter-spacing:.05em;}
+.divider{text-align:center;margin:36px 0;display:flex;align-items:center;gap:12px;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.divider span{font-size:.74rem;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.08em;}
+.what-del{background:var(--gl);border-radius:12px;padding:22px;margin-top:40px;}
+.wd-title{font-size:.86rem;font-weight:700;color:var(--black);margin-bottom:12px;}
+.wd-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.wd-item{display:flex;align-items:flex-start;gap:7px;font-size:.82rem;color:#374151;line-height:1.45;}
+.wd-dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:6px;}
+.contact-note{margin-top:36px;padding:16px 20px;border:1px solid var(--border);border-radius:10px;font-size:.84rem;color:var(--gray);line-height:1.62;}
+.contact-note a{color:var(--gd);font-weight:600;text-decoration:none;}
+.contact-note a:hover{text-decoration:underline;}
+@media(min-width:480px){.wd-grid{grid-template-columns:1fr 1fr;}}
+</style>
 </head>
 <body>
-<nav><a href="index.html" class="nav-logo">sloto<span>.</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="investors.html">Investors</a></li><li><a href="legal.html">Legal</a></li></ul><a href="index.html#download" class="nav-dl">Download free</a></nav>
+<nav style="background:rgba(255,255,255,0.92);">
+  <a href="index.html" class="nav-logo" style="color:var(--black);">sloto<span>.</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="legal.html">Legal</a></li></ul>
+  <a href="#" class="nav-launch" style="background:var(--black);color:var(--white);">Launching April 1st →</a>
+</nav>
 
 <div class="page-hero">
   <span class="ph-eyebrow">Account management</span>
-  <h1 class="ph-title">Delete your sloto. account</h1>
-  <p class="ph-sub">You can permanently delete your account and all associated data at any time. This action is irreversible — all your data will be removed from our servers.</p>
+  <h1 class="ph-title">Delete your account</h1>
+  <p class="ph-sub">Permanently remove your sloto. account and all associated data. This cannot be undone.</p>
 </div>
 
 <main>
-
-  <div class="warning-box">
-    <div class="warning-icon">⚠️</div>
-    <div class="warning-text"><strong>This cannot be undone.</strong> Deleting your account permanently removes your profile, all crowd reports you've submitted, spot reports, feedback, and your earned badges. Your locally-saved parked car state will remain on your device until you uninstall the app.</div>
+  <div class="warn-box">
+    <div style="font-size:1.1rem;flex-shrink:0;">⚠️</div>
+    <div class="warn-text"><strong>This is permanent.</strong> Deleting your account removes your profile, all reports you've submitted, feedback, and your badges. Your locally-saved parking state will remain on your device until you uninstall the app.</div>
   </div>
 
-  <!-- METHOD 1: In-app -->
   <div class="method">
     <div class="method-header">
-      <span class="method-badge recommended">Recommended</span>
-      <h2 class="method-title">Delete directly in the app</h2>
+      <span class="mbadge rec">Recommended</span>
+      <h2 class="m-title">Delete in the app</h2>
     </div>
     <div class="steps">
-      <div class="step">
-        <div class="step-num green">1</div>
-        <div class="step-content">
-          <div class="step-title">Open sloto. and go to the Profile tab</div>
-          <div class="step-body">Tap the person icon in the bottom navigation bar to open your Profile screen.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num green">2</div>
-        <div class="step-content">
-          <div class="step-title">Make sure you're signed in</div>
-          <div class="step-body">Account deletion requires you to be signed in. If you're not signed in, tap "Continue with Google" first.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num green">3</div>
-        <div class="step-content">
-          <div class="step-title">Scroll down and tap "Delete account"</div>
-          <div class="step-body">The delete option appears in red text at the bottom of the Profile screen, below the Account section.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num green">4</div>
-        <div class="step-content">
-          <div class="step-title">Confirm in the first dialog</div>
-          <div class="step-body">A confirmation dialog will appear explaining that this action is permanent. Tap "Delete" to proceed to the second step.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num green">5</div>
-        <div class="step-content">
-          <div class="step-title">Type DELETE to confirm</div>
-          <div class="step-body">A second confirmation asks you to type exactly:</div>
-          <div class="step-code">DELETE</div>
-          <div class="step-body" style="margin-top:6px;">This two-step process prevents accidental deletion. Once confirmed, your account and all data are permanently removed.</div>
-        </div>
-      </div>
+      <div class="step"><div class="step-n g">1</div><div><div class="step-title">Open sloto. → Profile tab</div><div class="step-body">Tap the person icon in the bottom nav.</div></div></div>
+      <div class="step"><div class="step-n g">2</div><div><div class="step-title">Make sure you're signed in</div><div class="step-body">Tap "Continue with Google" if you're not already.</div></div></div>
+      <div class="step"><div class="step-n g">3</div><div><div class="step-title">Tap "Delete account" (red, bottom of screen)</div><div class="step-body">Appears below the Account section.</div></div></div>
+      <div class="step"><div class="step-n g">4</div><div><div class="step-title">Confirm in the first dialog</div><div class="step-body">Tap "Delete" to proceed.</div></div></div>
+      <div class="step"><div class="step-n g">5</div><div><div class="step-title">Type DELETE to confirm</div><div class="step-body">A second step prevents accidental deletion. Type exactly:<br><span class="step-code">DELETE</span></div></div></div>
     </div>
   </div>
 
-  <div class="method-divider"><span>or</span></div>
+  <div class="divider"><span>or</span></div>
 
-  <!-- METHOD 2: Email -->
   <div class="method">
     <div class="method-header">
-      <span class="method-badge">Via email</span>
-      <h2 class="method-title">Request deletion by email</h2>
+      <span class="mbadge alt">Via email</span>
+      <h2 class="m-title">Request by email</h2>
     </div>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <div class="step-title">Email us at hello@sloto.ie</div>
-          <div class="step-body">Send an email from the address associated with your sloto. account with the subject line "Account deletion request".</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <div class="step-title">Include your account email address</div>
-          <div class="step-body">Confirm the email address you used to sign in to sloto. so we can locate and delete the correct account.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <div class="step-title">We'll process your request within 7 days</div>
-          <div class="step-body">We'll send you a confirmation once your account and all associated data have been permanently deleted from our servers.</div>
-        </div>
-      </div>
+      <div class="step"><div class="step-n b">1</div><div><div class="step-title">Email hello@sloto.ie</div><div class="step-body">Send from the address associated with your account. Subject: "Account deletion request".</div></div></div>
+      <div class="step"><div class="step-n b">2</div><div><div class="step-title">Include your account email</div><div class="step-body">So we can locate and delete the correct account.</div></div></div>
+      <div class="step"><div class="step-n b">3</div><div><div class="step-title">We'll process within 7 days</div><div class="step-body">You'll receive a confirmation once deletion is complete.</div></div></div>
     </div>
   </div>
 
-  <!-- WHAT GETS DELETED -->
-  <div class="what-deleted">
+  <div class="what-del">
     <div class="wd-title">What gets permanently deleted</div>
     <div class="wd-grid">
-      <div class="wd-item"><span class="wd-dot"></span>Your user profile (name, email, avatar)</div>
+      <div class="wd-item"><span class="wd-dot"></span>Your profile (name, email, avatar)</div>
       <div class="wd-item"><span class="wd-dot"></span>All crowd reports you submitted</div>
       <div class="wd-item"><span class="wd-dot"></span>All spot reports you submitted</div>
-      <div class="wd-item"><span class="wd-dot"></span>All wrong info reports you submitted</div>
-      <div class="wd-item"><span class="wd-dot"></span>Any feedback messages you sent</div>
-      <div class="wd-item"><span class="wd-dot"></span>Your spots reported count and badges</div>
-      <div class="wd-item"><span class="wd-dot"></span>Any photos you uploaded with reports</div>
-      <div class="wd-item"><span class="wd-dot"></span>Your Google OAuth connection</div>
+      <div class="wd-item"><span class="wd-dot"></span>All wrong info reports</div>
+      <div class="wd-item"><span class="wd-dot"></span>Feedback messages</div>
+      <div class="wd-item"><span class="wd-dot"></span>Your badges and spots reported count</div>
+      <div class="wd-item"><span class="wd-dot"></span>Uploaded photos</div>
+      <div class="wd-item"><span class="wd-dot"></span>Google OAuth connection</div>
     </div>
   </div>
 
   <div class="contact-note">
-    Questions about data deletion or your rights under GDPR? Contact us at <a href="mailto:hello@sloto.ie">hello@sloto.ie</a>. We respond within 24 hours and are required to action deletion requests within 30 days under GDPR.
+    Questions about data deletion or GDPR rights? Email <a href="mailto:hello@sloto.ie">hello@sloto.ie</a>. We respond within 24 hours and action deletion requests within 30 days as required by GDPR.
   </div>
-
 </main>
 
-<footer><a href="index.html" class="footer-logo">sloto<span>.</span></a><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="index.html#features">Features</a></li><li><a href="investors.html">Investors</a></li><li><a href="legal.html">Privacy &amp; Terms</a></li><li><a href="delete-account.html">Delete account</a></li></ul><p class="footer-copy">© 2026 Sloto Ltd. Made in Dublin. 🇮🇪</p></footer>
+<footer style="background:var(--white);color:var(--black);">
+  <a href="index.html" class="footer-logo" style="color:var(--black);">sloto<span>.</span></a>
+  <ul class="footer-links"><li><a href="index.html" style="color:var(--gray);">Home</a></li><li><a href="legal.html" style="color:var(--gray);">Privacy &amp; Terms</a></li></ul>
+  <p class="footer-copy" style="color:rgba(0,0,0,0.3);">© 2026 Sloto Ltd. Dublin 🇮🇪</p>
+</footer>
 </body></html>
