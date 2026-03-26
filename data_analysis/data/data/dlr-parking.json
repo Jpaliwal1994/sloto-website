@@ -1,0 +1,5831 @@
+{
+	"name" : "DLR_Parking_Meter",
+	"type" : "FeatureCollection",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1133043526821416, 53.257303593020445, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 325,
+				"Identifier" : "M325",
+				"Location" : "Killiney Dart Station Car Park",
+				"Area_Ref" : "Killiney",
+				"Number_of_Paid_Parking_Spaces_" : 52,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1132866879903718, 53.256524668728673, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 326,
+				"Identifier" : "M326",
+				"Location" : "Killiney Dart Station Car Park",
+				"Area_Ref" : "Killiney",
+				"Number_of_Paid_Parking_Spaces_" : 36,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1131481682493316, 53.255855476669822, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 730,
+				"Identifier" : "M730",
+				"Location" : "Station Road",
+				"Area_Ref" : "Killiney",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1462668543372638, 53.247321305068382, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 781,
+				"Identifier" : "M781",
+				"Location" : "Valley Drive",
+				"Area_Ref" : "Cherrywood",
+				"Number_of_Paid_Parking_Spaces_" : 84,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1434301013207424, 53.245855236936109, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 780,
+				"Identifier" : "M780",
+				"Location" : "Valley Drive",
+				"Area_Ref" : "Cherrywood",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1443356482596441, 53.241227093104925, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 782,
+				"Identifier" : "M782",
+				"Location" : "Cherrywood Park",
+				"Area_Ref" : "Cherrywood",
+				"Number_of_Paid_Parking_Spaces_" : 56,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1462587617852673, 53.241608612821466, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 783,
+				"Identifier" : "M783",
+				"Location" : "Cherrywood Park",
+				"Area_Ref" : "Cherrywood",
+				"Number_of_Paid_Parking_Spaces_" : 48,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1845684343777716, 53.266878911046675, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 63,
+				"Identifier" : "M63",
+				"Location" : "Westminster Court",
+				"Area_Ref" : "Foxrock",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1838322434467079, 53.266645738395312, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 690,
+				"Identifier" : "M690",
+				"Location" : "Brighton Road",
+				"Area_Ref" : "Foxrock",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2477223610008137, 53.28745083936753, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 279,
+				"Identifier" : "M279",
+				"Location" : "Ailesbury Grove",
+				"Area_Ref" : "Ailesbury",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2491478630046826, 53.286467457995158, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 280,
+				"Identifier" : "M280",
+				"Location" : "Ailesbury Lawn",
+				"Area_Ref" : "Ailesbury",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2481302641643293, 53.285193277538802, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 281,
+				"Identifier" : "M281",
+				"Location" : "Ailesbury Lawn",
+				"Area_Ref" : "Ailesbury",
+				"Number_of_Paid_Parking_Spaces_" : 36,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2449859313105431, 53.301949826533892, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 621,
+				"Identifier" : "M621",
+				"Location" : "Arbourfield",
+				"Area_Ref" : "Arbourfield",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2388379904054423, 53.284367260561858, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 287,
+				"Identifier" : "M287",
+				"Location" : "Ardglas",
+				"Area_Ref" : "Ardglas",
+				"Number_of_Paid_Parking_Spaces_" : 54,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2467843078811303, 53.288300890116368, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 611,
+				"Identifier" : "M611",
+				"Location" : "Ballinteer Road",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2464111870333676, 53.288636356725831, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 610,
+				"Identifier" : "M610",
+				"Location" : "Ballinteer Road (Close to Bridge)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2463759747790677, 53.287376541633336, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 609,
+				"Identifier" : "M609",
+				"Location" : "Ballinteer Road (The Gables)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2601732656926679, 53.296112035309129, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 627,
+				"Identifier" : "M627",
+				"Location" : "Braemor Road",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 45,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2231893759133472, 53.279013394084267, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 630,
+				"Identifier" : "M630",
+				"Location" : "Drummartin Link Road",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 36,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2240448838717466, 53.280680088552963, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 631,
+				"Identifier" : "M631",
+				"Location" : "Drummartin Link Road",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 35,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2251624771697118, 53.284231529069324, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 632,
+				"Identifier" : "M632",
+				"Location" : "Drummartin Link Road",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2367326684024293, 53.282428098709737, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 624,
+				"Identifier" : "M624",
+				"Location" : "Dun Emer",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 56,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2456550949300427, 53.293198119652295, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 603,
+				"Identifier" : "M603",
+				"Location" : "Dundrum Road (Shops Jct Taney Road)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2456708458635486, 53.290129407320137, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 306,
+				"Identifier" : "M306",
+				"Location" : "Dundrum Shopping Centre CP",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2456739037191582, 53.290124336219797, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 327,
+				"Identifier" : "M327",
+				"Location" : "Dundrum Shopping Centre CP",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2518730329382572, 53.295056143355623, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 265,
+				"Identifier" : "M265",
+				"Location" : "Glenbower Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2427385651409733, 53.284197598939677, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 625,
+				"Identifier" : "M625",
+				"Location" : "Lynnwood",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 53,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2440629623324257, 53.284947832691941, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 626,
+				"Identifier" : "M626",
+				"Location" : "Lynnwood",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 25,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2454401238414325, 53.291112865070531, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 601,
+				"Identifier" : "M601",
+				"Location" : "Main Street (AIB)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2443096994672427, 53.290037147577088, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 602,
+				"Identifier" : "M602",
+				"Location" : "Main Street (PTSB)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2437510711548621, 53.292948420730113, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 622,
+				"Identifier" : "M622",
+				"Location" : "Old Rectory Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2400511913344285, 53.288390137692971, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 302,
+				"Identifier" : "M302",
+				"Location" : "Sandyford Road Car Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 32,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2410793528280504, 53.288064553144252, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 303,
+				"Identifier" : "M303",
+				"Location" : "Sandyford Road Car Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 30,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2410718974805119, 53.288061536374776, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 304,
+				"Identifier" : "M304",
+				"Location" : "Sandyford Road Car Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2414083646455722, 53.288121539632556, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 305,
+				"Identifier" : "M305",
+				"Location" : "Sandyford Road Car Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2377018735477066, 53.290649468999185, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 623,
+				"Identifier" : "M623",
+				"Location" : "Stoney Road",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 33,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2508908739036659, 53.290202568132578, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 606,
+				"Identifier" : "M606",
+				"Location" : "Sweetmount Avenue",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2471884751252897, 53.291945153275741, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 604,
+				"Identifier" : "M604",
+				"Location" : "Sweetmount Avenue (opp. 10)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2478543086437979, 53.291246663869146, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 605,
+				"Identifier" : "M605",
+				"Location" : "Sweetmount Avenue (opp. 24)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 28,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2517452035064691, 53.289092894814075, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 608,
+				"Identifier" : "M608",
+				"Location" : "Sweetmount Drive",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2423173759542463, 53.291177686297353, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 620,
+				"Identifier" : "M620",
+				"Location" : "Taney Manor",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2479711967000089, 53.293225600522376, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 615,
+				"Identifier" : "M615",
+				"Location" : "Uppr. Churchtown Road (slip to Sweetmount)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2507234484924146, 53.298054707702192, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 618,
+				"Identifier" : "M618",
+				"Location" : "Woodlawn Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2514681565108319, 53.299266570690826, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 619,
+				"Identifier" : "M619",
+				"Location" : "Woodlawn Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2502463223277376, 53.295740446813795, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 617,
+				"Identifier" : "M617",
+				"Location" : "Woodlawn Park (13A)",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 31,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2508090319811451, 53.294323772000901, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 616,
+				"Identifier" : "M616",
+				"Location" : "Woodlawn Terrace/Park",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2452077531652357, 53.303825086352454, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 628,
+				"Identifier" : "M628",
+				"Location" : "Olivemount",
+				"Area_Ref" : "Olivemount",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2535475330608152, 53.289917871765752, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 607,
+				"Identifier" : "M607",
+				"Location" : "Sweetmount Avenue",
+				"Area_Ref" : "Dundrum",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1885160143236, 53.306133387512361, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 930,
+				"Identifier" : "M930",
+				"Location" : "Seafort Parade",
+				"Area_Ref" : "Seafort Parade",
+				"Number_of_Paid_Parking_Spaces_" : 32,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1532856434039873, 53.261988300759946, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 761,
+				"Identifier" : "M761",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1523317485259925, 53.261605103669922, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 762,
+				"Identifier" : "M762",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.15149604182188, 53.261421966897423, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 763,
+				"Identifier" : "M763",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1498809716415561, 53.260622194484959, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 764,
+				"Identifier" : "M764",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1491207663224294, 53.260003907358993, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 766,
+				"Identifier" : "M766",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1486317883451127, 53.259510038960059, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 767,
+				"Identifier" : "M767",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.149149972367745, 53.259806346672754, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 272,
+				"Identifier" : "M272",
+				"Location" : "Bray Road, outside Library",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1463589800789924, 53.257479002684114, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 769,
+				"Identifier" : "M769",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 29,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1479268726030254, 53.258534797212668, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 765,
+				"Identifier" : "M765",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1533386160366259, 53.262225688388234, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 760,
+				"Identifier" : "M760",
+				"Location" : "Bray Road",
+				"Area_Ref" : "Cabinteely",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1177956760310899, 53.23642022436816, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 330,
+				"Identifier" : "M330",
+				"Location" : "Shankill Dart Station Car Park",
+				"Area_Ref" : "Shankill",
+				"Number_of_Paid_Parking_Spaces_" : 72,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.11747489293165, 53.236439693924829, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 329,
+				"Identifier" : "M329",
+				"Location" : "Shankill Dart Station Car Park",
+				"Area_Ref" : "Shankill",
+				"Number_of_Paid_Parking_Spaces_" : 65,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1970050804702561, 53.307505514292622, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 932,
+				"Identifier" : "M932",
+				"Location" : "Beech Grove",
+				"Area_Ref" : "Booterstown",
+				"Number_of_Paid_Parking_Spaces_" : 45,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1983971295387521, 53.304611012564706, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 935,
+				"Identifier" : "M935",
+				"Location" : "Booterstown Avenue",
+				"Area_Ref" : "Booterstown",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1971482966365716, 53.306840518961089, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 933,
+				"Identifier" : "M933",
+				"Location" : "Booterstown Avenue",
+				"Area_Ref" : "Booterstown",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1977611131368988, 53.305321574879727, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 934,
+				"Identifier" : "M934",
+				"Location" : "Willow Place (Gleesons Pub)",
+				"Area_Ref" : "Booterstown",
+				"Number_of_Paid_Parking_Spaces_" : 32,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1980166338640181, 53.309571444125446, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 931,
+				"Identifier" : "M931",
+				"Location" : "Rock Road",
+				"Area_Ref" : "Booterstown",
+				"Number_of_Paid_Parking_Spaces_" : 41,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2048730679653339, 53.31097859736888, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 904,
+				"Identifier" : "M904",
+				"Location" : "Dornden Park",
+				"Area_Ref" : "Trimleston",
+				"Number_of_Paid_Parking_Spaces_" : 42,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1998649076691983, 53.310390681856184, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 905,
+				"Identifier" : "M905",
+				"Location" : "St. Helen's road",
+				"Area_Ref" : "Booterstown",
+				"Number_of_Paid_Parking_Spaces_" : 131,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1022511066497707, 53.275246319531263, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 720,
+				"Identifier" : "M720",
+				"Location" : "Ardeveen Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max Charge €5"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1044284917573863, 53.279036091890113, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 46,
+				"Identifier" : "M46",
+				"Location" : "Carysfort Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1034470448755904, 53.277210402612013, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 704,
+				"Identifier" : "M704",
+				"Location" : "Castle Street",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 3,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1047410405797899, 53.277640972228141, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 705,
+				"Identifier" : "M705",
+				"Location" : "Castle Street",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1072043823695523, 53.278379047084464, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 706,
+				"Identifier" : "M706",
+				"Location" : "Castle Street",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 3,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1077035353408151, 53.278497283234557, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 707,
+				"Identifier" : "M707",
+				"Location" : "Castle Street",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1028837668908302, 53.277299051110553, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 714,
+				"Identifier" : "M714",
+				"Location" : "Coliemore Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1028049721344475, 53.277962127706573, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 713,
+				"Identifier" : "M713",
+				"Location" : "Convent Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1028414641945288, 53.279222079227367, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 51,
+				"Identifier" : "M51",
+				"Location" : "Corrig Road (2)",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1041978565079953, 53.279930414289105, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 37,
+				"Identifier" : "M37",
+				"Location" : "Corrig Road (24)",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1044472452388163, 53.275386232685108, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 136,
+				"Identifier" : "M136",
+				"Location" : "Cunningham Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max Charge €5"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1092067109482411, 53.280490587573723, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 709,
+				"Identifier" : "M709",
+				"Location" : "Hyde Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1090035063681398, 53.279938497607013, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 708,
+				"Identifier" : "M708",
+				"Location" : "Hyde Road (GAA Club)",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 35,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1063320090203375, 53.277713637631258, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 721,
+				"Identifier" : "M721",
+				"Location" : "Kilbegnet Close",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.10569912382386, 53.27872847940754, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 41,
+				"Identifier" : "M41",
+				"Location" : "Ormeau Drive",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1034671570476275, 53.275895796708284, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 700,
+				"Identifier" : "M700",
+				"Location" : "Railway Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1033137304149481, 53.27847699241498, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 701,
+				"Identifier" : "M701",
+				"Location" : "Saint Patrick's Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 27,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.103593260260225, 53.277743136807281, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 702,
+				"Identifier" : "M702",
+				"Location" : "Saint Patrick's Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1021245820634009, 53.275631062440809, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 128,
+				"Identifier" : "M128",
+				"Location" : "Sorento Drive",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1003001840692566, 53.275726052702396, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 179,
+				"Identifier" : "M179",
+				"Location" : "Sorento Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 3,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1047234704633393, 53.276712441594292, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 321,
+				"Identifier" : "M321",
+				"Location" : "St. Patrick's Avenue Car Park",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1046802621338516, 53.276706795745987, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 328,
+				"Identifier" : "M328",
+				"Location" : "St. Patrick's Avenue Car Park",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1007894873638575, 53.276170014569693, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 176,
+				"Identifier" : "M176",
+				"Location" : "Tubbermore Road/Avenue",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1026794580805035, 53.276810298499491, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 715,
+				"Identifier" : "M715",
+				"Location" : "Tubbermore Road",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1042005466063083, 53.276492253531202, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 703,
+				"Identifier" : "M703",
+				"Location" : "Saint Patrick's Avenue",
+				"Area_Ref" : "Dalkey",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.118072226676313, 53.286586963024106, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 489,
+				"Location" : "Ballygihen Avenue",
+				"Area_Ref" : "Ballygihan Avenue",
+				"Number_of_Paid_Parking_Spaces_" : null,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1322617972824087, 53.291012211615943, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 435,
+				"Location" : "Adelaide Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1314697892423249, 53.291530369111555, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 436,
+				"Location" : "Adelaide Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1307224564010827, 53.292253787267562, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 437,
+				"Location" : "Adelaide Street (Jct Haddington Tce)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 36,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1378402728175345, 53.295002782911041, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 443,
+				"Location" : "Charlemont Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1307168041372186, 53.288887558228105, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 426,
+				"Location" : "Clarinda Park East (1)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1313939931040551, 53.287870812583819, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 427,
+				"Location" : "Clarinda Park East (18)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 25,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.132075238142348, 53.287038378531165, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 428,
+				"Location" : "Clarinda Park East (40)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 24,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1320287439120076, 53.289113472134758, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 312,
+				"Location" : "Clarinda Park East Car Park",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 37,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1311420417055578, 53.289430568639055, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 423,
+				"Location" : "Clarinda Park North",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 35,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1323016391958127, 53.289050865604317, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 424,
+				"Location" : "Clarinda Park West",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 50,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1337143651136667, 53.287398201345695, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 425,
+				"Location" : "Clarinda Park West (opp. 30)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 28,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1311411632864452, 53.28879866763441, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 311,
+				"Location" : "Clarinda Park West Car Park",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 56,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1400579726444722, 53.29606586759931, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 442,
+				"Location" : "Connaught Place (off Crofton Road)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1389767432497573, 53.293115042636984, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 406,
+				"Location" : "Convent Lane (Tesco Bloomfields)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1381888077539575, 53.291667319932422, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 409,
+				"Location" : "Convent Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1380456678202089, 53.291907938607324, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 410,
+				"Location" : "Convent Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1330703910527218, 53.290840755472246, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 419,
+				"Location" : "Corrig Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1339151903996836, 53.289256156288211, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 48,
+				"Location" : "Corrig Avenue (26/27)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1344260537683768, 53.287980951972095, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 49,
+				"Location" : "Corrig Avenue (7)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1334760515419999, 53.290283850314488, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 47,
+				"Location" : "Corrig Avenue (opp. 3)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1358807934918804, 53.287511876746279, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 400,
+				"Location" : "Corrig Park",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1384556960252059, 53.295269986951276, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 444,
+				"Location" : "Crofton Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1375050812626482, 53.295724713936735, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 440,
+				"Location" : "Crofton Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1386975594703035, 53.296001356459058, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 441,
+				"Location" : "Crofton Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1393346773019282, 53.29128218302553, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 459,
+				"Location" : "Cross Avenue (Jct Desmond Ave)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 43,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1338110139812585, 53.286208550550114, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 77,
+				"Location" : "Crosthwaite Park East",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 27,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1345383325900045, 53.284543585291608, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 79,
+				"Location" : "Crosthwaite Park South",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1348735697652987, 53.286009543388566, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 78,
+				"Location" : "Crosthwaite Park West",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 33,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1445116535550772, 53.295044009014497, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 449,
+				"Location" : "Cumberland Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1365888161065891, 53.293821499502016, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 408,
+				"Location" : "Elbana Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1390471148346206, 53.294732259171319, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 446,
+				"Location" : "George's Place",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1416349034524815, 53.29532068216767, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 448,
+				"Location" : "George's Place",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.142245992516294, 53.294932138281943, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 450,
+				"Location" : "George's Street Lower",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1336632875288482, 53.291188642695261, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 418,
+				"Location" : "George's Street Upper",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1331862379136997, 53.291433239076596, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 438,
+				"Location" : "Haigh Terrace",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 28,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1392470422578453, 53.29543470021374, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 445,
+				"Location" : "Kelly's Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1466793733489729, 53.290089614312663, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 213,
+				"Location" : "Knapton Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 44,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1409934225304461, 53.292738894713906, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 456,
+				"Location" : "Library Road (21)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.14059576221368, 53.29185362121914, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 455,
+				"Location" : "Library Road (3)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 63,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1348127045582483, 53.29358334099269, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 431,
+				"Location" : "Marine Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1291048410561828, 53.291490797474559, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 439,
+				"Location" : "Marine Terrace (6)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1301811979559613, 53.29137159849148, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 432,
+				"Location" : "Mellifont Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 26,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1306818376982974, 53.290772388074451, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 433,
+				"Location" : "Mellifont Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1313874067853567, 53.29034140404422, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 434,
+				"Location" : "Mellifont Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1368006331886642, 53.290807478372116, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 412,
+				"Location" : "Mulgrave Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1361687448471702, 53.291392957698754, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 411,
+				"Location" : "Mulgrave Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1370884505288066, 53.28926565863113, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 413,
+				"Location" : "Mulgrave Street (39)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 29,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1366336493538078, 53.284793508277509, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 470,
+				"Location" : "Myrtle Park",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1424536662497378, 53.291775348454394, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 56,
+				"Location" : "Northcote Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1351844039043648, 53.291229669564942, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 414,
+				"Location" : "Northumberland Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1353035168930683, 53.290926003475093, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 415,
+				"Location" : "Northumberland Avenue",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1360167429554346, 53.28945949948622, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 417,
+				"Location" : "Northumberland Avenue (20)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 37,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1355306254453108, 53.290475930126028, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 416,
+				"Location" : "Northumberland Avenue (41)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1438697469004531, 53.288380448951905, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 259,
+				"Location" : "Oakwood (off Tivoli Road)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1286864569711303, 53.290937704557294, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 430,
+				"Location" : "Park Road (2)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1294617745956765, 53.289805082853832, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 429,
+				"Location" : "Park Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1370318696636836, 53.291753104354008, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 404,
+				"Location" : "Patrick Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1379816959477473, 53.290938585674056, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 405,
+				"Location" : "Patrick Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 25,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1383602234622998, 53.289527535775107, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 465,
+				"Location" : "Patrick Street (46A)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1384893743717317, 53.288281199630653, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 466,
+				"Location" : "Patrick Street (56)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1292230741472586, 53.292094086261031, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 401,
+				"Location" : "Queens Road",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1296810426221695, 53.288219802657309, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 14,
+				"Location" : "Rosmeen Gardens",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 33,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1363574422106995, 53.286161968168429, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 80,
+				"Location" : "Royal Terrace East",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 43,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1369229336516229, 53.28699984372453, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 15,
+				"Location" : "Royal Terrace North",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1374516872685456, 53.286372086061981, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 82,
+				"Location" : "Royal Terrace West",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 82,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1413581408157238, 53.291751630493664, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 22,
+				"Location" : "St. Mary's Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 42,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.136889772211422, 53.293257566325885, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 402,
+				"Location" : "Sussex Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.136909870039851, 53.29324091572515, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 403,
+				"Location" : "Sussex Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1364722671720315, 53.29341370975358, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 407,
+				"Location" : "Sussex Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1397654840788256, 53.290443203706246, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 461,
+				"Location" : "Tivoli Terrace East (16)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 24,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1398261096021418, 53.289007266519256, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 17,
+				"Location" : "Tivoli Terrace East (4/5)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1409680297299403, 53.290789505768835, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 460,
+				"Location" : "Tivoli Terrace North",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 32,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1425288281515122, 53.28938895040406, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 463,
+				"Location" : "Tivoli Terrace South",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 28,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1432090911385417, 53.29228790254097, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 12,
+				"Location" : "Vesey Place",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1398630469885136, 53.294305617275882, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 451,
+				"Location" : "Wellington Street",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1446628867522204, 53.292822596293185, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 215,
+				"Location" : "Willow Bank",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1426280972590765, 53.294029384778973, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 11,
+				"Location" : "York Road (71)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.14279101405796, 53.294534654351317, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 10,
+				"Location" : "York Road (Jct Barrett St)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1426311267890092, 53.292863501582758, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 13,
+				"Location" : "York Road (Jct St. Michael's Tce)",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1272637730527357, 53.285001095202595, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 276,
+				"Location" : "Coldwell Street",
+				"Area_Ref" : "EFCH",
+				"Number_of_Paid_Parking_Spaces_" : 47,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1253494097009566, 53.28521260551441, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 275,
+				"Location" : "Harold Crescent",
+				"Area_Ref" : "EFCH",
+				"Number_of_Paid_Parking_Spaces_" : 95,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1408406064250229, 53.288099403380144, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 274,
+				"Location" : "Eglington Park",
+				"Area_Ref" : "Eglinton Park",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1235887992672824, 53.286288054865636, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 482,
+				"Location" : "Adelaide Road",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1242423043634338, 53.287246838473997, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 317,
+				"Location" : "Cowshed Car Park",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1243994592179982, 53.287278373837083, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 318,
+				"Location" : "Cowshed Car Park",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1261594242082937, 53.287341099799825, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 478,
+				"Location" : "Eden Park (housing side)",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1267035068125342, 53.287766989119795, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 313,
+				"Location" : "Eden Park Car Park",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1265656161696942, 53.28755811760238, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 314,
+				"Location" : "Glasthule Car Park",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 31,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1194372517979074, 53.285069426997353, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 73,
+				"Location" : "Hudson Road (Jct Albert Rd)",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.122061341599017, 53.285427562325395, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 483,
+				"Location" : "Hudson Road (Sports Ground)",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 34,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1263289595310528, 53.288256824809622, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 62,
+				"Location" : "Islington Avenue",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1230214902829569, 53.287561091569643, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 64,
+				"Location" : "Link Road",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1280036673085609, 53.286346705024293, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 74,
+				"Location" : "Magenta Place",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1276263668135602, 53.288922907066514, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 23,
+				"Location" : "Martello Avenue",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1241906157272314, 53.288719271245839, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 477,
+				"Location" : "Newtownsmith",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.127955461522685, 53.288193211615841, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 75,
+				"Location" : "Rosmeen Park",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1238965142776927, 53.287210844551517, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 65,
+				"Location" : "Summerhill Road",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1205279561414727, 53.286598959088863, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 67,
+				"Location" : "Wilmount Avenue",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1256411841426477, 53.289839450898548, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 315,
+				"Location" : "Windsor Terrace Car Park",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 46,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1262455019559647, 53.290205096858358, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 316,
+				"Location" : "Windsor Terrace Car Park",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 39,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.118788385316229, 53.285715252888039, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 70,
+				"Location" : "Albert Road",
+				"Area_Ref" : "Sandycove",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1191464172395014, 53.286446718117318, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 69,
+				"Location" : "Burdett Avenue",
+				"Area_Ref" : "Sandycove",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1199343412243623, 53.28680854208563, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 486,
+				"Location" : "Marine Avenue",
+				"Area_Ref" : "Sandycove",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1404873248975091, 53.295213893160849, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 447,
+				"Location" : "George's Place",
+				"Area_Ref" : "Dún Laoghaire",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1224493750221667, 53.28700409656475, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 480,
+				"Location" : "Glasthule Road (56)",
+				"Area_Ref" : "Glasthule",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1235524371432373, 53.279594841147606, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 495,
+				"Identifier" : "M495",
+				"Location" : "Marlbrough Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 30,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1251443075995065, 53.278707458155338, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 494,
+				"Identifier" : "M494",
+				"Location" : "Marlbrough Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1234545240367426, 53.280321072650466, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 496,
+				"Identifier" : "M496",
+				"Location" : "Marlbrough Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 31,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1295646074218455, 53.282761584280294, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 191,
+				"Identifier" : "M191",
+				"Location" : "Silchester Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1319342558533076, 53.283459070011347, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 193,
+				"Identifier" : "M193",
+				"Location" : "Silchester Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 34,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1265791958810221, 53.281375559758587, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 491,
+				"Identifier" : "M491",
+				"Location" : "Silchester Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 52,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1185178081885505, 53.279700154053607, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 499,
+				"Identifier" : "M499",
+				"Location" : "St. Catherine's Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 42,
+				"Hours_of_operation" : "0800 - 1800",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1244276297652966, 53.281532033535854, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 497,
+				"Identifier" : "M497",
+				"Location" : "Station Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 34,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1219692463071418, 53.280740315102584, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 498,
+				"Identifier" : "M498",
+				"Location" : "Station Road",
+				"Area_Ref" : "Glenageary",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1642730530983654, 53.279581839268111, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 880,
+				"Identifier" : "M880",
+				"Location" : "Deansgrange Road",
+				"Area_Ref" : "Deansgrange",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1634192005560866, 53.278139675563125, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 881,
+				"Identifier" : "M881",
+				"Location" : "Clonkeen Road",
+				"Area_Ref" : "Deansgrange",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1660678573944105, 53.296596916895446, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 833,
+				"Identifier" : "M833",
+				"Location" : "Alma Road (14)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 35,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1659747340632984, 53.297596490645049, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 834,
+				"Identifier" : "M834",
+				"Location" : "Alma Road (3)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 36,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1640272821247919, 53.297955670310806, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 110,
+				"Identifier" : "M110",
+				"Location" : "Belgrave Road (Avalon Hse.)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 48,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1629975563925878, 53.295598997244213, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 107,
+				"Identifier" : "M107",
+				"Location" : "Belgrave Sqaure (West)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 25,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1612364142038265, 53.295567681065172, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 827,
+				"Identifier" : "M827",
+				"Location" : "Belgrave Square (Jct South/East)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 82,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1630263414589725, 53.296592299411216, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 111,
+				"Identifier" : "M111",
+				"Location" : "Belgrave Terrace (3)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1604328392649439, 53.298138349835106, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 840,
+				"Identifier" : "M840",
+				"Location" : "Brighton Vale",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1643888301463861, 53.295666305372507, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 831,
+				"Identifier" : "M831",
+				"Location" : "Eaton Square (Jct South/East)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 25,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1643069395574335, 53.296740925602343, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 108,
+				"Identifier" : "M108",
+				"Location" : "Eaton Square (opp. Scoil Lorcain)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1657576744173941, 53.295242669922906, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 832,
+				"Identifier" : "M832",
+				"Location" : "Montpellier Parade",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 25,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1595892113928628, 53.295811332661479, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 105,
+				"Identifier" : "M105",
+				"Location" : "Seafield Avenue",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1682714072681444, 53.298599003548524, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 838,
+				"Identifier" : "M838",
+				"Location" : "Seapoint Avenue",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1689401116642442, 53.296982447352335, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 32,
+				"Identifier" : "M32",
+				"Location" : "Temple Crescent (8)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1697974484755447, 53.297401400760315, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 149,
+				"Identifier" : "M149",
+				"Location" : "Temple Park Avenue (30)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1677811875297515, 53.298174370693161, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 147,
+				"Identifier" : "M147",
+				"Location" : "Temple Park Avenue (Jct Temple Cres.)",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1610698082527167, 53.29741831580872, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 841,
+				"Identifier" : "M841",
+				"Location" : "Trafalgar Terrace",
+				"Area_Ref" : "Seapoint",
+				"Number_of_Paid_Parking_Spaces_" : 35,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2121644833796212, 53.269282107940178, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 271,
+				"Identifier" : "M271",
+				"Location" : "Mount Eagle Lawn",
+				"Area_Ref" : "Leopardstown Heights",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2720498995090308, 53.292384517002176, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 277,
+				"Identifier" : "M277",
+				"Location" : "Nutgrove Avenue",
+				"Area_Ref" : "Nutgrove Avenue",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1574396874844304, 53.295250984026303, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 104,
+				"Identifier" : "M104",
+				"Location" : "Albany Avenue",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1565183276089233, 53.294884762914918, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 103,
+				"Identifier" : "M103",
+				"Location" : "Brighton Avenue",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 25,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1520848051314037, 53.292815042828146, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 99,
+				"Identifier" : "M99",
+				"Location" : "Carrickbrennan Road",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 76,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1510816908571417, 53.290934299248597, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 182,
+				"Identifier" : "M182",
+				"Location" : "Carrickbrennan Road",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1513908161589761, 53.290606208110972, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 183,
+				"Identifier" : "M183",
+				"Location" : "Carrickbrennan Road",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1520999339530444, 53.292650328678619, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 815,
+				"Identifier" : "M815",
+				"Location" : "Carrickbrennan Road",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1536817632888248, 53.293385248498232, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 813,
+				"Identifier" : "M813",
+				"Location" : "Carrickbrennan Road (Post Office)",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1537243093108156, 53.294380774905896, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 812,
+				"Identifier" : "M812",
+				"Location" : "Clifton Avenue",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1541375683584318, 53.2949034467064, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 102,
+				"Identifier" : "M102",
+				"Location" : "Clifton Terrace",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1454500010267061, 53.29445107649088, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 822,
+				"Identifier" : "M822",
+				"Location" : "De Vesci Terrace",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 22,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1461472081833382, 53.295083330182067, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 800,
+				"Identifier" : "M800",
+				"Location" : "Dun Leary Hill (bus stop to DL)",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1457498419996641, 53.294969014591295, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 801,
+				"Identifier" : "M801",
+				"Location" : "Dun Leary Hill (Ramp to De Vesci Tce)",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1515995382387798, 53.294121054695658, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 809,
+				"Identifier" : "M809",
+				"Location" : "Link Road",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1477413461915269, 53.294615519382802, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 88,
+				"Identifier" : "M88",
+				"Location" : "Longford Place (De Vesci House)",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 19,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1484779824816282, 53.294233861097197, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 804,
+				"Identifier" : "M804",
+				"Location" : "Longford Place (Side to Dublin)",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1526818637744078, 53.294686545737328, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 94,
+				"Identifier" : "M94",
+				"Location" : "Longford Terrace",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1503263969244308, 53.294592506924758, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 805,
+				"Identifier" : "M805",
+				"Location" : "Longford Terrace",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 44,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1492711341829942, 53.294284272343901, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 808,
+				"Identifier" : "M808",
+				"Location" : "Longford Terrace",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1473239143508369, 53.295017130258024, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 802,
+				"Identifier" : "M802",
+				"Location" : "Opp. The Purty Kitchen",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1498022742710114, 53.292901410112663, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 161,
+				"Identifier" : "M161",
+				"Location" : "Pakenham Road",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1527264846114154, 53.291558268038962, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 818,
+				"Identifier" : "M818",
+				"Location" : "Richmond Hill",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1520608715789242, 53.294983677380124, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 319,
+				"Identifier" : "M319",
+				"Location" : "Salthill/Monkstown Car Park",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 48,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.152663217534033, 53.29516648116001, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 320,
+				"Identifier" : "M320",
+				"Location" : "Salthill/Monkstown Car Park",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 49,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1466240742673612, 53.293454295381146, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 821,
+				"Identifier" : "M821",
+				"Location" : "Sloperton",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1508797541022942, 53.29369610659883, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 807,
+				"Identifier" : "M807",
+				"Location" : "The Crescent",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 24,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.152628814569673, 53.293914434708604, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 810,
+				"Identifier" : "M810",
+				"Location" : "The Crescent",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1498268044318243, 53.293968947791818, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 806,
+				"Identifier" : "M806",
+				"Location" : "The Crescent (25)",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1527401300537106, 53.293807879471089, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 811,
+				"Identifier" : "M811",
+				"Location" : "The Crescent (Church Of Ire.)",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.150489081838856, 53.295570210320626, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 324,
+				"Identifier" : "M324",
+				"Location" : "The Gut Car Park",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 53,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1491680142038652, 53.292598633855221, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 162,
+				"Identifier" : "M162",
+				"Location" : "The Hill",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1479599766347315, 53.296276203786682, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 323,
+				"Identifier" : "M323",
+				"Location" : "West Pier Car Park",
+				"Area_Ref" : "Monkstown",
+				"Number_of_Paid_Parking_Spaces_" : 53,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2079808802649676, 53.273395754404696, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 85,
+				"Identifier" : "M85",
+				"Location" : "Arena Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2071151408757412, 53.274478990512016, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 87,
+				"Identifier" : "M87",
+				"Location" : "Arena Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2089140693154832, 53.277858156309321, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 217,
+				"Identifier" : "M217",
+				"Location" : "Arkle Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2094481874573146, 53.277289415814195, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 218,
+				"Identifier" : "M218",
+				"Location" : "Arkle Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.210585290297578, 53.278678590973563, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 219,
+				"Identifier" : "M219",
+				"Location" : "Ballymoss Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2112503513568509, 53.277971264447238, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 671,
+				"Identifier" : "M671",
+				"Location" : "Ballymoss Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2171381158896972, 53.274968600909915, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 666,
+				"Identifier" : "M666",
+				"Location" : "Bracken Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2059137326901492, 53.275093515941727, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 659,
+				"Identifier" : "M659",
+				"Location" : "Burton Hall Avenue",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2087087147697506, 53.276295957638389, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 260,
+				"Identifier" : "M260",
+				"Location" : "Carmanhall Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2156601723975662, 53.274256378946134, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 664,
+				"Identifier" : "M664",
+				"Location" : "Furze Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2161400225084167, 53.273395937108205, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 665,
+				"Identifier" : "M665",
+				"Location" : "Furze Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2137965125932162, 53.272188192573424, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 224,
+				"Identifier" : "M224",
+				"Location" : "Heather Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2131874341001883, 53.274051746211548, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 662,
+				"Identifier" : "M662",
+				"Location" : "Heather Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2181102726671122, 53.280710557318628, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 236,
+				"Identifier" : "M236",
+				"Location" : "Holly Avenue",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2112929415574705, 53.276234492915826, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 669,
+				"Identifier" : "M669",
+				"Location" : "Raven Rock Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2195710238703725, 53.277966530958714, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 232,
+				"Identifier" : "M232",
+				"Location" : "Rowan Avenue",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.219918785256989, 53.279260364759736, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 233,
+				"Identifier" : "M233",
+				"Location" : "Spruce Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 32,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2132638978490338, 53.275913909564402, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 668,
+				"Identifier" : "M668",
+				"Location" : "Tree Rock Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 27,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.218000671411378, 53.273779829845118, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 231,
+				"Identifier" : "M231",
+				"Location" : "Bracken Road",
+				"Area_Ref" : "Sandyford IE",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday - Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1955757338505828, 53.288005048377613, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 950,
+				"Identifier" : "M950",
+				"Location" : "The Hill",
+				"Area_Ref" : "Stillorgan Road",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1965907109839815, 53.288214720130121, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 951,
+				"Identifier" : "M951",
+				"Location" : "The Hill",
+				"Area_Ref" : "Stillorgan Road",
+				"Number_of_Paid_Parking_Spaces_" : 6,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2190764226696817, 53.310562422823573, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 900,
+				"Identifier" : "M900",
+				"Location" : "Stillorgan Road, at Montrose Hotel",
+				"Area_Ref" : "Stillorgan Road",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2175603862905575, 53.309835019694212, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 901,
+				"Identifier" : "M901",
+				"Location" : "Stillorgan Road, at Montrose Hotel",
+				"Area_Ref" : "Stillorgan Road",
+				"Number_of_Paid_Parking_Spaces_" : 24,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2156755393968792, 53.308653522885741, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 902,
+				"Identifier" : "M902",
+				"Location" : "Stillorgan Road, at Montrose Hotel",
+				"Area_Ref" : "Stillorgan Road",
+				"Number_of_Paid_Parking_Spaces_" : 28,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2137510088281838, 53.307500743082109, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 903,
+				"Identifier" : "M903",
+				"Location" : "Stillorgan Road, at Montrose Hotel",
+				"Area_Ref" : "Stillorgan Road",
+				"Number_of_Paid_Parking_Spaces_" : 28,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2180733544962123, 53.300458155419541, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 940,
+				"Identifier" : "M940",
+				"Location" : "Owenstown Park",
+				"Area_Ref" : "Owenstown Park",
+				"Number_of_Paid_Parking_Spaces_" : 9,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.2638783338830324, 53.300794468232901, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 627,
+				"Identifier" : "M627",
+				"Location" : "Braemor Road 117A-125A",
+				"Area_Ref" : "Braemor Road",
+				"Number_of_Paid_Parking_Spaces_" : 15,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturda",
+				"Hourly_Tarrif" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1823903003465421, 53.298378358224326, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 531,
+				"Identifier" : "M531",
+				"Location" : "Sydney Avenue Jct. Avoca Place",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1806458915723814, 53.298123062650156, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 172,
+				"Identifier" : "M172",
+				"Location" : "Angleasea Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 33,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1746876266116617, 53.298539172788153, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 140,
+				"Identifier" : "M140",
+				"Location" : "Barclay Court",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 26,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1776528871564, 53.302283383123203, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 310,
+				"Identifier" : "M310",
+				"Location" : "Bath Place Car Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 23,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1844240244209239, 53.303117288950638, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 156,
+				"Identifier" : "M156",
+				"Location" : "Ben Inagh Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1788739681076406, 53.302597563831036, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 300,
+				"Identifier" : "M300",
+				"Location" : "Blackrock Dart Station Car Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 26,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max Charge €6"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1788639107420362, 53.30259575729476, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 301,
+				"Identifier" : "M301",
+				"Location" : "Blackrock Dart Station Car Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 36,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max Charge €6"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1804084180172714, 53.297367156036763, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 145,
+				"Identifier" : "M145",
+				"Location" : "Brookfield Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1788251277935231, 53.297151427918685, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 518,
+				"Identifier" : "M518",
+				"Location" : "Brookfield Terrace",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max Charge €5"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1787566972300816, 53.295754647800912, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 519,
+				"Identifier" : "M519",
+				"Location" : "Brookfield Terrace",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 28,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max Stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1799997742898976, 53.29887033977608, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 515,
+				"Identifier" : "M515",
+				"Location" : "Carysfort Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 30,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max Charge €5"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1782177584835978, 53.30052526935733, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 513,
+				"Identifier" : "M513",
+				"Location" : "Carysfort Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1774630411871865, 53.300695427232078, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 514,
+				"Identifier" : "M514",
+				"Location" : "Carysfort Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1820817473480414, 53.297446912618518, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 146,
+				"Identifier" : "M146",
+				"Location" : "Convent Road (64)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1722347265863151, 53.298452788743866, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 530,
+				"Identifier" : "M530",
+				"Location" : "Craigmore Gardens",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1892178125139328, 53.300882066080028, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 157,
+				"Identifier" : "M157",
+				"Location" : "Cross Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1914011680456333, 53.301623358947445, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 261,
+				"Identifier" : "M261",
+				"Location" : "Cross Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1927727487863349, 53.301984340107225, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 262,
+				"Identifier" : "M262",
+				"Location" : "Cross Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 31,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1956865229451097, 53.302582685813995, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 263,
+				"Identifier" : "M263",
+				"Location" : "Cross Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1973566967455556, 53.303074125881352, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 264,
+				"Identifier" : "M264",
+				"Location" : "Cross Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1835745673462421, 53.300068803522912, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 533,
+				"Identifier" : "M533",
+				"Location" : "Frascati Park (41)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1840428166972217, 53.301293903185396, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 151,
+				"Identifier" : "M151",
+				"Location" : "Frascati Park (Beside Church)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 24,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1811549275808941, 53.29996668070946, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 532,
+				"Identifier" : "M532",
+				"Location" : "George's Avenue (68A)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 31,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1789893279817667, 53.301330691505008, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 511,
+				"Identifier" : "M511",
+				"Location" : "George's Avenue (HSE)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1791206655968418, 53.30089618975795, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 512,
+				"Identifier" : "M512",
+				"Location" : "George's Place",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1788462910640547, 53.300706504922296, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 308,
+				"Identifier" : "M308",
+				"Location" : "George's Place Car Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 20,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max Charge €6"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1788127931001666, 53.300347654466037, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 309,
+				"Identifier" : "M309",
+				"Location" : "George's Place Car Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 27,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max Charge €6"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.185951381261714, 53.297995230322172, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 121,
+				"Identifier" : "M121",
+				"Location" : "Green Road (26/28)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 43,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1839380841184743, 53.298793011654475, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 152,
+				"Identifier" : "M152",
+				"Location" : "Green Road (Jct Sydney Ave)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1767277770485798, 53.30212454969395, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 508,
+				"Identifier" : "M508",
+				"Location" : "Idrone Terrace",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 51,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max Charge €10"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1743507109492901, 53.301258955964634, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 509,
+				"Identifier" : "M509",
+				"Location" : "Idrone Terrace",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 29,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max Charge €10"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.176125146262839, 53.300802637216229, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 501,
+				"Identifier" : "M501",
+				"Location" : "Main Street",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1771926380821895, 53.301264135154227, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 503,
+				"Identifier" : "M503",
+				"Location" : "Main Street",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1762884826982356, 53.300947884672873, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 504,
+				"Identifier" : "M504",
+				"Location" : "Main Street",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1749045184929665, 53.300472202752395, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 510,
+				"Identifier" : "M510",
+				"Location" : "Main Street (Jct Idrone Tce)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 4,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.169940785185263, 53.299920003574343, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 526,
+				"Identifier" : "M526",
+				"Location" : "Maretimo Gardens East",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1855419841684522, 53.301664550929139, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 178,
+				"Identifier" : "M178",
+				"Location" : "Mount Merrion Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1867879669674171, 53.301328037930524, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 247,
+				"Identifier" : "M247",
+				"Location" : "Mount Merrion Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 7,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1893682805141657, 53.300486092923258, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 248,
+				"Identifier" : "M248",
+				"Location" : "Mount Merrion Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 2,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1846124795559652, 53.301790364477277, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 155,
+				"Identifier" : "M155",
+				"Location" : "Mount Merrion Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1875203919692883, 53.301014025886325, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 158,
+				"Identifier" : "M158",
+				"Location" : "Mount Merrion Avenue",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 8,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1702633446183235, 53.299271607048802, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 527,
+				"Identifier" : "M527",
+				"Location" : "Newtown Avenue (Blkrock Hse.)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max Charge €10"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.172309943946229, 53.29984392046358, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 529,
+				"Identifier" : "M529",
+				"Location" : "Newtown Avenue ",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 14,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max Charge €10"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.173846277229174, 53.300154119775748, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 528,
+				"Identifier" : "M528",
+				"Location" : "Newtown Avenue (Junction Maretimo Gds. East)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max Charge €10"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1804657322065841, 53.296690395106708, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 141,
+				"Identifier" : "M141",
+				"Location" : "Prince Edward Terrace",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 11,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1784776666143983, 53.301912499829434, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 506,
+				"Identifier" : "M506",
+				"Location" : "Rock Hill",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 3,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1797209926515198, 53.302379467420259, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 507,
+				"Identifier" : "M507",
+				"Location" : "Rock Hill",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 13,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1778407925518994, 53.297439776898848, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 521,
+				"Identifier" : "M521",
+				"Location" : "Sweetmans Avenue (Jct Brookfield Ave)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 18,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max Charge €5"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1776769128374491, 53.299101860788959, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 143,
+				"Identifier" : "M143",
+				"Location" : "Sweetmans Avenue (opp. 56)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 10,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1848471487213912, 53.299611044403598, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 153,
+				"Identifier" : "M153",
+				"Location" : "Sydney Avenue (28)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 12,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1852113355073044, 53.300460143063916, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 540,
+				"Identifier" : "M540",
+				"Location" : "Sydney Avenue (42)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 21,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1842039442581154, 53.298001416318186, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 159,
+				"Identifier" : "M159",
+				"Location" : "Sydney Terrace (6)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 17,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1758496194737287, 53.300082217481872, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 502,
+				"Identifier" : "M502",
+				"Location" : "Temple Road",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 26,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1766330846808559, 53.300412772695175, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 505,
+				"Identifier" : "M505",
+				"Location" : "Sweetmans Avenue (Temple Road Jct)",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 5,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.5,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1750567119330393, 53.299770283675905, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 307,
+				"Identifier" : "M307",
+				"Location" : "Temple Road Car Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 31,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Saturday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max Charge €6"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1893351648936283, 53.299342978834531, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 131,
+				"Identifier" : "M131",
+				"Location" : "Waltham Terrace",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 31,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max stay 3 Hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.186477477830099, 53.304512685907142, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 322,
+				"Identifier" : "M322",
+				"Location" : "Blackrock Park Car Park",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 16,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1.2,
+				"Restrictions" : "Max stay 3 hours"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -6.1781662247251434, 53.296368675893923, 0 ]
+			},
+			"properties" : {
+				"Meter_Number" : 520,
+				"Identifier" : "M520",
+				"Location" : "Brookfield Place",
+				"Area_Ref" : "Blackrock",
+				"Number_of_Paid_Parking_Spaces_" : 62,
+				"Hours_of_operation" : "0800 - 1900",
+				"Days_of_operation" : "Monday to Friday",
+				"Hourly_Tarrif" : 1,
+				"Restrictions" : "Max Stay 3 hours"
+			}
+		}
+	]
+}
