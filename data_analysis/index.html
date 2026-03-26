@@ -117,8 +117,8 @@ nav{
 .ph-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:block;color:var(--green);}
 .ph-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;margin-bottom:12px;}
 .ph-sub{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.75;max-width:700px;}
-.ph-prepared{margin-top:20px;font-size:.72rem;color:rgba(255,255,255,.25);font-weight:500;}
-.ph-prepared strong{color:rgba(255,255,255,.5);}
+.ph-prepared{margin-top:20px;font-size:.72rem;color:var(--green);font-weight:500;}
+.ph-prepared strong{color:var(--white);}
 @media(min-width:768px){.page-hero{padding:110px 48px 44px;}}
 @media(min-width:1024px){.page-hero{padding:120px 80px 48px;}}
 
@@ -394,7 +394,7 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">sloto<span>.</span> <span class="nav-badge">Prepared by Sloto</span></div>
+  <div class="nav-logo"><span class="nav-badge">Prepared by Sloto</span></div>
   <div class="nav-links" id="nav-links">
     <a data-tab="overview" class="active">Overview</a>
     <a data-tab="attributes">Data Attributes</a>
@@ -407,7 +407,7 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 </nav>
 
 <!-- HERO -->
-<div class="page-hero">
+<div class="page-hero" id="page-hero">
   <span class="ph-eyebrow">Smart Dublin — Open Parking Data Review</span>
   <h1 class="ph-title">Dublin Street Parking<br>Data Review</h1>
   <p class="ph-sub">An independent review of the open parking data published by Dublin's four county councils through Smart Dublin. This analysis examines data completeness, consistency, accuracy, and usability across all four local authorities.</p>
@@ -429,13 +429,13 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 
 <!-- ========== TAB 1: OVERVIEW ========== -->
 <div class="tab-content active" id="tab-overview">
-  <div class="section-title reveal">Four councils, five files, zero shared standards</div>
-  <p class="section-desc reveal">We reviewed all publicly available on-street parking data published by Dublin's four county councils through Smart Dublin. Each council publishes their data independently using different formats, structures, and levels of detail.</p>
+  <div class="section-title reveal">Four councils, five files, no shared standard</div>
+  <p class="section-desc reveal">This review covers all publicly available on-street parking data published by Dublin's four local authorities through Smart Dublin. Each council publishes independently, using different formats, structures, and levels of detail.</p>
   <div class="cards four reveal d1" id="overview-cards"></div>
 
   <div class="callout amber reveal">
     <div class="callout-title" style="color:var(--amber);">No shared data standard exists</div>
-    <div class="callout-body">Each council uses different column names, different file formats, and includes different information. There is no way to combine these datasets without significant manual mapping and standardisation work.</div>
+    <div class="callout-body">Each council uses different column names, different file formats, and includes different information. These datasets cannot be combined without significant manual mapping and standardisation effort.</div>
   </div>
 
   <div class="section-title reveal">File formats at a glance</div>
@@ -445,27 +445,27 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 
 <!-- ========== TAB 2: DATA ATTRIBUTES ========== -->
 <div class="tab-content" id="tab-attributes">
-  <div class="section-title reveal">What makes parking data useful?</div>
-  <p class="section-desc reveal">For any digital service — whether a parking app, city planning tool, or accessibility platform — the following attributes are essential for each parking location. Here is what each council actually provides:</p>
+  <div class="section-title reveal">Essential attributes for usable parking data</div>
+  <p class="section-desc reveal">For any digital service, city planning tool, or accessibility platform to utilise parking data effectively, the following attributes are required for each parking location. Below is what each local authority currently provides:</p>
   <div class="heatmap-wrap reveal d1" id="heatmap-container"></div>
 
-  <div class="section-title reveal">What would a user actually see?</div>
-  <p class="section-desc reveal">If someone looked up a parking location from each council's data, here is how much useful information they would get:</p>
+  <div class="section-title reveal">How does this data translate in practice?</div>
+  <p class="section-desc reveal">If a parking location were retrieved from each council's dataset, the following illustrates what information would actually be available:</p>
   <div class="reveal d1" id="user-experience-cards"></div>
 </div>
 
 <!-- ========== TAB 3: COMPLETENESS ========== -->
 <div class="tab-content" id="tab-completeness">
-  <div class="section-title reveal">How complete is each dataset?</div>
-  <p class="section-desc reveal">This measures what percentage of fields are actually filled in within each file. A high score only means the columns that exist have data — it does not mean all necessary information is present.</p>
+  <div class="section-title reveal">Dataset completeness by council</div>
+  <p class="section-desc reveal">This measures the percentage of fields populated within each file. A high score indicates that existing columns contain data — it does not indicate that all necessary attributes are present.</p>
   <div class="cards four reveal d1" id="completeness-cards"></div>
 
-  <div class="section-title reveal">Completeness by attribute across all councils</div>
-  <p class="section-desc reveal">Looking at each essential attribute across all four councils — how many provide it?</p>
+  <div class="section-title reveal">Attribute availability across all councils</div>
+  <p class="section-desc reveal">For each essential attribute, the following shows how many of the four local authorities include it in their published data:</p>
   <div class="reveal d1" id="attribute-completeness"></div>
 
-  <div class="section-title reveal">Parking bay data — the biggest gap</div>
-  <p class="section-desc reveal">Understanding parking capacity requires knowing how many bays each location has. Most councils do not publish this.</p>
+  <div class="section-title reveal">Parking bay data — the most significant gap</div>
+  <p class="section-desc reveal">Understanding parking capacity requires knowledge of the number of bays at each location. The majority of councils do not publish this information.</p>
   <div class="cards four reveal d1" id="bay-cards"></div>
   <div class="reveal d1" id="bay-progress"></div>
 </div>
@@ -473,11 +473,11 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 <!-- ========== TAB 4: QUALITY ISSUES ========== -->
 <div class="tab-content" id="tab-quality">
   <div class="section-title reveal">Missing information</div>
-  <p class="section-desc reveal">These are the columns where data is blank or not provided. The higher the percentage, the bigger the gap.</p>
+  <p class="section-desc reveal">The following highlights columns with significant gaps in data population. Only fields with material levels of missing data are shown.</p>
   <div class="table-wrap reveal d1" id="null-table"></div>
 
-  <div class="section-title reveal">Specific issues found</div>
-  <p class="section-desc reveal">Going through each file record by record, these are the problems that would need fixing before the data can be used reliably.</p>
+  <div class="section-title reveal">Specific issues identified</div>
+  <p class="section-desc reveal">A record-by-record review of each dataset revealed the following issues that would require resolution before the data can be used reliably.</p>
   <div class="reveal d1" id="issues-list"></div>
 
   <div class="section-title reveal">SDCC data overlap — which file to use?</div>
@@ -491,8 +491,8 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 
 <!-- ========== TAB 5: MAP ========== -->
 <div class="tab-content" id="tab-map">
-  <div class="section-title reveal">Every parking location on the map</div>
-  <p class="section-desc reveal">All locations from every file plotted by their coordinates. Toggle councils on and off. Click any point to see exactly what data is recorded for that location.</p>
+  <div class="section-title reveal">All published parking locations</div>
+  <p class="section-desc reveal">Every location with available coordinates is plotted below. Use the toggles to filter by council. Select any point to view the full data record for that location.</p>
   <div class="map-controls reveal" id="map-controls"></div>
   <div id="map" class="reveal d1"></div>
   <div class="map-stats reveal d2" id="map-stats"></div>
@@ -500,8 +500,8 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 
 <!-- ========== TAB 6: BROWSE DATA ========== -->
 <div class="tab-content" id="tab-explorer">
-  <div class="section-title reveal">Browse the raw records</div>
-  <p class="section-desc reveal">See every record exactly as it appears in the original file. Blank or missing values are shown in red so you can spot the gaps.</p>
+  <div class="section-title reveal">Raw data explorer</div>
+  <p class="section-desc reveal">Each record is displayed exactly as it appears in the original source file. Blank or missing values are highlighted in red to indicate data gaps.</p>
   <div class="explorer-controls reveal">
     <select id="explorer-source"></select>
     <input type="text" id="explorer-search" placeholder="Search by street, area, etc." />
@@ -513,7 +513,7 @@ document.getElementById('link-to-request').addEventListener('click', function() 
 <!-- ========== TAB 7: RECOMMENDATIONS ========== -->
 <div class="tab-content" id="tab-recommendations">
   <div class="section-title reveal">Recommendations</div>
-  <p class="section-desc reveal">Based on our review, these are the steps needed to make Dublin's open parking data genuinely useful for digital services, city planning, and citizens. Click each recommendation to see the supporting evidence.</p>
+  <p class="section-desc reveal">Based on this review, the following steps are recommended to improve the quality, consistency, and usability of Dublin's open parking data for digital services and city planning.</p>
   <div class="reveal d1" id="recommendations-list"></div>
 </div>
 
@@ -523,7 +523,6 @@ document.getElementById('link-to-request').addEventListener('click', function() 
     <div>
       <div class="footer-brand">
         <div class="footer-logo">sloto<span>.</span></div>
-        <span class="footer-tag">Prepared by Sloto</span>
       </div>
       <div class="footer-copy">Dublin Parking Data Review &copy; 2026</div>
     </div>
@@ -648,6 +647,7 @@ function switchTab(tabId) {
   const navLink = document.querySelector('#nav-links a[data-tab="' + tabId + '"]');
   if (navLink) navLink.classList.add('active');
   mobileSelect.value = tabId;
+  document.getElementById('page-hero').style.display = tabId === 'overview' ? '' : 'none';
   triggerReveals();
   if (tabId === 'map' && !mapInitialized) { initMap(); mapInitialized = true; }
 }
@@ -783,23 +783,23 @@ function buildAttributes() {
   ueEl.innerHTML =
     '<div class="issue-card" style="border-color:rgba(34,197,94,0.15);">' +
       '<div class="issue-header"><span class="badge badge-green">' + scores.dcc + ' of ' + total + '</span><span class="badge" style="background:rgba(34,197,94,0.15);color:var(--green);">DCC</span></div>' +
-      '<div class="issue-title">User looks up a DCC location:</div>' +
-      '<div class="issue-body">"This is on <strong style="color:var(--white);">Strand Road</strong>, in the <strong style="color:var(--white);">Blue Zone</strong>."<br><br>That is it. No price, no hours, no bay count, no maximum stay. The zone name alone is not enough to be useful.</div>' +
+      '<div class="issue-title">Retrieving a DCC location:</div>' +
+      '<div class="issue-body">"Location: <strong style="color:var(--white);">Strand Road</strong>, Zone: <strong style="color:var(--white);">Blue</strong>."<br><br>No pricing, operating hours, bay count, or maximum stay duration is available. The zone classification alone does not provide sufficient operational detail.</div>' +
     '</div>' +
     '<div class="issue-card" style="border-color:rgba(245,158,11,0.15);">' +
       '<div class="issue-header"><span class="badge badge-green">' + scores.dlr + ' of ' + total + '</span><span class="badge" style="background:rgba(245,158,11,0.15);color:var(--amber);">DLR</span></div>' +
-      '<div class="issue-title">User looks up a DLR location:</div>' +
-      '<div class="issue-body">"This is on <strong style="color:var(--white);">Main Street, Dun Laoghaire</strong>. It has <strong style="color:var(--white);">12 bays</strong>, costs <strong style="color:var(--white);">&euro;1.50/hr</strong>, and operates <strong style="color:var(--white);">Mon-Sat, 8am-6pm</strong>."<br><br>The most complete dataset. Still missing accessible bays, minimum purchase, and zone classification.</div>' +
+      '<div class="issue-title">Retrieving a DLR location:</div>' +
+      '<div class="issue-body">"Location: <strong style="color:var(--white);">Main Street, Dun Laoghaire</strong>. Bays: <strong style="color:var(--white);">12</strong>, Rate: <strong style="color:var(--white);">&euro;1.50/hr</strong>, Hours: <strong style="color:var(--white);">Mon-Sat, 8am-6pm</strong>."<br><br>The most complete dataset of the four councils. Still missing accessible bay counts, minimum purchase, and zone classification.</div>' +
     '</div>' +
     '<div class="issue-card" style="border-color:rgba(139,92,246,0.15);">' +
       '<div class="issue-header"><span class="badge badge-red">' + scores.fingal + ' of ' + total + '</span><span class="badge badge-purple">Fingal</span></div>' +
-      '<div class="issue-title">User looks up a Fingal location:</div>' +
-      '<div class="issue-body">"This is on <strong style="color:var(--white);">Dublin Street, Balbriggan</strong>."<br><br>Nothing else. No price, no hours, no bays, no zone. Just a name and a dot on the map.</div>' +
+      '<div class="issue-title">Retrieving a Fingal location:</div>' +
+      '<div class="issue-body">"Location: <strong style="color:var(--white);">Dublin Street, Balbriggan</strong>."<br><br>No additional attributes are available. Pricing, operating hours, bay counts, and zone classification are all absent from this dataset.</div>' +
     '</div>' +
     '<div class="issue-card" style="border-color:rgba(236,72,153,0.15);">' +
       '<div class="issue-header"><span class="badge badge-amber">' + scores.sdcc + ' of ' + total + '</span><span class="badge badge-pink">SDCC</span></div>' +
-      '<div class="issue-title">User looks up an SDCC location:</div>' +
-      '<div class="issue-body">"This is in <strong style="color:var(--white);">Clondalkin</strong> at <strong style="color:var(--white);">Tuttles N</strong>, with <strong style="color:var(--white);">5 bays</strong> including <strong style="color:var(--white);">2 accessible</strong>."<br><br>Bay counts and accessible spaces are a strong start. But there are no coordinates to show it on a map, no price, no hours, and no zone.</div>' +
+      '<div class="issue-title">Retrieving an SDCC location:</div>' +
+      '<div class="issue-body">"Location: <strong style="color:var(--white);">Clondalkin, Tuttles N</strong>. Bays: <strong style="color:var(--white);">5</strong>, Accessible: <strong style="color:var(--white);">2</strong>."<br><br>Bay counts and accessible space data represent a strong foundation. However, GPS coordinates, pricing, operating hours, and zone classification are absent from this dataset.</div>' +
     '</div>';
 }
 
@@ -876,18 +876,23 @@ function buildQuality() {
   // Null table
   const nullTableEl = document.getElementById('null-table');
   let nullHTML = '<table><thead><tr><th>File</th><th>Column</th><th>Blank</th><th>Total</th><th>% Missing</th></tr></thead><tbody>';
+  // Skip trivial gaps (<5%) and misleading columns like Shape
+  const skipColumns = ['Shape', 'OBJECTID', 'FID'];
   Object.entries(DATA).forEach(([key, ds]) => {
     const features = getFeatures(ds);
     const fields = getAllFieldNames(ds).sort();
     fields.forEach(f => {
+      if (skipColumns.includes(f)) return;
       const nulls = countNulls(ds, f);
       if (nulls === 0) return;
-      const pct = ((nulls / features.length) * 100).toFixed(1);
-      const badge = pct > 50 ? 'badge-red' : pct > 10 ? 'badge-amber' : 'badge-green';
-      nullHTML += '<tr><td><span class="stat-pill"><span class="dot" style="background:' + ds.color + '"></span>' + ds.shortLabel + '</span></td><td style="font-weight:600;">' + f + '</td><td>' + nulls + '</td><td>' + features.length + '</td><td><span class="badge ' + badge + '">' + pct + '%</span></td></tr>';
+      const pct = ((nulls / features.length) * 100);
+      if (pct < 5) return; // Skip trivial gaps
+      const badge = pct > 50 ? 'badge-red' : 'badge-amber';
+      nullHTML += '<tr><td><span class="stat-pill"><span class="dot" style="background:' + ds.color + '"></span>' + ds.shortLabel + '</span></td><td style="font-weight:600;">' + f + '</td><td>' + nulls + '</td><td>' + features.length + '</td><td><span class="badge ' + badge + '">' + pct.toFixed(1) + '%</span></td></tr>';
     });
   });
   nullHTML += '</tbody></table>';
+  nullHTML += '<div style="margin-top:16px;padding:14px 18px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);border-radius:10px;font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.7;"><strong style="color:var(--blue);">Note:</strong> GPS coordinates in DLR and SDCC Accessible datasets are embedded within the GeoJSON geometry structure rather than presented as standalone readable columns (e.g. Latitude, Longitude). While technically present, they require parsing to extract, unlike DCC and Fingal which provide coordinates as named attributes. Minor gaps affecting fewer than 5% of records have been excluded from this table.</div>';
   nullTableEl.innerHTML = nullHTML;
 
   // Issues
@@ -1097,53 +1102,53 @@ function buildRecommendations() {
       title: 'Adopt a shared data standard across all four councils',
       finding: 'Four councils publish parking data in four different formats with different column names, different structures, and different levels of detail. No two files can be combined without significant manual work.',
       solution: 'Agree on a common schema with standardised column names, a single file format (GeoJSON recommended), and a minimum set of required attributes. This would allow any technology provider or city planner to use the data immediately.',
-      proof: 'Sloto has already developed a normalised database schema that accommodates all four councils without restructuring. This schema could serve as the basis for a shared standard.'
+      proof: 'Sloto can assist with developing a normalised data schema that accommodates all four councils, providing a practical starting point for a shared standard.'
     },
     {
       num: 2,
       title: 'Enrich data from meter-level to street-level',
       finding: 'DCC publishes 796 individual meter locations. But drivers do not think in meters — they think in streets. A single street can have multiple meters, making it difficult to understand actual parking availability per street.',
       solution: 'Group meter records into street-level entries with aggregated bay counts and a single representative GPS coordinate per street. This makes the data directly useful for consumer applications and city dashboards.',
-      proof: 'Sloto has completed this exercise for DCC — consolidating 796 meter entries into 579 street-level parking locations through automated matching and manual review.'
+      proof: 'Sloto can undertake this consolidation exercise, grouping meter-level entries into street-level locations through a combination of automated matching and manual review.'
     },
     {
       num: 3,
       title: 'Include essential missing attributes in every file',
       finding: 'No single council publishes all the attributes needed for a useful parking service. DCC is missing bay counts, hours, and pricing. Fingal provides only street name and coordinates. SDCC has bay counts but no coordinates.',
       solution: 'Every parking record should include at minimum: street name, GPS coordinates, bay count, accessible bay count, operating days and hours, zone classification, and hourly rate. DLR is the closest to this standard today.',
-      proof: 'Sloto sourced and mapped official DCC zone rates, operating hours, and free parking days from council publications into a structured database — demonstrating that this enrichment is achievable when the source information exists.'
+      proof: 'Sloto can source and map official zone rates, operating hours, and special parking day information from council publications into a structured format, ensuring all essential attributes are captured consistently.'
     },
     {
       num: 4,
       title: 'Consolidate overlapping datasets within each council',
       finding: 'SDCC publishes accessible parking data in two separate files — one as a column in the paid parking CSV and another as a standalone GeoJSON. Some locations appear in both with no shared identifier to prevent double-counting.',
       solution: 'Each council should publish one authoritative file per data category. If accessible parking is tracked, it should be a column within the main parking file, not a separate dataset that partially overlaps.',
-      proof: 'This analysis identified the specific villages where SDCC data overlaps (Rathfarnham, Lucan, Rathcoole, Clondalkin, Palmerstown) and the inability to reconcile them — demonstrating the practical impact of fragmented publishing.'
+      proof: 'Sloto can assist with reconciling overlapping datasets and establishing a single authoritative source for each data category, including deduplication of accessible parking records across SDCC files.'
     },
     {
       num: 5,
       title: 'Validate records through physical street surveys',
       finding: 'Multiple spelling mistakes, duplicate coordinates, inactive locations, and missing data were found across all datasets. These errors can only be fully resolved through on-the-ground verification.',
       solution: 'Conduct a one-time comprehensive street survey across all four council areas to verify every parking location, capture missing attributes (bay counts, signage, operating hours), and establish a verified baseline dataset.',
-      proof: 'Sloto has developed a purpose-built street survey methodology and mobile application designed specifically for capturing on-street parking data at scale. This includes GPS capture, sign photography, structured data entry, and live coverage tracking.'
+      proof: 'Sloto has the capability to design and execute a purpose-built street survey programme, including mobile data capture, GPS recording, sign photography, structured data entry, and live coverage tracking across all four council areas.'
     },
     {
       num: 6,
       title: 'Establish an ongoing data maintenance process',
       finding: 'Parking infrastructure changes — new meters are installed, zones are adjusted, rates change, streets are reconfigured. A one-time data fix will degrade over time without a maintenance process.',
       solution: 'Set up a process for periodic data updates, ideally linked to council operational changes. When a zone rate changes or a new meter is installed, the open data should be updated within a defined timeframe.',
-      proof: 'Sloto\'s database architecture supports street-level overrides for operating hours and date-specific free parking days, showing how a maintenance-friendly data structure works in practice.'
+      proof: 'Sloto can design and implement a maintenance-friendly data architecture that supports street-level overrides for operating hours, date-specific exceptions, and rate changes — ensuring the dataset remains accurate over time.'
     }
   ];
 
   let html = '';
   recs.forEach(r => {
-    html += '<div class="rec-card" onclick="this.classList.toggle(\'open\')">' +
-      '<div class="rec-header"><div class="rec-num">' + r.num + '</div><div class="rec-title">' + r.title + '</div><div class="rec-chevron">&#9660;</div></div>' +
-      '<div class="rec-body"><div class="rec-inner">' +
+    html += '<div class="rec-card open" style="cursor:default;">' +
+      '<div class="rec-header" style="cursor:default;"><div class="rec-num">' + r.num + '</div><div class="rec-title">' + r.title + '</div></div>' +
+      '<div class="rec-body" style="max-height:none;"><div class="rec-inner">' +
         '<div class="rec-finding"><strong>Finding:</strong> ' + r.finding + '</div>' +
         '<div class="rec-solution">' + r.solution + '</div>' +
-        '<div class="rec-proof"><strong>Sloto\'s work:</strong> ' + r.proof + '</div>' +
+        '<div class="rec-proof"><strong>Sloto\'s suggestion:</strong> ' + r.proof + '</div>' +
       '</div></div>' +
     '</div>';
   });
