@@ -1228,8 +1228,6 @@ async function handleCheck() {
     if (error) throw error;
 
     if (data && data.length > 0) {
-      localStorage.setItem('sloto_access_email', email);
-      localStorage.setItem('sloto_access_name', data[0].name);
       unlockDashboard();
     } else {
       msg.className = 'gate-msg error';
@@ -1253,31 +1251,7 @@ function unlockDashboard() {
   loadData();
 }
 
-async function checkStoredAccess() {
-  const email = localStorage.getItem('sloto_access_email');
-  if (!email) return;
-
-  try {
-    const { data, error } = await sb
-      .from('access_requests')
-      .select('id, status')
-      .eq('email', email)
-      .eq('status', 'approved')
-      .limit(1);
-
-    if (!error && data && data.length > 0) {
-      unlockDashboard();
-    } else {
-      localStorage.removeItem('sloto_access_email');
-      localStorage.removeItem('sloto_access_name');
-    }
-  } catch (err) {
-    // If check fails, still show gate
-  }
-}
-
 // ===== INIT =====
-checkStoredAccess();
 </script>
 </body>
 </html>
