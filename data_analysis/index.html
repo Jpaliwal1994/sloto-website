@@ -1153,7 +1153,8 @@ function buildRecommendations() {
 // ===== SUPABASE & ACCESS GATE =====
 const SUPABASE_URL = 'https://ndnulyypymbpxxgwgszv.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5kbnVseXlweW1icHh4Z3dnc3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0ODkxNjYsImV4cCI6MjA5MDA2NTE2Nn0.K8oeXHXAH3yYT-25EXdnWgNjfjcRmh6f5CcfaxjTJ2U';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const gate = document.getElementById('access-gate');
 const dashboard = document.getElementById('dashboard-content');
@@ -1181,12 +1182,12 @@ async function handleRequest(e) {
   const org = document.getElementById('req-org').value.trim();
 
   try {
-    const { error } = await supabase.from('access_requests').insert({
+    const { error } = await sb.from('access_requests').insert({
       name: name,
       email: email,
       organisation: org,
       status: 'pending'
-    }, { returning: 'minimal' });
+    });
 
     if (error) throw error;
 
