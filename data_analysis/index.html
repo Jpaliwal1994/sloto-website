@@ -1218,7 +1218,7 @@ async function handleCheck() {
   const email = document.getElementById('check-email').value.trim().toLowerCase();
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await sb
       .from('access_requests')
       .select('id, name, email, status')
       .eq('email', email)
@@ -1258,7 +1258,7 @@ async function checkStoredAccess() {
   if (!email) return;
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await sb
       .from('access_requests')
       .select('id, status')
       .eq('email', email)
