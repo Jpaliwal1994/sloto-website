@@ -336,7 +336,7 @@ footer{
     <div id="gate-request">
       <div class="gate-title">Request Access</div>
       <div class="gate-desc">This analysis is not publicly available. Please submit your details to request access. You will be notified once your request has been reviewed.</div>
-      <form class="gate-form" id="request-form">
+      <div class="gate-form" id="request-form">
         <div>
           <div class="gate-label">Full Name</div>
           <input class="gate-input" type="text" id="req-name" placeholder="Your name" required />
@@ -349,8 +349,8 @@ footer{
           <div class="gate-label">Organisation</div>
           <input class="gate-input" type="text" id="req-org" placeholder="Company or council name" required />
         </div>
-        <button class="gate-btn" type="submit" id="req-btn">Submit Request</button>
-      </form>
+        <button class="gate-btn" type="button" id="req-btn" onclick="handleRequest()">Submit Request</button>
+      </div>
       <div class="gate-msg" id="req-msg"></div>
       <div class="gate-switch">Already have access? <a id="link-to-check">Check here</a></div>
     </div>
@@ -359,13 +359,13 @@ footer{
     <div id="gate-check" style="display:none;">
       <div class="gate-title">Check Your Access</div>
       <div class="gate-desc">Enter the email address you used when requesting access. If approved, the dashboard will unlock.</div>
-      <form class="gate-form" id="check-form">
+      <div class="gate-form" id="check-form">
         <div>
           <div class="gate-label">Email Address</div>
           <input class="gate-input" type="email" id="check-email" placeholder="you@example.com" required />
         </div>
-        <button class="gate-btn" type="submit" id="check-btn">Check Access</button>
-      </form>
+        <button class="gate-btn" type="button" id="check-btn" onclick="handleCheck()">Check Access</button>
+      </div>
       <div class="gate-msg" id="check-msg"></div>
       <div class="gate-switch">Need access? <a id="link-to-request">Request here</a></div>
     </div>
@@ -1168,8 +1168,7 @@ function showCheckForm() {
   document.getElementById('gate-check').style.display = 'block';
 }
 
-async function handleRequest(e) {
-  e.preventDefault();
+async function handleRequest() {
   const btn = document.getElementById('req-btn');
   const msg = document.getElementById('req-msg');
   btn.disabled = true;
@@ -1194,7 +1193,9 @@ async function handleRequest(e) {
     msg.className = 'gate-msg success';
     msg.innerHTML = '<strong>Request submitted.</strong> You will receive access once your request has been reviewed. Come back and check using your email address.';
     msg.style.display = 'block';
-    document.getElementById('request-form').reset();
+    document.getElementById('req-name').value = '';
+    document.getElementById('req-email').value = '';
+    document.getElementById('req-org').value = '';
   } catch (err) {
     msg.className = 'gate-msg error';
     msg.innerHTML = 'Something went wrong. Please try again or contact <strong>hello@sloto.ie</strong>.';
@@ -1206,8 +1207,7 @@ async function handleRequest(e) {
   return false;
 }
 
-async function handleCheck(e) {
-  e.preventDefault();
+async function handleCheck() {
   const btn = document.getElementById('check-btn');
   const msg = document.getElementById('check-msg');
   btn.disabled = true;
@@ -1277,8 +1277,6 @@ async function checkStoredAccess() {
 }
 
 // ===== INIT =====
-document.getElementById('request-form').addEventListener('submit', handleRequest);
-document.getElementById('check-form').addEventListener('submit', handleCheck);
 checkStoredAccess();
 </script>
 </body>
