@@ -1186,7 +1186,7 @@ async function handleRequest(e) {
       email: email,
       organisation: org,
       status: 'pending'
-    });
+    }, { returning: 'minimal' });
 
     if (error) throw error;
 
