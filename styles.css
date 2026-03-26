@@ -227,7 +227,7 @@ footer.light .footer-copy{color:var(--text-light);}
 .feature-media{display:flex;justify-content:center;}
 .feature-media img,
 .feature-media video{
-  border-radius:16px;width:100%;max-width:340px;
+  border-radius:16px;max-width:340px;
   box-shadow:0 8px 32px rgba(0,0,0,.08);
 }
 
@@ -254,7 +254,7 @@ footer.light .footer-copy{color:var(--text-light);}
   .hero{padding:100px 16px 56px;}
   .iphone{width:180px;}
   .feature-media img,
-  .feature-media video{max-width:100%;height:260px;}
+  .feature-media video{max-width:100%;}
 }
 
 /* ACCESSIBLE SECTION */
