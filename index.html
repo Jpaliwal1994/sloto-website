@@ -3,274 +3,160 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>sloto. — Find parking in Dublin</title>
-<meta name="description" content="1,279 verified on-street parking spots across Dublin. See what's free right now, set a timer, and find your way back. Launching April 1st."/>
+<title>sloto. — Dublin parking, finally fixed</title>
+<meta name="description" content="Real-time on-street parking information across Dublin. Compare rates, check availability, set a timer, and find your way back. Launching April 2026."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
-<style>
-body{background:#070707;color:#fff;}
-
-/* DOT FIELD */
-#dotField{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
-.dot{position:absolute;border-radius:50%;opacity:0;animation:floatDot linear infinite;}
-@keyframes floatDot{0%{opacity:0;transform:translateY(0);}10%{opacity:.55;}80%{opacity:.3;}100%{opacity:0;transform:translateY(-120px);}}
-
-/* HERO */
-.hero{padding:100px 20px 64px;position:relative;overflow:hidden;text-align:center;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(34,197,94,.08) 0%,transparent 70%);pointer-events:none;z-index:0;}
-.hero > *{position:relative;z-index:1;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:100px;padding:8px 16px;margin-bottom:28px;animation:fadeUp .7s ease both;}
-.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0;}
-.hero-badge-text{font-size:.75rem;font-weight:600;color:var(--green);}
-.hero-title{font-size:clamp(2.4rem,9vw,5.2rem);font-weight:900;letter-spacing:-.05em;line-height:.95;margin-bottom:22px;animation:fadeUp .7s .1s ease both;}
-.hero-title em{font-style:normal;color:var(--green);}
-.hero-sub{font-size:.9rem;color:rgba(255,255,255,.42);line-height:1.72;max-width:480px;margin:0 auto 36px;animation:fadeUp .7s .2s ease both;}
-.hero-sub strong{color:rgba(255,255,255,.75);font-weight:600;}
-.hero-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:48px;animation:fadeUp .7s .3s ease both;}
-.hstat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 22px;text-align:center;}
-.hstat-n{font-size:1.5rem;font-weight:900;letter-spacing:-.04em;color:#fff;}
-.hstat-l{font-size:.7rem;color:rgba(255,255,255,.35);font-weight:500;margin-top:2px;}
-.hero-phone{position:relative;display:inline-block;margin:0 auto;animation:fadeUp .8s .4s ease both;}
-.iphone{display:inline-block;position:relative;width:200px;}
-.iphone-frame{position:absolute;inset:0;border-radius:38px;border:2px solid rgba(255,255,255,.12);pointer-events:none;z-index:2;}
-.iphone-screen{border-radius:36px;overflow:hidden;background:#000;line-height:0;}
-.iphone-screen img{width:100%;display:block;border-radius:36px;}
-.iphone-island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:68px;height:18px;background:#000;border-radius:20px;z-index:3;}
-.iphone-float{animation:phoneFloat 4s ease-in-out infinite;}
-@keyframes phoneFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-
-/* FEATURES */
-.features{padding:72px 20px;max-width:1000px;margin:0 auto;}
-.section-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px;text-align:center;}
-.section-title{font-size:clamp(1.7rem,5vw,2.8rem);font-weight:900;letter-spacing:-.04em;line-height:1.04;text-align:center;margin-bottom:12px;}
-.section-sub{font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.72;text-align:center;max-width:480px;margin:0 auto 48px;}
-.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px 20px;}
-.feat-icon{font-size:1.4rem;margin-bottom:12px;}
-.feat-title{font-size:.95rem;font-weight:800;letter-spacing:-.02em;margin-bottom:7px;}
-.feat-body{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.65;}
-.feat.accent{background:rgba(34,197,94,.07);border-color:rgba(34,197,94,.18);}
-.feat.accent .feat-title{color:var(--green);}
-
-/* HOW IT WORKS */
-.hiw{padding:72px 20px;max-width:1000px;margin:0 auto;}
-.hiw-steps{display:flex;flex-direction:column;gap:56px;margin-top:48px;}
-.hiw-step{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;}
-.step-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:10px;}
-.step-title{font-size:clamp(1.3rem,4vw,1.8rem);font-weight:900;letter-spacing:-.04em;line-height:1.06;margin-bottom:10px;}
-.step-body{font-size:.86rem;color:rgba(255,255,255,.38);line-height:1.72;}
-.step-phone{display:flex;justify-content:center;}
-.step-phone .iphone{width:160px;}
-.step-phone .iphone-float{animation:phoneFloat 4s ease-in-out infinite;}
-
-/* slide-in animations for how it works */
-.slide-left{opacity:0;transform:translateX(-32px);transition:opacity .6s ease,transform .6s ease;}
-.slide-right{opacity:0;transform:translateX(32px);transition:opacity .6s ease,transform .6s ease;}
-.slide-left.visible,.slide-right.visible{opacity:1;transform:translateX(0);}
-
-/* LAUNCH */
-.launch{padding:72px 20px 96px;text-align:center;}
-.launch-inner{max-width:520px;margin:0 auto;}
-.launch-title{font-size:clamp(1.7rem,5vw,2.8rem);font-weight:900;letter-spacing:-.04em;line-height:1.04;margin-bottom:14px;}
-.launch-sub{font-size:.88rem;color:rgba(255,255,255,.38);line-height:1.72;margin-bottom:32px;}
-.launch-badge-wrap{display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:14px;padding:16px 28px;}
-.launch-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 2s infinite;}
-.launch-badge-text{font-size:.92rem;font-weight:700;color:#fff;}
-.launch-badge-text span{color:var(--green);}
-.launch-stores{margin-top:18px;font-size:.76rem;color:rgba(255,255,255,.2);font-weight:500;}
-
-/* MOBILE */
-@media(max-width:480px){
-  .hero{padding:88px 16px 52px;}
-  .iphone{width:160px;}
-  .hero-phone{margin-top:8px;}
-  .features-grid{grid-template-columns:1fr;}
-  .hiw-steps{gap:40px;}
-  .step-phone{display:none;}
-}
-@media(min-width:481px) and (max-width:767px){
-  .step-phone .iphone{width:140px;}
-  .hiw-step{grid-template-columns:1fr 1fr;gap:24px;align-items:center;}
-}
-@media(min-width:768px){
-  .hero{padding:130px 48px 88px;}
-  .hiw-step{grid-template-columns:1fr 1fr;gap:48px;}
-  .hiw-step.flip{direction:rtl;}
-  .hiw-step.flip > *{direction:ltr;}
-  .step-phone .iphone{width:190px;}
-  .features-grid{grid-template-columns:1fr 1fr 1fr 1fr;}
-}
-@media(min-width:1024px){
-  .iphone{width:240px;}
-  .step-phone .iphone{width:210px;}
-}
-</style>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
 
-<nav class="dark">
+<!-- NAV -->
+<nav class="light">
   <a href="index.html" class="nav-logo">sloto<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Features</a></li>
-    <li><a href="investors.html">Investors</a></li>
-    <li><a href="legal.html">Legal</a></li>
-  </ul>
-  <a href="#launch" class="nav-launch">Launching April 1st →</a>
+  <span class="nav-launch">Launching April 2026</span>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div id="dotField"></div>
-  <div class="hero-badge">
+  <div class="hero-badge" data-aos="fade-down" data-aos-duration="600">
     <span class="hero-badge-dot"></span>
-    <span class="hero-badge-text">Launching April 1st · iOS &amp; Android</span>
+    <span class="hero-badge-text">Launching April 2026 · iOS & Android</span>
   </div>
-  <h1 class="hero-title">Park smarter<br>in Dublin.<br><em>No more circling.</em></h1>
-  <p class="hero-sub"><strong>1,200+ verified spots</strong> mapped across Dublin. See what's free right now, what's paid, set a timer, and find your way back.</p>
-  <div class="hero-stats">
-    <div class="hstat"><div class="hstat-n">1,200+</div><div class="hstat-l">Verified spots</div></div>
-    <div class="hstat"><div class="hstat-n">Dublin</div><div class="hstat-l">Launching first</div></div>
-  </div>
-  <div class="hero-phone">
+  <h1 class="hero-title" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Stop circling.<br><em>Dublin parking, finally fixed.</em></h1>
+  <p class="hero-sub" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Real-time on-street parking information across Dublin. Compare rates, check availability, set a timer, and find your way back.</p>
+  <div class="hero-phone" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
     <div class="iphone iphone-float">
       <div class="iphone-frame"></div>
       <div class="iphone-screen">
         <div class="iphone-island"></div>
-        <img src="homepage.png" alt="Sloto map view showing Dublin parking spots"/>
+        <img src="pictures_and_videos/map.jpg" alt="Sloto map showing Dublin parking locations"/>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <p class="section-eyebrow reveal">What it does</p>
-  <h2 class="section-title reveal d1">Everything you need.<br>Nothing you don't.</h2>
-  <p class="section-sub reveal d2">Built for Dublin drivers. Know before you go.</p>
-  <div class="features-grid">
-    <div class="feat reveal accent">
-      <div class="feat-icon">🟢</div>
-      <div class="feat-title">Free vs paid, right now</div>
-      <div class="feat-body">Status computed from council operating hours. Green is free, red is paid — no guessing.</div>
+<!-- FEATURE 1: COMPARE RATES -->
+<section class="section">
+  <div class="feature-row">
+    <div class="feature-text" data-aos="fade-right" data-aos-duration="700">
+      <div class="feat-eyebrow">Rates at a glance</div>
+      <h3>See hourly rates as you zoom in</h3>
+      <p>Zoom into any area and parking markers reveal their hourly rates — from €0.90 to €4.00 per hour. Compare prices across streets and pick the most affordable option near your destination.</p>
     </div>
-    <div class="feat reveal d1">
-      <div class="feat-icon">🗺️</div>
-      <div class="feat-title">1,200+ verified spots</div>
-      <div class="feat-body">Every on-street bay across Dublin with correct zone, rate, and operating hours.</div>
-    </div>
-    <div class="feat reveal d2">
-      <div class="feat-icon">⏱️</div>
-      <div class="feat-title">Parking timer</div>
-      <div class="feat-body">Tap Park Here and we'll remind you before your free time ends or your meter expires.</div>
-    </div>
-    <div class="feat reveal d3">
-      <div class="feat-icon">👥</div>
-      <div class="feat-title">Live crowd reports</div>
-      <div class="feat-body">Drivers report availability in real time. See if a spot is busy before you drive there.</div>
+    <div class="feature-media" data-aos="fade-left" data-aos-duration="700" data-aos-delay="150">
+      <video src="pictures_and_videos/video_view_rates.MP4" autoplay muted loop playsinline></video>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="hiw">
-  <p class="section-eyebrow reveal">How it works</p>
-  <h2 class="section-title reveal d1">Three taps.<br>Parked.</h2>
-
-  <div class="hiw-steps">
-
-    <div class="hiw-step">
-      <div class="step-text slide-left">
-        <div class="step-num">Step 01</div>
-        <h3 class="step-title">Find a spot</h3>
-        <p class="step-body">Open the map and see every on-street bay colour-coded by status. Green means free right now. Red means paid. Filter by what you need.</p>
+<!-- FEATURE 2: PLAN BEFORE YOU LEAVE -->
+<div class="section-alt">
+  <section class="section">
+    <div class="feature-row flip">
+      <div class="feature-text" data-aos="fade-left" data-aos-duration="700">
+        <div class="feat-eyebrow">Plan ahead</div>
+        <h3>Search your destination, find parking nearby</h3>
+        <p>Search where you're heading before you leave. The map shows all nearby on-street parking with rates and availability so you know exactly where to go.</p>
       </div>
-      <div class="step-phone slide-right">
-        <div class="iphone iphone-float">
-          <div class="iphone-frame"></div>
-          <div class="iphone-screen">
-            <div class="iphone-island"></div>
-            <img src="homepage.png" alt="Map view showing free and paid parking spots"/>
-          </div>
-        </div>
+      <div class="feature-media" data-aos="fade-right" data-aos-duration="700" data-aos-delay="150">
+        <video src="pictures_and_videos/video_search_location.MP4" autoplay muted loop playsinline></video>
       </div>
     </div>
+  </section>
+</div>
 
-    <div class="hiw-step flip">
-      <div class="step-text slide-right">
-        <div class="step-num">Step 02</div>
-        <h3 class="step-title">Check the details</h3>
-        <p class="step-body">Tap any spot to see its operating hours, hourly rate, bay count, and live crowd reports from other drivers. Then hit navigate or park here.</p>
-      </div>
-      <div class="step-phone slide-left">
-        <div class="iphone iphone-float" style="animation-delay:.5s">
-          <div class="iphone-frame"></div>
-          <div class="iphone-screen">
-            <div class="iphone-island"></div>
-            <img src="parking_details.png" alt="Spot detail sheet showing hours, rate and crowd report"/>
-          </div>
-        </div>
-      </div>
+<!-- FEATURE 3: PARK AND RELAX -->
+<section class="section">
+  <div class="feature-row">
+    <div class="feature-text" data-aos="fade-right" data-aos-duration="700">
+      <div class="feat-eyebrow">Park and relax</div>
+      <h3>Set a timer. Walk back when you're ready.</h3>
+      <p>One tap parks your car. Set a reminder and we'll notify you before your time runs out. When you're done, follow the directions straight back to your car.</p>
     </div>
-
-    <div class="hiw-step">
-      <div class="step-text slide-left">
-        <div class="step-num">Step 03</div>
-        <h3 class="step-title">Park and relax</h3>
-        <p class="step-body">One tap marks your car. A timer starts and we'll notify you before time runs out. When you're done, we'll walk you straight back.</p>
-      </div>
-      <div class="step-phone slide-right">
-        <div class="iphone iphone-float" style="animation-delay:1s">
-          <div class="iphone-frame"></div>
-          <div class="iphone-screen">
-            <div class="iphone-island"></div>
-            <img src="parked_car.png" alt="My Car screen showing timer and walk back button"/>
-          </div>
-        </div>
-      </div>
+    <div class="feature-media" data-aos="fade-left" data-aos-duration="700" data-aos-delay="150">
+      <img src="pictures_and_videos/my_car.jpg" alt="My Car screen showing parking timer and walk back"/>
     </div>
-
   </div>
 </section>
+
+<!-- ACCESSIBLE PARKING -->
+<div class="section-alt">
+  <section class="section">
+    <div class="section-eyebrow section-center" data-aos="fade-up">Accessible parking</div>
+    <div class="accessible-highlight" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+      <div>
+        <div class="acc-icon">♿</div>
+        <h3>Live accessible parking availability</h3>
+        <p>Sensor-based accessible parking spots across Dublin city centre showing real-time availability. Know instantly if a space is free or occupied before you arrive.</p>
+      </div>
+      <img src="pictures_and_videos/accessible_bays.jpg" alt="Map showing accessible parking locations across Dublin"/>
+    </div>
+  </section>
+</div>
 
 <!-- LAUNCH -->
-<section class="launch" id="launch">
-  <div class="launch-inner reveal">
-    <h2 class="launch-title">Coming April 1st.</h2>
-    <p class="launch-sub">Sloto is launching on iOS and Android on April 1st 2026. Dublin parking, solved.</p>
-    <div class="launch-badge-wrap">
-      <span class="launch-badge-dot"></span>
-      <span class="launch-badge-text">Launching <span>April 1st 2026</span> · iOS &amp; Android</span>
+<section class="launch">
+  <div class="launch-inner" data-aos="fade-up" data-aos-duration="700">
+    <h2 class="launch-title">Launching April 2026.</h2>
+    <p class="launch-sub">Sloto is coming to iOS and Android. Dublin parking, finally fixed.</p>
+    <div class="launch-badge">
+      <span class="lb-dot"></span>
+      <span class="lb-text">Launching <span>April 2026</span> · iOS & Android</span>
     </div>
     <p class="launch-stores">Free to download · No account required to browse</p>
   </div>
 </section>
 
-<footer class="dark">
-  <a href="index.html" class="footer-logo">sloto<span>.</span></a>
+<!-- FOOTER -->
+<footer class="light">
+  <div>
+    <a href="index.html" class="footer-logo">sloto<span>.</span></a>
+    <p class="footer-built">Built in Dublin, Ireland 🇮🇪</p>
+  </div>
+  <div class="footer-contact">
+    <a href="mailto:hello@sloto.ie">hello@sloto.ie</a>
+  </div>
   <ul class="footer-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="investors.html">Investors</a></li>
-    <li><a href="legal.html">Privacy &amp; Terms</a></li>
+    <li><a href="legal.html">Legal</a></li>
     <li><a href="delete-account.html">Delete account</a></li>
   </ul>
-  <p class="footer-copy">© 2026 Sloto Ltd. Dublin 🇮🇪</p>
+  <p class="footer-copy">&copy; 2026 Sloto Ltd.</p>
 </footer>
 
-<script src="app.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-(function(){
-  var els = document.querySelectorAll('.slide-left,.slide-right');
-  if(!els.length) return;
-  var o = new IntersectionObserver(function(en){
-    en.forEach(function(x){
-      if(x.isIntersecting){x.target.classList.add('visible');o.unobserve(x.target);}
-    });
-  },{threshold:0.12,rootMargin:'0px 0px -32px 0px'});
-  els.forEach(function(x){o.observe(x);});
-})();
+  AOS.init({ once: true, duration: 600, offset: 80 });
+
+  // Dot field animation — varying sizes with glow
+  (function(){
+    var f = document.getElementById('dotField');
+    if (!f) return;
+    var palette = [
+      {color:'#22C55E',glow:'glow-green'},
+      {color:'#22C55E',glow:'glow-green'},
+      {color:'#22C55E',glow:'glow-green'},
+      {color:'#EF4444',glow:'glow-red'},
+      {color:'#9CA3AF',glow:'glow-grey'}
+    ];
+    var sizes = [4,5,6,8,10,12,14,16,20,24];
+    for (var i = 0; i < 55; i++){
+      var d = document.createElement('div');
+      var p = palette[Math.floor(Math.random() * palette.length)];
+      var s = sizes[Math.floor(Math.random() * sizes.length)];
+      d.className = 'dot ' + p.glow;
+      d.style.cssText =
+        'width:' + s + 'px;height:' + s + 'px;background:' + p.color + ';' +
+        'left:' + (Math.random() * 100) + '%;' +
+        'top:' + (5 + Math.random() * 90) + '%;' +
+        'animation-duration:' + (6 + Math.random() * 10) + 's;' +
+        'animation-delay:' + (Math.random() * 12) + 's;';
+      f.appendChild(d);
+    }
+  })();
 </script>
 </body>
 </html>
