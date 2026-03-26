@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dublin Parking Data Review — Prepared by Sloto</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+/* ACCESS GATE */
+#access-gate{
+  position:fixed;inset:0;z-index:10000;background:var(--black);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+}
+#access-gate.hidden{display:none;}
+.gate-box{
+  width:100%;max-width:440px;text-align:center;
+}
+.gate-logo{font-size:1.8rem;font-weight:900;letter-spacing:-.04em;margin-bottom:6px;}
+.gate-logo span{color:#228B22;}
+.gate-tagline{font-size:.72rem;color:rgba(255,255,255,.3);margin-bottom:36px;font-weight:500;}
+.gate-title{font-size:1.1rem;font-weight:800;margin-bottom:8px;}
+.gate-desc{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:28px;}
+.gate-form{display:flex;flex-direction:column;gap:12px;text-align:left;}
+.gate-label{font-size:.72rem;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:2px;}
+.gate-input{
+  width:100%;padding:12px 16px;border-radius:10px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  color:var(--white);font-family:var(--f);font-size:.85rem;outline:none;
+  transition:border-color .2s;
+}
+.gate-input:focus{border-color:#22C55E;}
+.gate-input::placeholder{color:rgba(255,255,255,.2);}
+.gate-btn{
+  width:100%;padding:14px;border:none;border-radius:10px;
+  background:#22C55E;color:#0a0a0a;font-family:var(--f);
+  font-size:.88rem;font-weight:700;cursor:pointer;
+  transition:opacity .2s;margin-top:4px;
+}
+.gate-btn:hover{opacity:.9;}
+.gate-btn:disabled{opacity:.5;cursor:not-allowed;}
+.gate-msg{
+  margin-top:16px;padding:14px 18px;border-radius:10px;
+  font-size:.8rem;line-height:1.6;display:none;
+}
+.gate-msg.success{display:block;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:rgba(255,255,255,.6);}
+.gate-msg.error{display:block;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:rgba(255,255,255,.6);}
+.gate-divider{
+  display:flex;align-items:center;gap:14px;margin:28px 0;
+  font-size:.7rem;color:rgba(255,255,255,.2);font-weight:600;
+}
+.gate-divider::before,.gate-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08);}
+.gate-switch{
+  font-size:.78rem;color:rgba(255,255,255,.35);margin-top:20px;
+}
+.gate-switch a{
+  color:#22C55E;text-decoration:none;font-weight:600;cursor:pointer;
+}
+.gate-switch a:hover{text-decoration:underline;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0a0a0a;
+  --white:#fff;
+  --green:#22C55E;
+  --gd:#228B22;
+  --red:#EF4444;
+  --gray:#6B7280;
+  --gl:#F5F5F5;
+  --ow:#FAF9F7;
+  --border:#E5E7EB;
+  --f:'Poppins',sans-serif;
+  --amber:#F59E0B;
+  --blue:#3B82F6;
+  --purple:#8B5CF6;
+  --teal:#14B8A6;
+  --pink:#EC4899;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:var(--f);overflow-x:hidden;background:var(--black);color:var(--white);}
+
+/* LOADING */
+#loading-screen{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity 0.4s;}
+#loading-screen.hidden{opacity:0;pointer-events:none;}
+.loader{width:40px;height:40px;border:3px solid rgba(255,255,255,0.1);border-top-color:var(--green);border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+#loading-screen p{font-size:.82rem;color:rgba(255,255,255,.4);}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;height:60px;
+  background:rgba(10,10,10,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.nav-logo{font-size:1.2rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;color:var(--white);display:flex;align-items:center;gap:8px;}
+.nav-logo span{color:var(--gd);}
+.nav-badge{font-size:.55rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:2px 6px;}
+.nav-links{display:none;list-style:none;overflow-x:auto;gap:4px;}
+.nav-links a{text-decoration:none;font-size:.78rem;font-weight:500;color:rgba(255,255,255,0.4);transition:all 0.2s;cursor:pointer;padding:6px 12px;border-radius:6px;white-space:nowrap;}
+.nav-links a:hover{color:rgba(255,255,255,.7);background:rgba(255,255,255,.04);}
+.nav-links a.active{color:var(--white);background:rgba(255,255,255,.08);}
+@media(min-width:768px){
+  nav{padding:0 48px;height:64px;}
+  .nav-links{display:flex;align-items:center;}
+}
+
+/* HERO */
+.page-hero{
+  padding:96px 20px 36px;background:var(--black);color:var(--white);
+  position:relative;overflow:hidden;
+}
+.page-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,197,94,.04) 0%,transparent 65%);pointer-events:none;}
+.ph-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:block;color:var(--green);}
+.ph-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;margin-bottom:12px;}
+.ph-sub{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.75;max-width:700px;}
+.ph-prepared{margin-top:20px;font-size:.72rem;color:rgba(255,255,255,.25);font-weight:500;}
+.ph-prepared strong{color:rgba(255,255,255,.5);}
+@media(min-width:768px){.page-hero{padding:110px 48px 44px;}}
+@media(min-width:1024px){.page-hero{padding:120px 80px 48px;}}
+
+/* MOBILE TAB SELECTOR */
+#mobile-tabs{padding:0 20px;margin-bottom:20px;display:none;}
+#mobile-tab-select{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 14px;color:var(--white);font-family:var(--f);font-size:.82rem;}
+#mobile-tab-select option{background:var(--black);}
+
+/* TAB CONTENT */
+.tab-content{display:none;padding:0 20px 60px;}
+.tab-content.active{display:block;}
+@media(min-width:768px){.tab-content{padding:0 48px 60px;}}
+@media(min-width:1024px){.tab-content{padding:0 80px 60px;}}
+
+/* SECTION TITLES */
+.section-title{
+  font-size:clamp(1.05rem,3vw,1.35rem);font-weight:800;letter-spacing:-.03em;
+  margin:40px 0 10px;color:var(--white);
+}
+.section-desc{
+  font-size:.83rem;color:rgba(255,255,255,.42);margin-bottom:24px;line-height:1.75;max-width:700px;
+}
+
+/* CALLOUT BOX */
+.callout{
+  background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);
+  border-radius:14px;padding:24px 28px;margin-bottom:28px;
+}
+.callout.amber{background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.2);}
+.callout.green{background:rgba(34,197,94,0.06);border-color:rgba(34,197,94,0.15);}
+.callout.blue{background:rgba(59,130,246,0.06);border-color:rgba(59,130,246,0.15);}
+.callout-title{font-size:.92rem;font-weight:800;margin-bottom:6px;}
+.callout-body{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.75;}
+
+/* CARDS GRID */
+.cards{display:grid;gap:16px;margin-bottom:32px;}
+.cards.four{grid-template-columns:1fr;}
+@media(min-width:640px){.cards.four{grid-template-columns:1fr 1fr;}}
+@media(min-width:1024px){.cards.four{grid-template-columns:1fr 1fr 1fr 1fr;}}
+.cards.three{grid-template-columns:1fr;}
+@media(min-width:640px){.cards.three{grid-template-columns:1fr 1fr;}}
+@media(min-width:1024px){.cards.three{grid-template-columns:1fr 1fr 1fr;}}
+.cards.two{grid-template-columns:1fr;}
+@media(min-width:640px){.cards.two{grid-template-columns:1fr 1fr;}}
+
+.card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;padding:24px;
+  transition:border-color 0.2s;
+}
+.card:hover{border-color:rgba(255,255,255,0.15);}
+.card-source{font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.card-value{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;letter-spacing:-.04em;line-height:1;}
+.card-label{font-size:.78rem;color:rgba(255,255,255,.42);margin-top:6px;line-height:1.55;}
+.card-meta{margin-top:10px;font-size:.7rem;color:rgba(255,255,255,.25);}
+
+/* TABLE */
+.table-wrap{
+  overflow-x:auto;margin-bottom:32px;
+  border:1px solid rgba(255,255,255,0.07);border-radius:14px;
+  background:rgba(255,255,255,0.02);
+}
+table{width:100%;border-collapse:collapse;font-size:.78rem;}
+thead th{
+  text-align:left;padding:14px 16px;font-weight:700;font-size:.68rem;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  white-space:nowrap;position:sticky;top:0;background:rgba(10,10,10,0.97);
+}
+tbody td{
+  padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.04);
+  color:rgba(255,255,255,.7);white-space:nowrap;
+}
+tbody td.wrap{white-space:normal;max-width:300px;}
+tbody tr:hover td{background:rgba(255,255,255,0.03);}
+.cell-null{color:var(--red);font-weight:700;font-style:italic;}
+.cell-warn{color:var(--amber);font-weight:600;}
+.cell-ok{color:var(--green);}
+.cell-note{font-size:.68rem;color:rgba(255,255,255,.3);display:block;margin-top:2px;font-style:normal;}
+
+/* BADGE */
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.66rem;font-weight:700;}
+.badge-red{background:rgba(239,68,68,0.15);color:var(--red);}
+.badge-amber{background:rgba(245,158,11,0.15);color:var(--amber);}
+.badge-green{background:rgba(34,197,94,0.15);color:var(--green);}
+.badge-blue{background:rgba(59,130,246,0.15);color:var(--blue);}
+.badge-purple{background:rgba(139,92,246,0.15);color:var(--purple);}
+.badge-pink{background:rgba(236,72,153,0.15);color:var(--pink);}
+.badge-teal{background:rgba(20,184,166,0.15);color:var(--teal);}
+
+/* SCHEMA TABLE */
+.schema-table{font-size:.75rem;}
+.schema-table th{font-size:.63rem;}
+.schema-table td{font-size:.74rem;white-space:normal;word-break:break-word;}
+.schema-table .present{color:var(--green);font-weight:700;}
+.schema-table .absent{color:rgba(255,255,255,0.15);}
+
+/* HEATMAP */
+.heatmap-wrap{overflow-x:auto;margin-bottom:32px;}
+.heatmap{border-collapse:collapse;font-size:.74rem;}
+.heatmap th{padding:10px 14px;font-size:.63rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);white-space:nowrap;}
+.heatmap td{padding:10px 14px;text-align:center;font-weight:700;font-size:.72rem;border:1px solid rgba(255,255,255,.04);border-radius:4px;}
+.heatmap td.h-yes{background:rgba(34,197,94,.12);color:var(--green);}
+.heatmap td.h-partial{background:rgba(245,158,11,.12);color:var(--amber);}
+.heatmap td.h-no{background:rgba(239,68,68,.08);color:var(--red);}
+.heatmap td.h-label{text-align:left;font-weight:700;color:var(--white);white-space:nowrap;}
+
+/* MAP */
+#map{width:100%;height:520px;border-radius:14px;border:1px solid rgba(255,255,255,0.07);margin-bottom:16px;}
+.map-controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;align-items:center;}
+.map-toggle{display:flex;align-items:center;gap:6px;font-size:.78rem;color:rgba(255,255,255,.6);cursor:pointer;padding:6px 12px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:all .2s;user-select:none;}
+.map-toggle:hover{border-color:rgba(255,255,255,.15);}
+.map-toggle.active{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.08);}
+.map-toggle .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.map-stats{font-size:.76rem;color:rgba(255,255,255,.35);margin-bottom:24px;}
+
+/* ISSUE CARD */
+.issue-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);border-radius:12px;
+  padding:20px 24px;margin-bottom:12px;
+}
+.issue-card .issue-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.issue-card .issue-title{font-size:.86rem;font-weight:700;}
+.issue-card .issue-body{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.75;}
+
+/* PROGRESS BAR */
+.progress-bar{width:100%;height:32px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;display:flex;margin:10px 0;}
+.progress-bar .segment{height:100%;display:flex;align-items:center;justify-content:center;font-size:.63rem;font-weight:700;color:var(--black);min-width:2px;}
+
+/* STAT PILL */
+.stat-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border-radius:8px;padding:6px 12px;font-size:.7rem;font-weight:600;}
+.stat-pill .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* DATA EXPLORER */
+.explorer-controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;align-items:center;}
+.explorer-controls select,.explorer-controls input{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+  border-radius:8px;padding:8px 14px;color:var(--white);
+  font-family:var(--f);font-size:.78rem;outline:none;transition:border-color 0.2s;
+}
+.explorer-controls select:focus,.explorer-controls input:focus{border-color:var(--green);}
+.explorer-controls select option{background:var(--black);}
+.explorer-table-wrap{max-height:600px;overflow:auto;border:1px solid rgba(255,255,255,0.07);border-radius:14px;background:rgba(255,255,255,0.02);}
+.row-count{font-size:.76rem;color:rgba(255,255,255,.35);margin-bottom:10px;}
+
+/* RECOMMENDATION CARDS */
+.rec-card{
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;margin-bottom:14px;overflow:hidden;transition:border-color .2s;
+}
+.rec-card:hover{border-color:rgba(255,255,255,.12);}
+.rec-header{display:flex;align-items:center;gap:14px;padding:20px 24px;cursor:pointer;user-select:none;}
+.rec-num{width:32px;height:32px;background:var(--green);color:var(--black);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;flex-shrink:0;}
+.rec-title{font-size:.9rem;font-weight:700;flex:1;}
+.rec-chevron{font-size:.8rem;color:rgba(255,255,255,.3);transition:transform .2s;flex-shrink:0;}
+.rec-card.open .rec-chevron{transform:rotate(180deg);}
+.rec-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.rec-card.open .rec-body{max-height:800px;}
+.rec-inner{padding:0 24px 24px;border-top:1px solid rgba(255,255,255,.05);}
+.rec-finding{margin-top:16px;padding:14px 18px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.12);border-radius:10px;font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.7;}
+.rec-finding strong{color:var(--red);font-weight:700;}
+.rec-solution{margin-top:12px;font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.75;}
+.rec-proof{margin-top:12px;padding:14px 18px;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.1);border-radius:10px;font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.7;}
+.rec-proof strong{color:var(--green);font-weight:700;}
+
+/* SDCC OVERLAP */
+.overlap-toggle{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.overlap-btn{padding:8px 16px;border-radius:8px;font-size:.78rem;font-weight:600;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;font-family:var(--f);}
+.overlap-btn.active{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:var(--white);}
+
+/* FOOTER */
+footer{
+  padding:36px 20px;
+  background:#070707;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-inner{display:flex;flex-direction:column;gap:16px;}
+.footer-brand{display:flex;align-items:center;gap:10px;}
+.footer-logo{font-size:1.25rem;font-weight:800;letter-spacing:-0.04em;color:var(--white);}
+.footer-logo span{color:var(--gd);}
+.footer-tag{font-size:.7rem;color:rgba(255,255,255,.25);}
+.footer-contact{font-size:.78rem;color:rgba(255,255,255,.35);}
+.footer-contact a{color:var(--green);text-decoration:none;font-weight:600;}
+.footer-contact a:hover{text-decoration:underline;}
+.footer-copy{font-size:.68rem;color:rgba(255,255,255,.15);margin-top:4px;}
+@media(min-width:768px){
+  footer{padding:44px 48px;}
+  .footer-inner{flex-direction:row;align-items:center;justify-content:space-between;}
+}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+
+<!-- ACCESS GATE -->
+<div id="access-gate">
+  <div class="gate-box">
+    <div class="gate-logo">sloto<span>.</span></div>
+    <div class="gate-tagline">Dublin Parking Data Review</div>
+
+    <!-- REQUEST FORM -->
+    <div id="gate-request">
+      <div class="gate-title">Request Access</div>
+      <div class="gate-desc">This analysis is not publicly available. Please submit your details to request access. You will be notified once your request has been reviewed.</div>
+      <form class="gate-form" id="request-form">
+        <div>
+          <div class="gate-label">Full Name</div>
+          <input class="gate-input" type="text" id="req-name" placeholder="Your name" required />
+        </div>
+        <div>
+          <div class="gate-label">Email Address</div>
+          <input class="gate-input" type="email" id="req-email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <div class="gate-label">Organisation</div>
+          <input class="gate-input" type="text" id="req-org" placeholder="Company or council name" required />
+        </div>
+        <button class="gate-btn" type="submit" id="req-btn">Submit Request</button>
+      </form>
+      <div class="gate-msg" id="req-msg"></div>
+      <div class="gate-switch">Already have access? <a id="link-to-check">Check here</a></div>
+    </div>
+
+    <!-- CHECK ACCESS FORM -->
+    <div id="gate-check" style="display:none;">
+      <div class="gate-title">Check Your Access</div>
+      <div class="gate-desc">Enter the email address you used when requesting access. If approved, the dashboard will unlock.</div>
+      <form class="gate-form" id="check-form">
+        <div>
+          <div class="gate-label">Email Address</div>
+          <input class="gate-input" type="email" id="check-email" placeholder="you@example.com" required />
+        </div>
+        <button class="gate-btn" type="submit" id="check-btn">Check Access</button>
+      </form>
+      <div class="gate-msg" id="check-msg"></div>
+      <div class="gate-switch">Need access? <a id="link-to-request">Request here</a></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('link-to-check').addEventListener('click', function() {
+  document.getElementById('gate-request').style.display = 'none';
+  document.getElementById('gate-check').style.display = 'block';
+});
+document.getElementById('link-to-request').addEventListener('click', function() {
+  document.getElementById('gate-request').style.display = 'block';
+  document.getElementById('gate-check').style.display = 'none';
+});
+</script>
+
+<!-- DASHBOARD CONTENT (hidden until access granted) -->
+<div id="dashboard-content" style="display:none;">
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="loader"></div>
+  <p>Loading parking data...</p>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">sloto<span>.</span> <span class="nav-badge">Prepared by Sloto</span></div>
+  <div class="nav-links" id="nav-links">
+    <a data-tab="overview" class="active">Overview</a>
+    <a data-tab="attributes">Data Attributes</a>
+    <a data-tab="completeness">Completeness</a>
+    <a data-tab="quality">Quality Issues</a>
+    <a data-tab="map">Map</a>
+    <a data-tab="explorer">Browse Data</a>
+    <a data-tab="recommendations">Recommendations</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <span class="ph-eyebrow">Smart Dublin — Open Parking Data Review</span>
+  <h1 class="ph-title">Dublin Street Parking<br>Data Review</h1>
+  <p class="ph-sub">An independent review of the open parking data published by Dublin's four county councils through Smart Dublin. This analysis examines data completeness, consistency, accuracy, and usability across all four local authorities.</p>
+  <p class="ph-prepared">Prepared by <strong>Sloto</strong> — hello@sloto.ie</p>
+</div>
+
+<!-- MOBILE TAB SELECTOR -->
+<div id="mobile-tabs">
+  <select id="mobile-tab-select">
+    <option value="overview">Overview</option>
+    <option value="attributes">Data Attributes</option>
+    <option value="completeness">Completeness</option>
+    <option value="quality">Quality Issues</option>
+    <option value="map">Map</option>
+    <option value="explorer">Browse Data</option>
+    <option value="recommendations">Recommendations</option>
+  </select>
+</div>
+
+<!-- ========== TAB 1: OVERVIEW ========== -->
+<div class="tab-content active" id="tab-overview">
+  <div class="section-title reveal">Four councils, five files, zero shared standards</div>
+  <p class="section-desc reveal">We reviewed all publicly available on-street parking data published by Dublin's four county councils through Smart Dublin. Each council publishes their data independently using different formats, structures, and levels of detail.</p>
+  <div class="cards four reveal d1" id="overview-cards"></div>
+
+  <div class="callout amber reveal">
+    <div class="callout-title" style="color:var(--amber);">No shared data standard exists</div>
+    <div class="callout-body">Each council uses different column names, different file formats, and includes different information. There is no way to combine these datasets without significant manual mapping and standardisation work.</div>
+  </div>
+
+  <div class="section-title reveal">File formats at a glance</div>
+  <p class="section-desc reveal">Even the way coordinates are provided differs across councils.</p>
+  <div class="reveal d1" id="format-notes"></div>
+</div>
+
+<!-- ========== TAB 2: DATA ATTRIBUTES ========== -->
+<div class="tab-content" id="tab-attributes">
+  <div class="section-title reveal">What makes parking data useful?</div>
+  <p class="section-desc reveal">For any digital service — whether a parking app, city planning tool, or accessibility platform — the following attributes are essential for each parking location. Here is what each council actually provides:</p>
+  <div class="heatmap-wrap reveal d1" id="heatmap-container"></div>
+
+  <div class="section-title reveal">What would a user actually see?</div>
+  <p class="section-desc reveal">If someone looked up a parking location from each council's data, here is how much useful information they would get:</p>
+  <div class="reveal d1" id="user-experience-cards"></div>
+</div>
+
+<!-- ========== TAB 3: COMPLETENESS ========== -->
+<div class="tab-content" id="tab-completeness">
+  <div class="section-title reveal">How complete is each dataset?</div>
+  <p class="section-desc reveal">This measures what percentage of fields are actually filled in within each file. A high score only means the columns that exist have data — it does not mean all necessary information is present.</p>
+  <div class="cards four reveal d1" id="completeness-cards"></div>
+
+  <div class="section-title reveal">Completeness by attribute across all councils</div>
+  <p class="section-desc reveal">Looking at each essential attribute across all four councils — how many provide it?</p>
+  <div class="reveal d1" id="attribute-completeness"></div>
+
+  <div class="section-title reveal">Parking bay data — the biggest gap</div>
+  <p class="section-desc reveal">Understanding parking capacity requires knowing how many bays each location has. Most councils do not publish this.</p>
+  <div class="cards four reveal d1" id="bay-cards"></div>
+  <div class="reveal d1" id="bay-progress"></div>
+</div>
+
+<!-- ========== TAB 4: QUALITY ISSUES ========== -->
+<div class="tab-content" id="tab-quality">
+  <div class="section-title reveal">Missing information</div>
+  <p class="section-desc reveal">These are the columns where data is blank or not provided. The higher the percentage, the bigger the gap.</p>
+  <div class="table-wrap reveal d1" id="null-table"></div>
+
+  <div class="section-title reveal">Specific issues found</div>
+  <p class="section-desc reveal">Going through each file record by record, these are the problems that would need fixing before the data can be used reliably.</p>
+  <div class="reveal d1" id="issues-list"></div>
+
+  <div class="section-title reveal">SDCC data overlap — which file to use?</div>
+  <p class="section-desc reveal">South Dublin County Council publishes two separate files that both contain accessible parking information. This creates a duplication problem with no clear way to reconcile them.</p>
+  <div class="callout reveal">
+    <div class="callout-title" style="color:var(--red);">Two files, overlapping data, no shared key</div>
+    <div class="callout-body">The Paid Parking CSV includes accessible bay counts alongside regular bays for village street parking. The Accessible Parking GeoJSON is a separate dataset of 65 dedicated accessible locations across SDCC. Some on-street village locations appear in both files. Without a shared identifier, there is no reliable way to determine which file is authoritative or how to merge them without double-counting.</div>
+  </div>
+  <div class="reveal d1" id="sdcc-overlap"></div>
+</div>
+
+<!-- ========== TAB 5: MAP ========== -->
+<div class="tab-content" id="tab-map">
+  <div class="section-title reveal">Every parking location on the map</div>
+  <p class="section-desc reveal">All locations from every file plotted by their coordinates. Toggle councils on and off. Click any point to see exactly what data is recorded for that location.</p>
+  <div class="map-controls reveal" id="map-controls"></div>
+  <div id="map" class="reveal d1"></div>
+  <div class="map-stats reveal d2" id="map-stats"></div>
+</div>
+
+<!-- ========== TAB 6: BROWSE DATA ========== -->
+<div class="tab-content" id="tab-explorer">
+  <div class="section-title reveal">Browse the raw records</div>
+  <p class="section-desc reveal">See every record exactly as it appears in the original file. Blank or missing values are shown in red so you can spot the gaps.</p>
+  <div class="explorer-controls reveal">
+    <select id="explorer-source"></select>
+    <input type="text" id="explorer-search" placeholder="Search by street, area, etc." />
+  </div>
+  <div class="row-count reveal" id="explorer-count"></div>
+  <div class="explorer-table-wrap reveal d1" id="explorer-table"></div>
+</div>
+
+<!-- ========== TAB 7: RECOMMENDATIONS ========== -->
+<div class="tab-content" id="tab-recommendations">
+  <div class="section-title reveal">Recommendations</div>
+  <p class="section-desc reveal">Based on our review, these are the steps needed to make Dublin's open parking data genuinely useful for digital services, city planning, and citizens. Click each recommendation to see the supporting evidence.</p>
+  <div class="reveal d1" id="recommendations-list"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <div class="footer-logo">sloto<span>.</span></div>
+        <span class="footer-tag">Prepared by Sloto</span>
+      </div>
+      <div class="footer-copy">Dublin Parking Data Review &copy; 2026</div>
+    </div>
+    <div class="footer-contact">
+      Questions or feedback? <a href="mailto:hello@sloto.ie">hello@sloto.ie</a>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /dashboard-content -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ===== GLOBAL STATE =====
+let DATA = {};
+let dataLoaded = 0;
+const totalFiles = 5;
+const councilColors = {
+  dcc: '#22C55E',
+  dlr: '#F59E0B',
+  fingal: '#8B5CF6',
+  sdccPaid: '#EC4899',
+  sdccAccessible: '#14B8A6'
+};
+
+// ===== LOAD DATA =====
+async function loadData() {
+  try {
+    const [dcc, dlr, fingal, sdccCsv, sdccGeo] = await Promise.all([
+      fetch('data/dcc-meters-2025.json').then(r => r.json()),
+      fetch('data/dlr-parking.json').then(r => r.json()),
+      fetch('data/fingal-parking.json').then(r => r.json()),
+      fetch('data/Paid_Parking_SDCC.csv').then(r => r.text()),
+      fetch('data/Accessible_Parking_Spaces_SDCC.geojson').then(r => r.json()),
+    ]);
+
+    // Parse SDCC CSV into GeoJSON-like structure
+    const csvRows = parseCSV(sdccCsv);
+    const sdccPaidFeatures = csvRows.map((row, i) => ({
+      type: 'Feature',
+      geometry: null,
+      properties: row
+    }));
+
+    DATA = {
+      dcc: { data: dcc, label: 'Dublin City Council (DCC)', shortLabel: 'DCC', color: councilColors.dcc, file: 'dcc-meters-2025.json', format: 'GeoJSON', council: 'Dublin City' },
+      dlr: { data: dlr, label: 'Dun Laoghaire-Rathdown (DLR)', shortLabel: 'DLR', color: councilColors.dlr, file: 'dlr-parking.json', format: 'GeoJSON', council: 'DLR' },
+      fingal: { data: fingal, label: 'Fingal County Council', shortLabel: 'Fingal', color: councilColors.fingal, file: 'fingal-parking.json', format: 'GeoJSON', council: 'Fingal' },
+      sdccPaid: { data: { type: 'FeatureCollection', features: sdccPaidFeatures }, label: 'SDCC Paid Parking', shortLabel: 'SDCC Paid', color: councilColors.sdccPaid, file: 'Paid_Parking_SDCC.csv', format: 'CSV', council: 'South Dublin' },
+      sdccAccessible: { data: sdccGeo, label: 'SDCC Accessible Parking', shortLabel: 'SDCC Accessible', color: councilColors.sdccAccessible, file: 'Accessible_Parking_Spaces_SDCC.geojson', format: 'GeoJSON', council: 'South Dublin' },
+    };
+
+    buildDashboard();
+    document.getElementById('loading-screen').classList.add('hidden');
+  } catch (err) {
+    document.getElementById('loading-screen').innerHTML = '<p style="color:var(--red);font-size:.9rem;">Failed to load data files. Make sure data/ folder is accessible.<br><br><span style="color:rgba(255,255,255,.3);font-size:.75rem;">Tip: Run a local server (python3 -m http.server) from the Data Analysis folder.</span></p>';
+    console.error(err);
+  }
+}
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = parseCSVLine(lines[0]);
+  return lines.slice(1).map(line => {
+    const vals = parseCSVLine(line);
+    const obj = {};
+    headers.forEach((h, i) => { obj[h.trim()] = vals[i] !== undefined ? vals[i].trim() : ''; });
+    return obj;
+  });
+}
+
+function parseCSVLine(line) {
+  const result = [];
+  let current = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') { inQuotes = !inQuotes; }
+    else if (ch === ',' && !inQuotes) { result.push(current); current = ''; }
+    else { current += ch; }
+  }
+  result.push(current);
+  return result;
+}
+
+// ===== HELPERS =====
+function getFeatures(ds) { return ds.data.features || []; }
+function getProps(f) { return f.properties || {}; }
+function getAllFieldNames(ds) {
+  const fields = new Set();
+  getFeatures(ds).forEach(f => Object.keys(getProps(f)).forEach(k => fields.add(k)));
+  return [...fields];
+}
+function countNulls(ds, field) {
+  let count = 0;
+  getFeatures(ds).forEach(f => {
+    const p = getProps(f);
+    if (!(field in p) || p[field] === null || p[field] === '' || p[field] === undefined) count++;
+  });
+  return count;
+}
+function getCoords(feature) {
+  const geom = feature.geometry;
+  if (!geom || !geom.coordinates) return null;
+  if (geom.type === 'Point') return [geom.coordinates[1], geom.coordinates[0]];
+  return null;
+}
+function escapeHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ===== TAB SWITCHING =====
+const navLinks = document.querySelectorAll('#nav-links a[data-tab]');
+const tabs = document.querySelectorAll('.tab-content');
+const mobileSelect = document.getElementById('mobile-tab-select');
+let mapInitialized = false;
+
+function switchTab(tabId) {
+  tabs.forEach(t => t.classList.remove('active'));
+  navLinks.forEach(a => a.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  const navLink = document.querySelector('#nav-links a[data-tab="' + tabId + '"]');
+  if (navLink) navLink.classList.add('active');
+  mobileSelect.value = tabId;
+  triggerReveals();
+  if (tabId === 'map' && !mapInitialized) { initMap(); mapInitialized = true; }
+}
+navLinks.forEach(a => a.addEventListener('click', () => switchTab(a.dataset.tab)));
+mobileSelect.addEventListener('change', () => switchTab(mobileSelect.value));
+
+if (window.innerWidth < 768) document.getElementById('mobile-tabs').style.display = 'block';
+window.addEventListener('resize', () => {
+  document.getElementById('mobile-tabs').style.display = window.innerWidth < 768 ? 'block' : 'none';
+});
+
+// ===== REVEAL =====
+function triggerReveals() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 50) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', triggerReveals);
+
+// ===== BUILD ALL =====
+function buildDashboard() {
+  buildOverview();
+  buildAttributes();
+  buildCompleteness();
+  buildQuality();
+  buildExplorer();
+  buildRecommendations();
+  setTimeout(triggerReveals, 100);
+}
+
+// Datasets used in analysis (excludes SDCC accessible for main metrics since it's a different data type)
+function getAnalysisDatasets() {
+  return { dcc: DATA.dcc, dlr: DATA.dlr, fingal: DATA.fingal, sdccPaid: DATA.sdccPaid };
+}
+
+// ===== TAB 1: OVERVIEW =====
+function buildOverview() {
+  const cardsEl = document.getElementById('overview-cards');
+  let html = '';
+  Object.entries(DATA).forEach(([key, ds]) => {
+    const features = getFeatures(ds);
+    const fields = getAllFieldNames(ds);
+    const recordLabel = key === 'sdccAccessible' ? 'accessible locations' : key === 'sdccPaid' ? 'paid parking areas' : 'parking meters';
+    html += '<div class="card"><div class="card-source" style="color:' + ds.color + '">' + ds.label + '</div><div class="card-value">' + features.length.toLocaleString() + '</div><div class="card-label">' + recordLabel + '</div><div class="card-meta">' + fields.length + ' columns &middot; ' + ds.format + ' &middot; ' + ds.file + '</div></div>';
+  });
+  cardsEl.innerHTML = html;
+
+  // Format notes
+  const formatEl = document.getElementById('format-notes');
+  formatEl.innerHTML =
+    '<div class="issue-card" style="border-color:rgba(34,197,94,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-green">DCC</span><span class="badge badge-green">GeoJSON</span></div>' +
+      '<div class="issue-title">Latitude and longitude provided as named columns</div>' +
+      '<div class="issue-body">Clear columns called "Latitude" and "Longitude". 1 record out of 796 is missing its coordinates entirely.</div>' +
+    '</div>' +
+    '<div class="issue-card" style="border-color:rgba(245,158,11,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-amber">DLR</span><span class="badge badge-amber">GeoJSON</span></div>' +
+      '<div class="issue-title">No named coordinate columns — buried inside the geometry section</div>' +
+      '<div class="issue-body">Coordinates exist but only inside the technical geometry structure. Unlike DCC and Fingal who provide them as regular columns, DLR requires parsing the GeoJSON geometry to extract locations.</div>' +
+    '</div>' +
+    '<div class="issue-card" style="border-color:rgba(139,92,246,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-purple">Fingal</span><span class="badge badge-purple">GeoJSON</span></div>' +
+      '<div class="issue-title">Latitude and longitude as named columns, plus Irish Transverse Mercator</div>' +
+      '<div class="issue-body">Columns called "Lat" and "Long" — different names than DCC, but straightforward. Also includes ITM coordinates (X, Y) which adds some clutter but does not affect usability.</div>' +
+    '</div>' +
+    '<div class="issue-card" style="border-color:rgba(236,72,153,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-pink">SDCC Paid</span><span class="badge badge-pink">CSV</span></div>' +
+      '<div class="issue-title">No coordinates at all</div>' +
+      '<div class="issue-body">The paid parking CSV contains no GPS coordinates, no latitude, no longitude. Locations are described only by village name and a text description (e.g. "Main Street"). These locations cannot be placed on a map.</div>' +
+    '</div>' +
+    '<div class="issue-card" style="border-color:rgba(20,184,166,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-teal">SDCC Accessible</span><span class="badge badge-teal">GeoJSON</span></div>' +
+      '<div class="issue-title">Full coordinates provided as named columns and in geometry</div>' +
+      '<div class="issue-body">Both "Latitude" and "Longitude" columns plus GeoJSON geometry. Well structured and easy to map. However, this file only covers accessible parking locations — not general paid parking.</div>' +
+    '</div>';
+}
+
+// ===== TAB 2: DATA ATTRIBUTES =====
+function buildAttributes() {
+  const requirements = [
+    { need: 'Street / Address Name', dcc: 'yes', dlr: 'yes', fingal: 'yes', sdcc: 'yes', dccNote: '"Address"', dlrNote: '"Location"', fingalNote: '"Street_Name" + "Location"', sdccNote: '"Location" (text only)' },
+    { need: 'GPS Coordinates', dcc: 'yes', dlr: 'partial', fingal: 'yes', sdcc: 'no', dccNote: 'Named columns', dlrNote: 'Geometry only', fingalNote: 'Named columns', sdccNote: 'Not in paid file' },
+    { need: 'Number of Bays', dcc: 'no', dlr: 'yes', fingal: 'no', sdcc: 'yes', dccNote: '', dlrNote: 'Per meter', fingalNote: '', sdccNote: 'Per area in CSV' },
+    { need: 'Accessible Bays', dcc: 'no', dlr: 'no', fingal: 'no', sdcc: 'partial', dccNote: '', dlrNote: '', fingalNote: '', sdccNote: 'In CSV, also separate file' },
+    { need: 'Operating Days', dcc: 'no', dlr: 'yes', fingal: 'no', sdcc: 'no', dccNote: '', dlrNote: '"Days_of_operation"', fingalNote: '', sdccNote: '' },
+    { need: 'Operating Hours', dcc: 'no', dlr: 'yes', fingal: 'no', sdcc: 'no', dccNote: '', dlrNote: '"Hours_of_operation"', fingalNote: '', sdccNote: '' },
+    { need: 'Zone / Area Classification', dcc: 'yes', dlr: 'no', fingal: 'no', sdcc: 'no', dccNote: '5 zones by colour', dlrNote: '', fingalNote: '', sdccNote: '' },
+    { need: 'Price Per Hour', dcc: 'no', dlr: 'yes', fingal: 'no', sdcc: 'no', dccNote: '', dlrNote: '"Hourly_Tarrif"', fingalNote: '', sdccNote: '' },
+    { need: 'Minimum Purchase', dcc: 'no', dlr: 'no', fingal: 'no', sdcc: 'no', dccNote: '', dlrNote: '', fingalNote: '', sdccNote: '' },
+    { need: 'Maximum Stay Duration', dcc: 'no', dlr: 'partial', fingal: 'no', sdcc: 'no', dccNote: '', dlrNote: '83 of 344 records', fingalNote: '', sdccNote: '' },
+  ];
+
+  // Heatmap
+  const container = document.getElementById('heatmap-container');
+  let h = '<table class="heatmap"><thead><tr><th></th>';
+  h += '<th style="color:' + councilColors.dcc + '">DCC<br><span style="font-weight:400;font-size:.55rem;letter-spacing:0;">796 meters</span></th>';
+  h += '<th style="color:' + councilColors.dlr + '">DLR<br><span style="font-weight:400;font-size:.55rem;letter-spacing:0;">344 meters</span></th>';
+  h += '<th style="color:' + councilColors.fingal + '">Fingal<br><span style="font-weight:400;font-size:.55rem;letter-spacing:0;">139 meters</span></th>';
+  h += '<th style="color:' + councilColors.sdccPaid + '">SDCC<br><span style="font-weight:400;font-size:.55rem;letter-spacing:0;">86 areas</span></th>';
+  h += '</tr></thead><tbody>';
+
+  const statusMap = { yes: ['h-yes', 'Yes'], partial: ['h-partial', 'Partial'], no: ['h-no', 'Missing'] };
+  requirements.forEach(r => {
+    h += '<tr><td class="h-label">' + r.need + '</td>';
+    ['dcc','dlr','fingal','sdcc'].forEach(c => {
+      const [cls, txt] = statusMap[r[c]];
+      const note = r[c + 'Note'];
+      h += '<td class="' + cls + '" title="' + escapeHtml(note || '') + '">' + txt + (note ? '<span style="display:block;font-size:.58rem;font-weight:400;opacity:.7;margin-top:2px;">' + escapeHtml(note) + '</span>' : '') + '</td>';
+    });
+    h += '</tr>';
+  });
+  h += '</tbody></table>';
+
+  // Score row
+  const scores = { dcc: 0, dlr: 0, fingal: 0, sdcc: 0 };
+  requirements.forEach(r => {
+    ['dcc','dlr','fingal','sdcc'].forEach(c => {
+      if (r[c] === 'yes') scores[c]++;
+      if (r[c] === 'partial') scores[c] += 0.5;
+    });
+  });
+  const total = requirements.length;
+  h += '<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;">';
+  [['DCC', 'dcc', councilColors.dcc], ['DLR', 'dlr', councilColors.dlr], ['Fingal', 'fingal', councilColors.fingal], ['SDCC', 'sdcc', councilColors.sdccPaid]].forEach(([label, key, color]) => {
+    h += '<div class="stat-pill"><span class="dot" style="background:' + color + '"></span>' + label + ': ' + scores[key] + ' of ' + total + '</div>';
+  });
+  h += '</div>';
+  container.innerHTML = h;
+
+  // User experience cards
+  const ueEl = document.getElementById('user-experience-cards');
+  ueEl.innerHTML =
+    '<div class="issue-card" style="border-color:rgba(34,197,94,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-green">' + scores.dcc + ' of ' + total + '</span><span class="badge" style="background:rgba(34,197,94,0.15);color:var(--green);">DCC</span></div>' +
+      '<div class="issue-title">User looks up a DCC location:</div>' +
+      '<div class="issue-body">"This is on <strong style="color:var(--white);">Strand Road</strong>, in the <strong style="color:var(--white);">Blue Zone</strong>."<br><br>That is it. No price, no hours, no bay count, no maximum stay. The zone name alone is not enough to be useful.</div>' +
+    '</div>' +
+    '<div class="issue-card" style="border-color:rgba(245,158,11,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-green">' + scores.dlr + ' of ' + total + '</span><span class="badge" style="background:rgba(245,158,11,0.15);color:var(--amber);">DLR</span></div>' +
+      '<div class="issue-title">User looks up a DLR location:</div>' +
+      '<div class="issue-body">"This is on <strong style="color:var(--white);">Main Street, Dun Laoghaire</strong>. It has <strong style="color:var(--white);">12 bays</strong>, costs <strong style="color:var(--white);">&euro;1.50/hr</strong>, and operates <strong style="color:var(--white);">Mon-Sat, 8am-6pm</strong>."<br><br>The most complete dataset. Still missing accessible bays, minimum purchase, and zone classification.</div>' +
+    '</div>' +
+    '<div class="issue-card" style="border-color:rgba(139,92,246,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-red">' + scores.fingal + ' of ' + total + '</span><span class="badge badge-purple">Fingal</span></div>' +
+      '<div class="issue-title">User looks up a Fingal location:</div>' +
+      '<div class="issue-body">"This is on <strong style="color:var(--white);">Dublin Street, Balbriggan</strong>."<br><br>Nothing else. No price, no hours, no bays, no zone. Just a name and a dot on the map.</div>' +
+    '</div>' +
+    '<div class="issue-card" style="border-color:rgba(236,72,153,0.15);">' +
+      '<div class="issue-header"><span class="badge badge-amber">' + scores.sdcc + ' of ' + total + '</span><span class="badge badge-pink">SDCC</span></div>' +
+      '<div class="issue-title">User looks up an SDCC location:</div>' +
+      '<div class="issue-body">"This is in <strong style="color:var(--white);">Clondalkin</strong> at <strong style="color:var(--white);">Tuttles N</strong>, with <strong style="color:var(--white);">5 bays</strong> including <strong style="color:var(--white);">2 accessible</strong>."<br><br>Bay counts and accessible spaces are a strong start. But there are no coordinates to show it on a map, no price, no hours, and no zone.</div>' +
+    '</div>';
+}
+
+// ===== TAB 3: COMPLETENESS =====
+function buildCompleteness() {
+  const completenessCards = document.getElementById('completeness-cards');
+  let html = '';
+  Object.entries(DATA).forEach(([key, ds]) => {
+    const features = getFeatures(ds);
+    const fields = getAllFieldNames(ds);
+    let totalCells = features.length * fields.length;
+    let nullCells = 0;
+    fields.forEach(f => { nullCells += countNulls(ds, f); });
+    const completeness = totalCells > 0 ? ((1 - nullCells / totalCells) * 100).toFixed(1) : 0;
+    const scoreColor = completeness > 90 ? 'var(--green)' : completeness > 70 ? 'var(--amber)' : 'var(--red)';
+    html += '<div class="card"><div class="card-source" style="color:' + ds.color + '">' + ds.shortLabel + '</div><div class="card-value" style="color:' + scoreColor + '">' + completeness + '%</div><div class="card-label">of existing columns filled in</div><div class="card-meta">' + nullCells.toLocaleString() + ' blank values across ' + fields.length + ' columns</div></div>';
+  });
+  completenessCards.innerHTML = html;
+
+  // Attribute completeness
+  const attrEl = document.getElementById('attribute-completeness');
+  const attrs = [
+    { name: 'Street / Address', count: 4, of: 4 },
+    { name: 'GPS Coordinates', count: 2.5, of: 4 },
+    { name: 'Number of Bays', count: 2, of: 4 },
+    { name: 'Accessible Bays', count: 0.5, of: 4 },
+    { name: 'Operating Days', count: 1, of: 4 },
+    { name: 'Operating Hours', count: 1, of: 4 },
+    { name: 'Zone Classification', count: 1, of: 4 },
+    { name: 'Price Per Hour', count: 1, of: 4 },
+    { name: 'Minimum Purchase', count: 0, of: 4 },
+    { name: 'Max Stay Duration', count: 0.5, of: 4 },
+  ];
+  let attrHtml = '';
+  attrs.forEach(a => {
+    const pct = (a.count / a.of * 100);
+    const col = pct >= 75 ? 'var(--green)' : pct >= 50 ? 'var(--amber)' : 'var(--red)';
+    attrHtml += '<div style="margin-bottom:14px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-size:.8rem;font-weight:600;">' + a.name + '</span><span style="font-size:.75rem;color:' + col + ';font-weight:700;">' + a.count + ' of ' + a.of + ' councils</span></div><div class="progress-bar" style="height:10px;"><div class="segment" style="width:' + pct + '%;background:' + col + ';"></div><div class="segment" style="width:' + (100 - pct) + '%;background:rgba(255,255,255,.06);"></div></div></div>';
+  });
+  attrEl.innerHTML = attrHtml;
+
+  // Bay data
+  const bayCards = document.getElementById('bay-cards');
+  const dlrFeatures = getFeatures(DATA.dlr);
+  let dlrTotal = 0, dlrWithBays = 0;
+  dlrFeatures.forEach(f => {
+    const v = f.properties['Number_of_Paid_Parking_Spaces_'];
+    if (v !== null && v !== undefined && v !== '') { dlrTotal += Number(v); dlrWithBays++; }
+  });
+  const sdccPaidFeatures = getFeatures(DATA.sdccPaid);
+  let sdccBayTotal = 0, sdccWithBays = 0;
+  sdccPaidFeatures.forEach(f => {
+    const v = f.properties['No. Spaces'];
+    if (v && v.trim()) { sdccBayTotal += Number(v); sdccWithBays++; }
+  });
+
+  bayCards.innerHTML =
+    '<div class="card"><div class="card-source" style="color:var(--green);">DLR</div><div class="card-value" style="color:var(--green);">' + dlrTotal.toLocaleString() + '</div><div class="card-label">total bays across ' + dlrWithBays + ' meters</div></div>' +
+    '<div class="card"><div class="card-source" style="color:' + councilColors.sdccPaid + ';">SDCC Paid</div><div class="card-value" style="color:' + councilColors.sdccPaid + ';">' + sdccBayTotal.toLocaleString() + '</div><div class="card-label">total bays across ' + sdccWithBays + ' areas</div></div>' +
+    '<div class="card"><div class="card-source" style="color:var(--red);">DCC</div><div class="card-value" style="color:var(--red);">0</div><div class="card-label">796 meters, no bay counts</div></div>' +
+    '<div class="card"><div class="card-source" style="color:var(--red);">Fingal</div><div class="card-value" style="color:var(--red);">0</div><div class="card-label">139 meters, no bay counts</div></div>';
+
+  const totalMeters = 796 + 344 + 139 + sdccWithBays;
+  const withBays = dlrWithBays + sdccWithBays;
+  const bayPct = (withBays / totalMeters * 100).toFixed(0);
+  document.getElementById('bay-progress').innerHTML =
+    '<div style="margin:12px 0 24px;"><div style="font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:8px;">Of <strong style="color:var(--white);">' + totalMeters.toLocaleString() + '</strong> locations across all councils, only <strong style="color:var(--green);">' + withBays + '</strong> (' + bayPct + '%) include bay counts:</div>' +
+    '<div class="progress-bar"><div class="segment" style="width:' + bayPct + '%;background:var(--green);">' + bayPct + '%</div><div class="segment" style="width:' + (100 - bayPct) + '%;background:rgba(239,68,68,0.3);color:var(--white);">' + (100 - bayPct) + '% no data</div></div>' +
+    '<div style="margin-top:12px;font-size:.76rem;color:rgba(255,255,255,.35);">No council tracks accessible bays in their primary parking file. SDCC includes them in their paid parking CSV but not in a way that can be cross-referenced with other datasets.</div></div>';
+}
+
+// ===== TAB 4: QUALITY =====
+function buildQuality() {
+  // Null table
+  const nullTableEl = document.getElementById('null-table');
+  let nullHTML = '<table><thead><tr><th>File</th><th>Column</th><th>Blank</th><th>Total</th><th>% Missing</th></tr></thead><tbody>';
+  Object.entries(DATA).forEach(([key, ds]) => {
+    const features = getFeatures(ds);
+    const fields = getAllFieldNames(ds).sort();
+    fields.forEach(f => {
+      const nulls = countNulls(ds, f);
+      if (nulls === 0) return;
+      const pct = ((nulls / features.length) * 100).toFixed(1);
+      const badge = pct > 50 ? 'badge-red' : pct > 10 ? 'badge-amber' : 'badge-green';
+      nullHTML += '<tr><td><span class="stat-pill"><span class="dot" style="background:' + ds.color + '"></span>' + ds.shortLabel + '</span></td><td style="font-weight:600;">' + f + '</td><td>' + nulls + '</td><td>' + features.length + '</td><td><span class="badge ' + badge + '">' + pct + '%</span></td></tr>';
+    });
+  });
+  nullHTML += '</tbody></table>';
+  nullTableEl.innerHTML = nullHTML;
+
+  // Issues
+  const issuesEl = document.getElementById('issues-list');
+  const issues = [];
+
+  // DCC
+  const dccF = getFeatures(DATA.dcc);
+  const nullGeom = dccF.filter(f => !f.geometry || !f.geometry.coordinates);
+  if (nullGeom.length) issues.push({ source: 'DCC', severity: 'red', title: nullGeom.length + ' record has no location', body: 'This meter cannot be shown on a map because its coordinates are completely blank.' });
+  const shapeNulls = dccF.filter(f => f.properties.Shape === null).length;
+  if (shapeNulls === dccF.length) issues.push({ source: 'DCC', severity: 'amber', title: 'The "Shape" column is completely empty across all ' + dccF.length + ' records', body: 'This column exists in the file but contains no data. It adds unnecessary clutter to the dataset.' });
+
+  // DLR
+  const dlrF = getFeatures(DATA.dlr);
+  const restrictMissing = dlrF.filter(f => !('Restrictions' in f.properties));
+  if (restrictMissing.length) issues.push({ source: 'DLR', severity: 'amber', title: restrictMissing.length + ' of ' + dlrF.length + ' records are missing the "Restrictions" column', body: 'Some records have a restrictions field and others simply do not — not blank, but absent entirely from the record structure.' });
+  issues.push({ source: 'DLR', severity: 'amber', title: 'Column names contain typos', body: 'The hourly rate column is spelled "Hourly_Tarrif" instead of "Hourly_Tariff". The bays column has a trailing underscore: "Number_of_Paid_Parking_Spaces_". These inconsistencies cause problems when integrating data.' });
+
+  const restrictionValues = {};
+  dlrF.forEach(f => { const r = f.properties.Restrictions; if (r) restrictionValues[r] = (restrictionValues[r] || 0) + 1; });
+  const restrictKeys = Object.keys(restrictionValues);
+  if (restrictKeys.length > 1) {
+    issues.push({ source: 'DLR', severity: 'amber', title: 'Same restriction written in different ways', body: 'The same rule appears with different capitalisation: ' + restrictKeys.slice(0, 4).map(k => '"' + k + '"').join(', ') + '. This makes filtering and grouping unreliable.' });
+  }
+
+  // Fingal
+  const fingalF = getFeatures(DATA.fingal);
+  const nullMeters = fingalF.filter(f => f.properties.Meter_ID === null);
+  if (nullMeters.length) issues.push({ source: 'Fingal', severity: 'red', title: nullMeters.length + ' record has no meter ID', body: 'This record cannot be uniquely identified or tracked.' });
+  const coordMap = {};
+  fingalF.forEach(f => { const c = getCoords(f); if (!c) return; const key = c[0].toFixed(6) + ',' + c[1].toFixed(6); if (!coordMap[key]) coordMap[key] = []; coordMap[key].push(f.properties); });
+  const dupes = Object.entries(coordMap).filter(([k, v]) => v.length > 1);
+  if (dupes.length) issues.push({ source: 'Fingal', severity: 'amber', title: dupes.length + ' pairs of meters share the exact same GPS coordinates', body: 'Multiple records have identical latitude and longitude. This could be meters physically next to each other or a data entry error.' });
+
+  const typos = new Set();
+  fingalF.forEach(f => {
+    const sn = f.properties.Street_Name || '';
+    const la = f.properties.LEAS_ADMIN || '';
+    if (sn.includes('Streeet')) typos.add('"Church Streeet" should be "Church Street"');
+    if (sn.includes('Castel ')) typos.add('"Castel Avenue/Park" should be "Castle Avenue/Park"');
+    if (sn.includes('Cresent')) typos.add('"Portersgate Cresent" should be "Portersgate Crescent"');
+    if (la.includes('Castelknock')) typos.add('"Castelknock" should be "Castleknock"');
+  });
+  if (typos.size) issues.push({ source: 'Fingal', severity: 'amber', title: typos.size + ' spelling mistakes in street/area names', body: [...typos].join('<br>') });
+
+  // SDCC
+  issues.push({ source: 'SDCC', severity: 'red', title: 'Paid parking file has no GPS coordinates', body: 'The Paid_Parking_SDCC.csv contains no latitude, longitude, or any coordinate data. Locations are described only by village name and a text description. They cannot be shown on a map.' });
+  issues.push({ source: 'SDCC', severity: 'red', title: 'Two files with overlapping accessible parking data', body: 'The paid parking CSV includes accessible bay counts as a column. A separate GeoJSON file lists 65 dedicated accessible locations. Some village locations appear in both, creating a duplication problem with no shared key to reconcile them.' });
+
+  // Cross-file
+  issues.push({ source: 'All Councils', severity: 'red', title: 'Every council uses a different data format and structure', body: 'There is no shared standard. Column names, file formats, and included information differ across every council. Combining these datasets requires significant manual mapping work.' });
+
+  // Render
+  const sevOrder = { red: 0, amber: 1 };
+  issues.sort((a, b) => (sevOrder[a.severity] ?? 2) - (sevOrder[b.severity] ?? 2));
+  let issueHTML = '';
+  issues.forEach(issue => {
+    const badgeClass = issue.severity === 'red' ? 'badge-red' : 'badge-amber';
+    const sevLabel = issue.severity === 'red' ? 'Critical' : 'Minor';
+    issueHTML += '<div class="issue-card"><div class="issue-header"><span class="badge ' + badgeClass + '">' + sevLabel + '</span><span class="badge badge-blue">' + issue.source + '</span></div><div class="issue-title">' + issue.title + '</div><div class="issue-body">' + issue.body + '</div></div>';
+  });
+  issuesEl.innerHTML = issueHTML;
+
+  // SDCC Overlap section
+  buildSDCCOverlap();
+}
+
+function buildSDCCOverlap() {
+  const el = document.getElementById('sdcc-overlap');
+  const csvFeatures = getFeatures(DATA.sdccPaid);
+  const geoFeatures = getFeatures(DATA.sdccAccessible);
+
+  const csvWithAccessible = csvFeatures.filter(f => f.properties['Accessible Spaces'] && f.properties['Accessible Spaces'].trim() !== '');
+  const geoOnStreet = geoFeatures.filter(f => f.properties.Space_Type === 'On Street');
+
+  let csvTotal = 0; csvWithAccessible.forEach(f => { const v = parseInt(f.properties['Accessible Spaces']); if (!isNaN(v)) csvTotal += v; });
+  let geoTotal = 0; geoFeatures.forEach(f => { const v = f.properties.No_Of_Spaces; if (v) geoTotal += Number(v); });
+  let geoOnStreetTotal = 0; geoOnStreet.forEach(f => { const v = f.properties.No_Of_Spaces; if (v) geoOnStreetTotal += Number(v); });
+
+  el.innerHTML =
+    '<div class="cards two" style="margin-bottom:20px;">' +
+      '<div class="card"><div class="card-source" style="color:' + councilColors.sdccPaid + '">Paid Parking CSV</div><div class="card-value">' + csvWithAccessible.length + '</div><div class="card-label">rows with accessible bay counts (' + csvTotal + ' total accessible spaces)</div><div class="card-meta">Village street parking — no GPS coordinates</div></div>' +
+      '<div class="card"><div class="card-source" style="color:' + councilColors.sdccAccessible + '">Accessible Parking GeoJSON</div><div class="card-value">' + geoFeatures.length + '</div><div class="card-label">dedicated accessible locations (' + geoTotal + ' total spaces)</div><div class="card-meta">' + geoOnStreet.length + ' on-street, ' + (geoFeatures.length - geoOnStreet.length) + ' at facilities — has GPS</div></div>' +
+    '</div>' +
+    '<div class="callout amber"><div class="callout-title" style="color:var(--amber);">The overlap</div><div class="callout-body">Villages like Rathfarnham, Lucan, Rathcoole, Clondalkin, and Palmerstown appear in both files. The CSV reports accessible bays as part of paid parking areas. The GeoJSON lists standalone accessible locations including some on the same streets. With no shared identifier between files, adding both together would double-count accessible spaces in these areas.</div></div>';
+}
+
+// ===== TAB 5: MAP =====
+function initMap() {
+  const map = L.map('map').setView([53.35, -6.26], 10);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 19
+  }).addTo(map);
+
+  const controlsEl = document.getElementById('map-controls');
+  const layers = {};
+  let totalCount = 0, plottedCount = 0;
+
+  // Only plot datasets with coordinates
+  const mappable = { dcc: DATA.dcc, dlr: DATA.dlr, fingal: DATA.fingal, sdccAccessible: DATA.sdccAccessible };
+
+  Object.entries(mappable).forEach(([key, ds]) => {
+    const layerGroup = L.layerGroup();
+    let plotted = 0;
+    getFeatures(ds).forEach(f => {
+      totalCount++;
+      const coords = getCoords(f);
+      if (!coords || isNaN(coords[0]) || isNaN(coords[1])) return;
+      plotted++;
+      plottedCount++;
+      const props = getProps(f);
+      let popup = '<div style="font-family:Poppins,sans-serif;font-size:12px;max-width:280px;max-height:220px;overflow:auto;">' +
+        '<strong style="color:' + ds.color + '">' + ds.shortLabel + '</strong><br>';
+      Object.entries(props).forEach(([k, v]) => {
+        const val = v === null ? '<span style="color:#EF4444;font-weight:700">blank</span>' : escapeHtml(v);
+        popup += '<span style="color:#888">' + k + ':</span> ' + val + '<br>';
+      });
+      popup += '</div>';
+      L.circleMarker(coords, { radius: 5, fillColor: ds.color, color: ds.color, weight: 1, opacity: 0.8, fillOpacity: 0.6 }).bindPopup(popup).addTo(layerGroup);
+    });
+    layerGroup.addTo(map);
+    layers[key] = { layer: layerGroup, plotted: plotted };
+
+    // Toggle button
+    controlsEl.innerHTML += '<label class="map-toggle active" data-layer="' + key + '"><span class="dot" style="background:' + ds.color + '"></span>' + ds.shortLabel + ' (' + plotted + ')</label>';
+  });
+
+  // Note about SDCC Paid
+  controlsEl.innerHTML += '<span style="font-size:.72rem;color:rgba(255,255,255,.3);margin-left:8px;">SDCC Paid Parking has no coordinates and cannot be mapped</span>';
+
+  // Toggle click handlers
+  controlsEl.querySelectorAll('.map-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.layer;
+      btn.classList.toggle('active');
+      if (btn.classList.contains('active')) { map.addLayer(layers[key].layer); }
+      else { map.removeLayer(layers[key].layer); }
+    });
+  });
+
+  document.getElementById('map-stats').textContent = plottedCount.toLocaleString() + ' of ' + totalCount.toLocaleString() + ' locations shown on the map. SDCC paid parking (' + getFeatures(DATA.sdccPaid).length + ' records) could not be mapped — no coordinates in file.';
+}
+
+// ===== TAB 6: BROWSE DATA =====
+function buildExplorer() {
+  const sourceSelect = document.getElementById('explorer-source');
+  Object.entries(DATA).forEach(([key, ds]) => {
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = ds.label + ' (' + getFeatures(ds).length + ' records)';
+    sourceSelect.appendChild(opt);
+  });
+
+  function renderExplorer() {
+    const key = sourceSelect.value;
+    const ds = DATA[key];
+    const features = getFeatures(ds);
+    const fields = getAllFieldNames(ds).sort();
+    const searchTerm = document.getElementById('explorer-search').value.toLowerCase();
+
+    let filtered = features;
+    if (searchTerm) {
+      filtered = features.filter(f => {
+        const props = getProps(f);
+        return Object.values(props).some(v => v !== null && String(v).toLowerCase().includes(searchTerm));
+      });
+    }
+
+    document.getElementById('explorer-count').textContent = 'Showing ' + filtered.length + ' of ' + features.length + ' records';
+
+    let html = '<table><thead><tr><th>#</th>';
+    fields.forEach(f => { html += '<th>' + f + '</th>'; });
+    html += '</tr></thead><tbody>';
+
+    const max = Math.min(filtered.length, 500);
+    for (let i = 0; i < max; i++) {
+      const props = getProps(filtered[i]);
+      html += '<tr><td>' + (i + 1) + '</td>';
+      fields.forEach(field => {
+        const val = props[field];
+        if (val === null || val === undefined || val === '' || !(field in props)) {
+          html += '<td class="cell-null">blank</td>';
+        } else {
+          const s = escapeHtml(val);
+          html += '<td>' + (s.length > 60 ? s.substring(0, 57) + '...' : s) + '</td>';
+        }
+      });
+      html += '</tr>';
+    }
+    if (filtered.length > 500) html += '<tr><td colspan="' + (fields.length + 1) + '" style="text-align:center;color:var(--amber);padding:16px;">Showing first 500 of ' + filtered.length + ' records</td></tr>';
+    html += '</tbody></table>';
+    document.getElementById('explorer-table').innerHTML = html;
+  }
+
+  sourceSelect.addEventListener('change', renderExplorer);
+  document.getElementById('explorer-search').addEventListener('input', renderExplorer);
+  renderExplorer();
+}
+
+// ===== TAB 7: RECOMMENDATIONS =====
+function buildRecommendations() {
+  const el = document.getElementById('recommendations-list');
+  const recs = [
+    {
+      num: 1,
+      title: 'Adopt a shared data standard across all four councils',
+      finding: 'Four councils publish parking data in four different formats with different column names, different structures, and different levels of detail. No two files can be combined without significant manual work.',
+      solution: 'Agree on a common schema with standardised column names, a single file format (GeoJSON recommended), and a minimum set of required attributes. This would allow any technology provider or city planner to use the data immediately.',
+      proof: 'Sloto has already developed a normalised database schema that accommodates all four councils without restructuring. This schema could serve as the basis for a shared standard.'
+    },
+    {
+      num: 2,
+      title: 'Enrich data from meter-level to street-level',
+      finding: 'DCC publishes 796 individual meter locations. But drivers do not think in meters — they think in streets. A single street can have multiple meters, making it difficult to understand actual parking availability per street.',
+      solution: 'Group meter records into street-level entries with aggregated bay counts and a single representative GPS coordinate per street. This makes the data directly useful for consumer applications and city dashboards.',
+      proof: 'Sloto has completed this exercise for DCC — consolidating 796 meter entries into 579 street-level parking locations through automated matching and manual review.'
+    },
+    {
+      num: 3,
+      title: 'Include essential missing attributes in every file',
+      finding: 'No single council publishes all the attributes needed for a useful parking service. DCC is missing bay counts, hours, and pricing. Fingal provides only street name and coordinates. SDCC has bay counts but no coordinates.',
+      solution: 'Every parking record should include at minimum: street name, GPS coordinates, bay count, accessible bay count, operating days and hours, zone classification, and hourly rate. DLR is the closest to this standard today.',
+      proof: 'Sloto sourced and mapped official DCC zone rates, operating hours, and free parking days from council publications into a structured database — demonstrating that this enrichment is achievable when the source information exists.'
+    },
+    {
+      num: 4,
+      title: 'Consolidate overlapping datasets within each council',
+      finding: 'SDCC publishes accessible parking data in two separate files — one as a column in the paid parking CSV and another as a standalone GeoJSON. Some locations appear in both with no shared identifier to prevent double-counting.',
+      solution: 'Each council should publish one authoritative file per data category. If accessible parking is tracked, it should be a column within the main parking file, not a separate dataset that partially overlaps.',
+      proof: 'This analysis identified the specific villages where SDCC data overlaps (Rathfarnham, Lucan, Rathcoole, Clondalkin, Palmerstown) and the inability to reconcile them — demonstrating the practical impact of fragmented publishing.'
+    },
+    {
+      num: 5,
+      title: 'Validate records through physical street surveys',
+      finding: 'Multiple spelling mistakes, duplicate coordinates, inactive locations, and missing data were found across all datasets. These errors can only be fully resolved through on-the-ground verification.',
+      solution: 'Conduct a one-time comprehensive street survey across all four council areas to verify every parking location, capture missing attributes (bay counts, signage, operating hours), and establish a verified baseline dataset.',
+      proof: 'Sloto has developed a purpose-built street survey methodology and mobile application designed specifically for capturing on-street parking data at scale. This includes GPS capture, sign photography, structured data entry, and live coverage tracking.'
+    },
+    {
+      num: 6,
+      title: 'Establish an ongoing data maintenance process',
+      finding: 'Parking infrastructure changes — new meters are installed, zones are adjusted, rates change, streets are reconfigured. A one-time data fix will degrade over time without a maintenance process.',
+      solution: 'Set up a process for periodic data updates, ideally linked to council operational changes. When a zone rate changes or a new meter is installed, the open data should be updated within a defined timeframe.',
+      proof: 'Sloto\'s database architecture supports street-level overrides for operating hours and date-specific free parking days, showing how a maintenance-friendly data structure works in practice.'
+    }
+  ];
+
+  let html = '';
+  recs.forEach(r => {
+    html += '<div class="rec-card" onclick="this.classList.toggle(\'open\')">' +
+      '<div class="rec-header"><div class="rec-num">' + r.num + '</div><div class="rec-title">' + r.title + '</div><div class="rec-chevron">&#9660;</div></div>' +
+      '<div class="rec-body"><div class="rec-inner">' +
+        '<div class="rec-finding"><strong>Finding:</strong> ' + r.finding + '</div>' +
+        '<div class="rec-solution">' + r.solution + '</div>' +
+        '<div class="rec-proof"><strong>Sloto\'s work:</strong> ' + r.proof + '</div>' +
+      '</div></div>' +
+    '</div>';
+  });
+  el.innerHTML = html;
+}
+
+// ===== SUPABASE & ACCESS GATE =====
+const SUPABASE_URL = 'https://ndnulyypymbpxxgwgszv.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5kbnVseXlweW1icHh4Z3dnc3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0ODkxNjYsImV4cCI6MjA5MDA2NTE2Nn0.K8oeXHXAH3yYT-25EXdnWgNjfjcRmh6f5CcfaxjTJ2U';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const gate = document.getElementById('access-gate');
+const dashboard = document.getElementById('dashboard-content');
+
+function showRequestForm() {
+  document.getElementById('gate-request').style.display = 'block';
+  document.getElementById('gate-check').style.display = 'none';
+}
+function showCheckForm() {
+  document.getElementById('gate-request').style.display = 'none';
+  document.getElementById('gate-check').style.display = 'block';
+}
+
+async function handleRequest(e) {
+  e.preventDefault();
+  const btn = document.getElementById('req-btn');
+  const msg = document.getElementById('req-msg');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  msg.className = 'gate-msg';
+  msg.style.display = 'none';
+
+  const name = document.getElementById('req-name').value.trim();
+  const email = document.getElementById('req-email').value.trim().toLowerCase();
+  const org = document.getElementById('req-org').value.trim();
+
+  try {
+    const { error } = await supabase.from('access_requests').insert({
+      name: name,
+      email: email,
+      organisation: org,
+      status: 'pending'
+    });
+
+    if (error) throw error;
+
+    msg.className = 'gate-msg success';
+    msg.innerHTML = '<strong>Request submitted.</strong> You will receive access once your request has been reviewed. Come back and check using your email address.';
+    msg.style.display = 'block';
+    document.getElementById('request-form').reset();
+  } catch (err) {
+    msg.className = 'gate-msg error';
+    msg.innerHTML = 'Something went wrong. Please try again or contact <strong>hello@sloto.ie</strong>.';
+    msg.style.display = 'block';
+    console.error(err);
+  }
+  btn.disabled = false;
+  btn.textContent = 'Submit Request';
+  return false;
+}
+
+async function handleCheck(e) {
+  e.preventDefault();
+  const btn = document.getElementById('check-btn');
+  const msg = document.getElementById('check-msg');
+  btn.disabled = true;
+  btn.textContent = 'Checking...';
+  msg.className = 'gate-msg';
+  msg.style.display = 'none';
+
+  const email = document.getElementById('check-email').value.trim().toLowerCase();
+
+  try {
+    const { data, error } = await supabase
+      .from('access_requests')
+      .select('id, name, email, status')
+      .eq('email', email)
+      .eq('status', 'approved')
+      .limit(1);
+
+    if (error) throw error;
+
+    if (data && data.length > 0) {
+      localStorage.setItem('sloto_access_email', email);
+      localStorage.setItem('sloto_access_name', data[0].name);
+      unlockDashboard();
+    } else {
+      msg.className = 'gate-msg error';
+      msg.innerHTML = 'Access not yet approved. If you have submitted a request, please allow some time for it to be reviewed. For questions, contact <strong>hello@sloto.ie</strong>.';
+      msg.style.display = 'block';
+    }
+  } catch (err) {
+    msg.className = 'gate-msg error';
+    msg.innerHTML = 'Something went wrong. Please try again.';
+    msg.style.display = 'block';
+    console.error(err);
+  }
+  btn.disabled = false;
+  btn.textContent = 'Check Access';
+  return false;
+}
+
+function unlockDashboard() {
+  gate.classList.add('hidden');
+  document.getElementById('dashboard-content').style.display = 'block';
+  loadData();
+}
+
+async function checkStoredAccess() {
+  const email = localStorage.getItem('sloto_access_email');
+  if (!email) return;
+
+  try {
+    const { data, error } = await supabase
+      .from('access_requests')
+      .select('id, status')
+      .eq('email', email)
+      .eq('status', 'approved')
+      .limit(1);
+
+    if (!error && data && data.length > 0) {
+      unlockDashboard();
+    } else {
+      localStorage.removeItem('sloto_access_email');
+      localStorage.removeItem('sloto_access_name');
+    }
+  } catch (err) {
+    // If check fails, still show gate
+  }
+}
+
+// ===== INIT =====
+document.getElementById('request-form').addEventListener('submit', handleRequest);
+document.getElementById('check-form').addEventListener('submit', handleCheck);
+checkStoredAccess();
+</script>
+</body>
+</html>
