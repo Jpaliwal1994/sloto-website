@@ -553,11 +553,11 @@ const councilColors = {
 async function loadData() {
   try {
     const [dcc, dlr, fingal, sdccCsv, sdccGeo] = await Promise.all([
-      fetch('data/dcc-meters-2025.json').then(r => r.json()),
-      fetch('data/dlr-parking.json').then(r => r.json()),
-      fetch('data/fingal-parking.json').then(r => r.json()),
-      fetch('data/Paid_Parking_SDCC.csv').then(r => r.text()),
-      fetch('data/Accessible_Parking_Spaces_SDCC.geojson').then(r => r.json()),
+      fetch('/data_analysis/data/dcc-meters-2025.json').then(r => r.json()),
+      fetch('/data_analysis/data/dlr-parking.json').then(r => r.json()),
+      fetch('/data_analysis/data/fingal-parking.json').then(r => r.json()),
+      fetch('/data_analysis/data/Paid_Parking_SDCC.csv').then(r => r.text()),
+      fetch('/data_analysis/data/Accessible_Parking_Spaces_SDCC.geojson').then(r => r.json()),
     ]);
 
     // Parse SDCC CSV into GeoJSON-like structure
