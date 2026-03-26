@@ -648,6 +648,7 @@ function switchTab(tabId) {
   if (navLink) navLink.classList.add('active');
   mobileSelect.value = tabId;
   document.getElementById('page-hero').style.display = tabId === 'overview' ? '' : 'none';
+  document.getElementById('tab-' + tabId).style.paddingTop = tabId === 'overview' ? '' : '90px';
   triggerReveals();
   if (tabId === 'map' && !mapInitialized) { initMap(); mapInitialized = true; }
 }
