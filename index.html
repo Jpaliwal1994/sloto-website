@@ -1,482 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>sloto. — Find parking in Dublin, instantly</title>
-<meta name="description" content="Real-time Dublin parking availability, live accessible bay sensors, and crowd-sourced reports. Free app for iPhone and Android."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --black:#0a0a0a;
-  --white:#fff;
-  --green:#22C55E;
-  --gd:#228B22;
-  --red:#EF4444;
-  --gray:#6B7280;
-  --gl:#F5F5F5;
-  --ow:#FAF9F7;
-  --border:#E5E7EB;
-  --f:'Poppins',sans-serif;
-}
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{font-family:var(--f);background:var(--white);color:var(--black);overflow-x:hidden;}
-img{max-width:100%;display:block;}
-a{text-decoration:none;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sloto — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 20px;height:60px;
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(0,0,0,0.06);
-  transition:box-shadow 0.3s;
-}
-nav.scrolled{box-shadow:0 1px 24px rgba(0,0,0,0.07);}
-.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.04em;color:var(--black);}
-.nav-logo span{color:var(--gd);}
-.nav-links{display:none;list-style:none;align-items:center;gap:32px;}
-.nav-links a{font-size:0.875rem;font-weight:500;color:rgba(0,0,0,0.45);transition:color 0.2s;}
-.nav-links a:hover{color:var(--black);}
-.nav-cta{
-  padding:8px 16px;border-radius:8px;
-  background:var(--black);color:var(--white);
-  font-size:0.75rem;font-weight:700;
-  transition:opacity 0.2s;
-}
-.nav-cta:hover{opacity:0.85;}
-@media(min-width:768px){
-  nav{padding:0 48px;height:68px;}
-  .nav-logo{font-size:1.55rem;}
-  .nav-links{display:flex;}
-  .nav-cta{font-size:0.875rem;padding:10px 22px;}
-}
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --green: #228B22;
+      --text: #111111;
+      --muted: #999999;
+      --icon-bg: #DDDDDD;
+      --drum-h: 82px;
+    }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding:100px 20px 60px;
-  background:var(--white);
-  position:relative;overflow:hidden;
-}
-.hero-bg-dot{
-  position:absolute;
-  border-radius:50%;
-  background:rgba(34,139,34,0.06);
-  pointer-events:none;
-}
-.hero-inner{
-  max-width:1100px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr;
-  gap:48px;align-items:center;
-}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:7px;
-  background:#f0fdf4;border:1px solid #bbf7d0;
-  color:var(--gd);
-  font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
-  padding:5px 12px;border-radius:100px;
-  margin-bottom:20px;
-}
-.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-.hero-h{
-  font-size:clamp(2.4rem,8vw,4.2rem);
-  font-weight:900;letter-spacing:-0.04em;line-height:1.02;
-  color:var(--black);margin-bottom:18px;
-}
-.hero-h span{color:var(--gd);}
-.hero-sub{
-  font-size:1rem;color:var(--gray);line-height:1.7;
-  max-width:460px;margin-bottom:36px;
-}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-store{
-  display:flex;align-items:center;gap:10px;
-  padding:12px 20px;border-radius:12px;
-  font-size:0.8rem;
-  transition:transform 0.2s, opacity 0.2s;
-}
-.btn-store:hover{transform:translateY(-2px);opacity:0.9;}
-.btn-apple{background:var(--black);color:var(--white);}
-.btn-google{background:var(--white);color:var(--black);border:1.5px solid var(--border);}
-.btn-store-lbl{display:flex;flex-direction:column;}
-.btn-store-lbl small{font-size:0.68rem;opacity:0.6;font-weight:500;}
-.btn-store-lbl strong{font-size:0.88rem;font-weight:700;}
-.hero-visual{display:flex;justify-content:center;position:relative;}
-.hero-phone-wrap{position:relative;}
-.hero-glow{
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:280px;height:280px;
-  background:radial-gradient(circle,rgba(34,139,34,0.12) 0%,transparent 70%);
-  pointer-events:none;
-}
-.phone{
-  width:220px;
-  border-radius:36px;
-  border:8px solid #111;
-  overflow:hidden;
-  box-shadow:0 32px 80px rgba(0,0,0,0.22);
-  position:relative;z-index:1;
-  animation:float 4s ease-in-out infinite;
-}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-.phone img{width:100%;display:block;}
-@media(min-width:768px){
-  .hero{padding:120px 48px 80px;}
-  .hero-inner{grid-template-columns:1fr 1fr;gap:64px;}
-  .phone{width:260px;}
-}
-@media(min-width:1024px){
-  .hero-inner{gap:80px;}
-  .phone{width:280px;}
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* SECTION SHARED */
-.section{padding:80px 20px;}
-.section-inner{max-width:1100px;margin:0 auto;}
-.sec-tag{
-  font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--gd);margin-bottom:10px;
-}
-.sec-h{
-  font-size:clamp(1.7rem,4vw,2.4rem);
-  font-weight:900;letter-spacing:-0.03em;
-  color:var(--black);margin-bottom:48px;
-}
-@media(min-width:768px){.section{padding:100px 48px;}}
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
 
-/* VIDEOS */
-.videos-grid{display:grid;grid-template-columns:1fr;gap:20px;}
-.vid-card{
-  border-radius:20px;overflow:hidden;
-  border:1px solid var(--border);
-  background:var(--white);
-  transition:transform 0.3s, box-shadow 0.3s;
-}
-.vid-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.1);}
-.vid-wrap{position:relative;background:#0a0a0a;}
-.vid-wrap video{width:100%;display:block;max-height:420px;object-fit:cover;}
-.vid-body{padding:20px 22px;}
-.vid-title{font-size:1rem;font-weight:700;color:var(--black);margin-bottom:5px;letter-spacing:-0.02em;}
-.vid-desc{font-size:0.88rem;color:var(--gray);line-height:1.6;}
-@media(min-width:768px){.videos-grid{grid-template-columns:1fr 1fr;}}
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px 80px;
+      position: relative;
+    }
 
-/* FEATURES */
-.feats-grid{display:grid;grid-template-columns:1fr;gap:20px;}
-.feat-card{
-  border-radius:20px;overflow:hidden;
-  border:1px solid var(--border);
-  background:var(--white);
-  transition:transform 0.3s, box-shadow 0.3s;
-}
-.feat-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.1);}
-.feat-img{background:var(--gl);}
-.feat-img img{width:100%;display:block;}
-.feat-body{padding:22px 24px;}
-.feat-badge{
-  display:inline-block;
-  font-size:0.68rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
-  padding:3px 10px;border-radius:100px;
-  background:#f0fdf4;color:var(--gd);
-  margin-bottom:10px;
-}
-.feat-title{font-size:1.05rem;font-weight:800;color:var(--black);margin-bottom:6px;letter-spacing:-0.02em;}
-.feat-desc{font-size:0.875rem;color:var(--gray);line-height:1.65;}
-@media(min-width:768px){.feats-grid{grid-template-columns:1fr 1fr;}}
+    /* ── Logo — fixed top left ── */
+    .logo {
+      position: fixed;
+      top: 28px;
+      left: 32px;
+      display: flex;
+      align-items: baseline;
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
+      z-index: 10;
+    }
 
-/* REVIEWS */
-.reviews-section{background:var(--black);padding:80px 20px;}
-.reviews-inner{max-width:1100px;margin:0 auto;}
-.reviews-section .sec-tag{color:var(--green);}
-.reviews-section .sec-h{color:var(--white);}
-.reviews-grid{display:grid;grid-template-columns:1fr;gap:16px;}
-.review-card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:16px;padding:28px;
-}
-.stars{display:flex;gap:3px;margin-bottom:14px;}
-.star{width:14px;height:14px;background:var(--green);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
-.review-text{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:18px;font-style:italic;}
-.review-author{display:flex;align-items:center;gap:10px;}
-.review-avatar{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(34,197,94,0.15);
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.75rem;font-weight:700;color:var(--green);
-}
-.review-name{font-size:0.85rem;font-weight:600;color:var(--white);}
-.review-sub{font-size:0.75rem;color:rgba(255,255,255,0.35);}
-@media(min-width:768px){
-  .reviews-section{padding:100px 48px;}
-  .reviews-grid{grid-template-columns:repeat(3,1fr);}
-}
+    .logo-word {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(22px, 3vw, 32px);
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1;
+    }
 
-/* CONTACT */
-.contact-section{padding:80px 20px;background:var(--ow);}
-.contact-inner{max-width:1100px;margin:0 auto;text-align:center;}
-.contact-inner .sec-tag{display:block;}
-.contact-inner .sec-h{margin-bottom:16px;}
-.contact-sub{font-size:1rem;color:var(--gray);margin-bottom:36px;line-height:1.6;}
-.contact-email-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--black);color:var(--white);
-  padding:16px 32px;border-radius:12px;
-  font-size:1rem;font-weight:700;letter-spacing:-0.01em;
-  transition:transform 0.2s,opacity 0.2s;
-}
-.contact-email-btn:hover{transform:translateY(-2px);opacity:0.88;}
-.contact-note{margin-top:20px;font-size:0.82rem;color:rgba(0,0,0,0.3);}
-@media(min-width:768px){.contact-section{padding:100px 48px;}}
+    .logo-square {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 0;
+      margin-left: 3px;
+      margin-bottom: 4px;
+      flex-shrink: 0;
+    }
 
-/* FOOTER */
-footer{
-  border-top:1px solid rgba(0,0,0,0.07);
-  padding:36px 20px;
-  display:flex;flex-direction:column;gap:20px;
-  background:var(--white);
-}
-.footer-logo{font-size:1.3rem;font-weight:800;letter-spacing:-0.04em;color:var(--black);}
-.footer-logo span{color:var(--gd);}
-.footer-links{display:flex;flex-wrap:wrap;gap:14px 20px;list-style:none;}
-.footer-links a{font-size:0.8rem;font-weight:500;color:var(--gray);transition:color 0.2s;}
-.footer-links a:hover{color:var(--black);}
-.footer-copy{font-size:0.75rem;color:rgba(0,0,0,0.3);}
-@media(min-width:768px){
-  footer{flex-direction:row;align-items:center;justify-content:space-between;padding:44px 48px;gap:24px;}
-}
+    /* ── Tagline — centre hero ── */
+    .tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(24px, 4.5vw, 48px);
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.22s forwards;
+      line-height: 1.2;
+      text-transform: none;
+    }
 
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-</style>
+    /* ── Drum ── */
+    .drum-outer {
+      width: 100%;
+      max-width: 600px;
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.38s forwards;
+    }
+
+    .drum-window {
+      position: relative;
+      height: calc(var(--drum-h) * 3);
+      overflow: hidden;
+    }
+
+    /* Top and bottom fade masks */
+    .drum-window::before,
+    .drum-window::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: calc(var(--drum-h) * 1.1);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .drum-window::before {
+      top: 0;
+      background: linear-gradient(to bottom, #ffffff 30%, transparent);
+    }
+    .drum-window::after {
+      bottom: 0;
+      background: linear-gradient(to top, #ffffff 30%, transparent);
+    }
+
+    /* Two fading lines for centre highlight */
+    .drum-line-top,
+    .drum-line-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      z-index: 4;
+      pointer-events: none;
+      /* Fade in from centre, transparent at edges */
+      background: linear-gradient(to right, transparent 0%, #CCCCCC 25%, #CCCCCC 75%, transparent 100%);
+    }
+    .drum-line-top {
+      top: calc(var(--drum-h) * 1);
+    }
+    .drum-line-bottom {
+      top: calc(var(--drum-h) * 2);
+    }
+
+    .drum-track {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+
+    .drum-item {
+      height: var(--drum-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 18px;
+      flex-shrink: 0;
+    }
+
+    .drum-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--icon-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.35s ease;
+    }
+
+    .drum-icon.active-icon {
+      background: #111111;
+    }
+
+    .drum-icon svg {
+      width: 19px;
+      height: 19px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .drum-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(15px, 2.3vw, 19px);
+      color: var(--text);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .drum-sub {
+      font-size: clamp(11px, 1.1vw, 12px);
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 2px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 32px;
+      height: 1.5px;
+      background: #E2E2E2;
+      margin: 44px auto;
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.52s forwards;
+    }
+
+    /* ── Coming Soon ── */
+    .coming-soon {
+      text-align: center;
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.62s forwards;
+    }
+
+    .cs-label {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(20px, 3.5vw, 30px);
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .cs-sub {
+      font-size: clamp(12px, 1.4vw, 14px);
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: #CCCCCC;
+      letter-spacing: 0.08em;
+      opacity: 0;
+      animation: rise 0.7s ease 1s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="index.html" class="nav-logo">sloto<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="#action">See it in action</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#" class="nav-cta">Download the app</a>
-</nav>
+<main class="page">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-dot" style="width:600px;height:600px;top:-200px;right:-200px;"></div>
-  <div class="hero-bg-dot" style="width:300px;height:300px;bottom:-100px;left:-100px;"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-tag">
-        <span class="hero-tag-dot"></span>
-        Dublin parking, solved
-      </div>
-      <h1 class="hero-h">Find parking<br>in Dublin.<br><span>Instantly.</span></h1>
-      <p class="hero-sub">Real-time availability, live accessible bay sensors, and crowd-sourced reports — all in one free app.</p>
-      <div class="hero-btns">
-        <a href="#" class="btn-store btn-apple">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          <div class="btn-store-lbl">
-            <small>Download on the</small>
-            <strong>App Store</strong>
-          </div>
-        </a>
-        <a href="#" class="btn-store btn-google">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.99.14l12.47-7.19-2.64-2.64-10.82 9.69zM.49 2.27C.18 2.6 0 3.1 0 3.76v16.48c0 .66.18 1.16.49 1.49l.08.07L9.26 13v-.22L.57 4.2l-.08.07zm20.28 8.09-2.79-1.61-2.96 2.96 2.96 2.96 2.82-1.63c.8-.46.8-1.22-.03-1.68zM4.17.39L16.64 7.58l-2.64 2.64L3.18.27c.36-.08.72-.02.99.12z"/></svg>
-          <div class="btn-store-lbl">
-            <small>Get it on</small>
-            <strong>Google Play</strong>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-phone-wrap">
-        <div class="hero-glow"></div>
-        <div class="phone">
-          <img src="https://raw.githubusercontent.com/Jpaliwal1994/sloto-website/main/pictures_and_videos/map.jpg" alt="Sloto app map screen showing Dublin parking spots"/>
-        </div>
-      </div>
+  <div class="logo">
+    <span class="logo-word">Sloto</span>
+    <span class="logo-square"></span>
+  </div>
+
+  <p class="tagline">Dublin's smartest parking app</p>
+
+  <div class="drum-outer">
+    <div class="drum-window">
+      <div class="drum-line-top"></div>
+      <div class="drum-line-bottom"></div>
+      <div class="drum-track" id="drumTrack"></div>
     </div>
   </div>
-</section>
 
-<!-- SEE IT IN ACTION -->
-<section class="section" id="action">
-  <div class="section-inner">
-    <p class="sec-tag reveal">See it in action</p>
-    <h2 class="sec-h reveal">Watch how it works</h2>
-    <div class="videos-grid">
-      <div class="vid-card reveal">
-        <div class="vid-wrap">
-          <video autoplay muted loop playsinline>
-            <source src="https://raw.githubusercontent.com/Jpaliwal1994/sloto-website/main/pictures_and_videos/video_search_location.MP4" type="video/mp4"/>
-          </video>
-        </div>
-        <div class="vid-body">
-          <div class="vid-title">Search any destination</div>
-          <div class="vid-desc">Find parking near where you're going — not where you already are.</div>
-        </div>
-      </div>
-      <div class="vid-card reveal">
-        <div class="vid-wrap">
-          <video autoplay muted loop playsinline>
-            <source src="https://raw.githubusercontent.com/Jpaliwal1994/sloto-website/main/pictures_and_videos/video_view_rates.MP4" type="video/mp4"/>
-          </video>
-        </div>
-        <div class="vid-body">
-          <div class="vid-title">See live hourly rates</div>
-          <div class="vid-desc">Zoom in and rates appear on every marker — no surprises when you arrive.</div>
-        </div>
-      </div>
-    </div>
+  <div class="divider"></div>
+
+  <div class="coming-soon">
+    <span class="cs-label">Coming Soon</span>
+    <p class="cs-sub">We're putting the final touches on something great.</p>
   </div>
-</section>
 
-<!-- FEATURES -->
-<section class="section" id="features" style="background:var(--gl);">
-  <div class="section-inner">
-    <p class="sec-tag reveal">Features</p>
-    <h2 class="sec-h reveal">Everything a Dublin driver needs</h2>
-    <div class="feats-grid">
-      <div class="feat-card reveal">
-        <div class="feat-img">
-          <img src="https://raw.githubusercontent.com/Jpaliwal1994/sloto-website/main/pictures_and_videos/parking_details.jpg" alt="Parking spot details screen"/>
-        </div>
-        <div class="feat-body">
-          <div class="feat-badge">Live data</div>
-          <div class="feat-title">Real-time status and rates</div>
-          <div class="feat-desc">See if a spot is free or paid right now, with live hourly rates, operating hours, and crowd reports — before you even drive there.</div>
-        </div>
-      </div>
-      <div class="feat-card reveal">
-        <div class="feat-img">
-          <img src="https://raw.githubusercontent.com/Jpaliwal1994/sloto-website/main/pictures_and_videos/accessible_bays.jpg" alt="Accessible bays map screen"/>
-        </div>
-        <div class="feat-body">
-          <div class="feat-badge">Smart Dublin data</div>
-          <div class="feat-title">Live accessible bay sensors</div>
-          <div class="feat-desc">84 accessible bays across Dublin City tracked by Smart Dublin sensors, updated every 5 minutes. Blue means available, grey means occupied.</div>
-        </div>
-      </div>
-      <div class="feat-card reveal">
-        <div class="feat-img">
-          <img src="https://raw.githubusercontent.com/Jpaliwal1994/sloto-website/main/pictures_and_videos/my_car.jpg" alt="My Car screen showing parked location"/>
-        </div>
-        <div class="feat-body">
-          <div class="feat-badge">Free account</div>
-          <div class="feat-title">Track where you parked</div>
-          <div class="feat-desc">Mark your spot the moment you park. Walk back with one tap and never waste time wandering around a street you don't recognise.</div>
-        </div>
-      </div>
-      <div class="feat-card reveal">
-        <div class="feat-img">
-          <img src="https://raw.githubusercontent.com/Jpaliwal1994/sloto-website/main/pictures_and_videos/set_timer.jpg" alt="Set parking timer screen"/>
-        </div>
-        <div class="feat-body">
-          <div class="feat-badge">Free account</div>
-          <div class="feat-title">Parking timer and reminders</div>
-          <div class="feat-desc">Set a timer the moment you park and get notified before your paid parking expires. Never come back to a ticket again.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- REVIEWS -->
-<section class="reviews-section" id="reviews">
-  <div class="reviews-inner">
-    <p class="sec-tag reveal">Reviews</p>
-    <h2 class="sec-h reveal">What Dublin drivers say</h2>
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-text">"Finally an app that actually tells you if parking is free before you drive around for 20 minutes. Saved me a fortune on the meters already."</p>
-        <div class="review-author">
-          <div class="review-avatar">SC</div>
-          <div>
-            <div class="review-name">Seán C.</div>
-            <div class="review-sub">Dublin 4</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card reveal">
-        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-text">"The accessible bay feature is brilliant. My mum needs a disabled space and this is the first app that actually shows live availability. Genuinely useful."</p>
-        <div class="review-author">
-          <div class="review-avatar">AM</div>
-          <div>
-            <div class="review-name">Aoife M.</div>
-            <div class="review-sub">Rathmines</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card reveal">
-        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="review-text">"Set the parking timer once, got a notification two minutes before it ran out. Ran back just in time. This app paid for itself on day one."</p>
-        <div class="review-author">
-          <div class="review-avatar">PF</div>
-          <div>
-            <div class="review-name">Patrick F.</div>
-            <div class="review-sub">Ranelagh</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="contact-inner">
-    <p class="sec-tag reveal">Contact</p>
-    <h2 class="sec-h reveal">Get in touch</h2>
-    <p class="contact-sub reveal">Questions, feedback, or just want to say hello?<br>We'd love to hear from you.</p>
-    <a href="mailto:hello@sloto.ie" class="contact-email-btn reveal">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      hello@sloto.ie
-    </a>
-    <p class="contact-note reveal">We typically respond within 24 hours.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <a href="index.html" class="footer-logo">sloto<span>.</span></a>
-  <ul class="footer-links">
-    <li><a href="legal.html">Privacy &amp; Terms</a></li>
-    <li><a href="delete-account.html">Delete account</a></li>
-  </ul>
-  <p class="footer-copy">© 2026 Sloto Ltd. Dublin 🇮🇪</p>
-</footer>
+<span class="footer">sloto.ie</span>
 
 <script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-});
+  const features = [
+    {
+      text: 'Street parking made easy',
+      sub: 'Find available spots near you instantly',
+      icon: `<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>`
+    },
+    {
+      text: 'Live accessible bay sensors',
+      sub: 'Real-time occupancy from smart sensors',
+      icon: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="white" stroke="none"/><path d="M7.5 7.5a6.5 6.5 0 0 0 0 9M16.5 7.5a6.5 6.5 0 0 1 0 9"/><path d="M4.5 4.5a11 11 0 0 0 0 15M19.5 4.5a11 11 0 0 1 0 15"/></svg>`
+    },
+    {
+      text: 'Navigate to a spot',
+      sub: 'Turn-by-turn directions to your bay',
+      icon: `<svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>`
+    },
+    {
+      text: 'Rates & operating hours',
+      sub: "Know exactly what you'll pay, upfront",
+      icon: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>`
+    },
+    {
+      text: 'Parking reminders',
+      sub: 'Never get a ticket again',
+      icon: `<svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`
+    },
+    {
+      text: 'Find your car',
+      sub: 'Always know where you parked',
+      icon: `<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`
+    },
+  ];
 
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-      observer.unobserve(e.target);
-    }
+  const track = document.getElementById('drumTrack');
+  const DRUM_H = 82;
+  let current = 0;
+  let isAnimating = false;
+
+  // [ghost-last] + [6 features] + [ghost-first]
+  const allItems = [features[features.length - 1], ...features, features[0]];
+
+  allItems.forEach((f, i) => {
+    const el = document.createElement('div');
+    el.className = 'drum-item';
+    el.innerHTML = `
+      <div class="drum-icon" id="icon-${i}">${f.icon}</div>
+      <div>
+        <div class="drum-text">${f.text}</div>
+        <div class="drum-sub">${f.sub}</div>
+      </div>
+    `;
+    track.appendChild(el);
   });
-}, {threshold: 0.1});
-reveals.forEach(el => observer.observe(el));
+
+  function getY(c) {
+    return -c * DRUM_H;
+  }
+
+  function highlightCentre() {
+    document.querySelectorAll('.drum-icon').forEach(el => el.classList.remove('active-icon'));
+    // Centre item DOM index = current + 1 (offset by ghost-last at index 0)
+    const el = document.getElementById(`icon-${current + 1}`);
+    if (el) el.classList.add('active-icon');
+  }
+
+  track.style.transform = `translateY(${getY(current)}px)`;
+  highlightCentre();
+
+  function advance() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    current++;
+
+    track.style.transition = 'transform 0.48s cubic-bezier(0.4, 0, 0.2, 1)';
+    track.style.transform = `translateY(${getY(current)}px)`;
+    highlightCentre();
+
+    track.addEventListener('transitionend', function onEnd() {
+      track.removeEventListener('transitionend', onEnd);
+
+      if (current >= features.length) {
+        current = 0;
+        track.style.transition = 'none';
+        track.style.transform = `translateY(${getY(current)}px)`;
+        highlightCentre();
+      }
+
+      isAnimating = false;
+    }, { once: true });
+  }
+
+  function loop() {
+    setTimeout(() => {
+      advance();
+      loop();
+    }, 2400);
+  }
+
+  setTimeout(loop, 2000);
 </script>
+
 </body>
 </html>
