@@ -449,8 +449,8 @@ document.getElementById('link-to-request').addEventListener('click', function() 
   <p class="section-desc reveal">For any digital service, city planning tool, or accessibility platform to utilise parking data effectively, the following attributes are required for each parking location. Below is what each local authority currently provides:</p>
   <div class="heatmap-wrap reveal d1" id="heatmap-container"></div>
 
-  <div class="section-title reveal">How does this data translate in practice?</div>
-  <p class="section-desc reveal">If a parking location were retrieved from each council's dataset, the following illustrates what information would actually be available:</p>
+  <div class="section-title reveal">Practical application of the available data</div>
+  <p class="section-desc reveal">The following illustrates the information available when a parking location is retrieved from each council's published dataset:</p>
   <div class="reveal d1" id="user-experience-cards"></div>
 </div>
 
@@ -480,7 +480,7 @@ document.getElementById('link-to-request').addEventListener('click', function() 
   <p class="section-desc reveal">A record-by-record review of each dataset revealed the following issues that would require resolution before the data can be used reliably.</p>
   <div class="reveal d1" id="issues-list"></div>
 
-  <div class="section-title reveal">SDCC data overlap — which file to use?</div>
+  <div class="section-title reveal">SDCC data overlap — data source assessment</div>
   <p class="section-desc reveal">South Dublin County Council publishes two separate files that both contain accessible parking information. This creates a duplication problem with no clear way to reconcile them.</p>
   <div class="callout reveal">
     <div class="callout-title" style="color:var(--red);">Two files, overlapping data, no shared key</div>
@@ -1102,43 +1102,43 @@ function buildRecommendations() {
       num: 1,
       title: 'Adopt a shared data standard across all four councils',
       finding: 'Four councils publish parking data in four different formats with different column names, different structures, and different levels of detail. No two files can be combined without significant manual work.',
-      solution: 'Agree on a common schema with standardised column names, a single file format (GeoJSON recommended), and a minimum set of required attributes. This would allow any technology provider or city planner to use the data immediately.',
-      proof: 'Sloto can assist with developing a normalised data schema that accommodates all four councils, providing a practical starting point for a shared standard.'
+      solution: 'Agree on a common schema with standardised column names, a single file format (GeoJSON recommended), and a minimum set of required attributes. This would enable any technology provider or public body to utilise the data immediately.',
+      proof: 'A normalised data schema that accommodates all four councils can be developed as a practical starting point for a shared standard.'
     },
     {
       num: 2,
       title: 'Enrich data from meter-level to street-level',
-      finding: 'DCC publishes 796 individual meter locations. But drivers do not think in meters — they think in streets. A single street can have multiple meters, making it difficult to understand actual parking availability per street.',
-      solution: 'Group meter records into street-level entries with aggregated bay counts and a single representative GPS coordinate per street. This makes the data directly useful for consumer applications and city dashboards.',
-      proof: 'Sloto can undertake this consolidation exercise, grouping meter-level entries into street-level locations through a combination of automated matching and manual review.'
+      finding: 'DCC publishes 796 individual meter locations. However, multiple meters can exist on a single street, making it difficult to determine actual parking availability at street level.',
+      solution: 'Group meter records into street-level entries with aggregated bay counts and a single representative GPS coordinate per street. This would make the data directly usable for digital services and city planning applications.',
+      proof: 'This consolidation exercise involves grouping meter-level entries into street-level locations through a combination of automated matching and manual review.'
     },
     {
       num: 3,
       title: 'Include essential missing attributes in every file',
       finding: 'No single council publishes all the attributes needed for a useful parking service. DCC is missing bay counts, hours, and pricing. Fingal provides only street name and coordinates. SDCC has bay counts but no coordinates.',
       solution: 'Every parking record should include at minimum: street name, GPS coordinates, bay count, accessible bay count, operating days and hours, zone classification, and hourly rate. DLR is the closest to this standard today.',
-      proof: 'Sloto can source and map official zone rates, operating hours, and special parking day information from council publications into a structured format, ensuring all essential attributes are captured consistently.'
+      proof: 'Official zone rates, operating hours, and special parking day information should be sourced from council publications and mapped into a structured format, ensuring all essential attributes are captured consistently.'
     },
     {
       num: 4,
       title: 'Consolidate overlapping datasets within each council',
       finding: 'SDCC publishes accessible parking data in two separate files — one as a column in the paid parking CSV and another as a standalone GeoJSON. Some locations appear in both with no shared identifier to prevent double-counting.',
       solution: 'Each council should publish one authoritative file per data category. If accessible parking is tracked, it should be a column within the main parking file, not a separate dataset that partially overlaps.',
-      proof: 'Sloto can assist with reconciling overlapping datasets and establishing a single authoritative source for each data category, including deduplication of accessible parking records across SDCC files.'
+      proof: 'Overlapping datasets should be reconciled to establish a single authoritative source for each data category, including deduplication of accessible parking records across SDCC files.'
     },
     {
       num: 5,
       title: 'Validate records through physical street surveys',
       finding: 'Multiple spelling mistakes, duplicate coordinates, inactive locations, and missing data were found across all datasets. These errors can only be fully resolved through on-the-ground verification.',
       solution: 'Conduct a one-time comprehensive street survey across all four council areas to verify every parking location, capture missing attributes (bay counts, signage, operating hours), and establish a verified baseline dataset.',
-      proof: 'Sloto has the capability to design and execute a purpose-built street survey programme, including mobile data capture, GPS recording, sign photography, structured data entry, and live coverage tracking across all four council areas.'
+      proof: 'A purpose-built street survey programme should be designed and executed, including mobile data capture, GPS recording, sign photography, structured data entry, and live coverage tracking across all four council areas.'
     },
     {
       num: 6,
       title: 'Establish an ongoing data maintenance process',
       finding: 'Parking infrastructure changes — new meters are installed, zones are adjusted, rates change, streets are reconfigured. A one-time data fix will degrade over time without a maintenance process.',
       solution: 'Set up a process for periodic data updates, ideally linked to council operational changes. When a zone rate changes or a new meter is installed, the open data should be updated within a defined timeframe.',
-      proof: 'Sloto can design and implement a maintenance-friendly data architecture that supports street-level overrides for operating hours, date-specific exceptions, and rate changes — ensuring the dataset remains accurate over time.'
+      proof: 'A maintenance-friendly data architecture should be designed and implemented that supports street-level overrides for operating hours, date-specific exceptions, and rate changes — ensuring the dataset remains accurate over time.'
     }
   ];
 
