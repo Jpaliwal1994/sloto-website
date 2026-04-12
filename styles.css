@@ -321,8 +321,8 @@ section { padding: 96px 0; }
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(245,124,0,0.12);
-  color: var(--brand);
+  background: rgba(14,124,106,0.12);
+  color: var(--accent-green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +349,7 @@ section { padding: 96px 0; }
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 48px;
-  color: var(--brand);
+  color: var(--accent-green);
   line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 16px;
@@ -434,7 +434,7 @@ section { padding: 96px 0; }
   content: '';
   width: 18px;
   height: 18px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F57C00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E7C6A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
   flex-shrink: 0;
 }
 .plan .btn { width: 100%; }
@@ -469,7 +469,7 @@ section { padding: 96px 0; }
   text-align: left;
   transition: color 200ms ease;
 }
-.faq-question:hover { color: var(--brand); }
+.faq-question:hover { color: var(--accent-green); }
 .faq-chevron {
   flex-shrink: 0;
   width: 20px;
