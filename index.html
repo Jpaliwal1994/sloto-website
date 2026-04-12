@@ -1,384 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sloto — Coming Soon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg: #FFFFFF;
-      --green: #228B22;
-      --text: #111111;
-      --muted: #999999;
-      --icon-bg: #DDDDDD;
-      --drum-h: 82px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      overflow-x: hidden;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 24px 80px;
-      position: relative;
-    }
-
-    /* ── Logo — fixed top left ── */
-    .logo {
-      position: fixed;
-      top: 28px;
-      left: 32px;
-      display: flex;
-      align-items: baseline;
-      opacity: 0;
-      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
-      z-index: 10;
-    }
-
-    .logo-word {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: clamp(22px, 3vw, 32px);
-      letter-spacing: -0.02em;
-      color: var(--text);
-      line-height: 1;
-    }
-
-    .logo-square {
-      width: 7px;
-      height: 7px;
-      background: var(--green);
-      border-radius: 0;
-      margin-left: 3px;
-      margin-bottom: 4px;
-      flex-shrink: 0;
-    }
-
-    /* ── Tagline — centre hero ── */
-    .tagline {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(24px, 4.5vw, 48px);
-      font-weight: 300;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      text-align: center;
-      margin-bottom: 56px;
-      opacity: 0;
-      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.22s forwards;
-      line-height: 1.2;
-      text-transform: none;
-    }
-
-    /* ── Drum ── */
-    .drum-outer {
-      width: 100%;
-      max-width: 600px;
-      opacity: 0;
-      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.38s forwards;
-    }
-
-    .drum-window {
-      position: relative;
-      height: calc(var(--drum-h) * 3);
-      overflow: hidden;
-    }
-
-    /* Top and bottom fade masks */
-    .drum-window::before,
-    .drum-window::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0;
-      height: calc(var(--drum-h) * 1.1);
-      z-index: 3;
-      pointer-events: none;
-    }
-    .drum-window::before {
-      top: 0;
-      background: linear-gradient(to bottom, #ffffff 30%, transparent);
-    }
-    .drum-window::after {
-      bottom: 0;
-      background: linear-gradient(to top, #ffffff 30%, transparent);
-    }
-
-    /* Two fading lines for centre highlight */
-    .drum-line-top,
-    .drum-line-bottom {
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 1px;
-      z-index: 4;
-      pointer-events: none;
-      /* Fade in from centre, transparent at edges */
-      background: linear-gradient(to right, transparent 0%, #CCCCCC 25%, #CCCCCC 75%, transparent 100%);
-    }
-    .drum-line-top {
-      top: calc(var(--drum-h) * 1);
-    }
-    .drum-line-bottom {
-      top: calc(var(--drum-h) * 2);
-    }
-
-    .drum-track {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      z-index: 2;
-    }
-
-    .drum-item {
-      height: var(--drum-h);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 0 18px;
-      flex-shrink: 0;
-    }
-
-    .drum-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--icon-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.35s ease;
-    }
-
-    .drum-icon.active-icon {
-      background: #111111;
-    }
-
-    .drum-icon svg {
-      width: 19px;
-      height: 19px;
-      stroke: #ffffff;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .drum-text {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      font-size: clamp(15px, 2.3vw, 19px);
-      color: var(--text);
-      letter-spacing: -0.01em;
-      line-height: 1.15;
-    }
-
-    .drum-sub {
-      font-size: clamp(11px, 1.1vw, 12px);
-      color: var(--muted);
-      font-weight: 300;
-      margin-top: 2px;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      width: 32px;
-      height: 1.5px;
-      background: #E2E2E2;
-      margin: 44px auto;
-      opacity: 0;
-      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.52s forwards;
-    }
-
-    /* ── Coming Soon ── */
-    .coming-soon {
-      text-align: center;
-      opacity: 0;
-      animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) 0.62s forwards;
-    }
-
-    .cs-label {
-      display: block;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      font-size: clamp(20px, 3.5vw, 30px);
-      color: var(--text);
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-    }
-
-    .cs-sub {
-      font-size: clamp(12px, 1.4vw, 14px);
-      color: var(--muted);
-      font-weight: 300;
-    }
-
-    /* ── Footer ── */
-    .footer {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 11px;
-      color: #CCCCCC;
-      letter-spacing: 0.08em;
-      opacity: 0;
-      animation: rise 0.7s ease 1s forwards;
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>sloto. — Dublin parking, finally fixed</title>
+<meta name="description" content="Real-time on-street parking information across Dublin. Compare rates, check availability, set a timer, and find your way back. Launching April 2026."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
 </head>
 <body>
 
-<main class="page">
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">sloto<span>.</span></a>
+  <div class="nav-pill"><span class="nav-pill-dot"></span> Launching April 2026</div>
+</nav>
 
-  <div class="logo">
-    <span class="logo-word">Sloto</span>
-    <span class="logo-square"></span>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
   </div>
-
-  <p class="tagline">Dublin's smartest parking app</p>
-
-  <div class="drum-outer">
-    <div class="drum-window">
-      <div class="drum-line-top"></div>
-      <div class="drum-line-bottom"></div>
-      <div class="drum-track" id="drumTrack"></div>
+  <div id="dotField"></div>
+  <div class="hero-inner">
+    <div class="hero-text" data-anim="slide-right">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>Launching April 2026 · iOS & Android</span>
+      </div>
+      <h1>Stop circling.<br><em>Dublin parking, finally fixed.</em></h1>
+      <p class="hero-sub">Real-time on-street parking information across Dublin. Compare rates, check availability, set a timer, and find your way back.</p>
+    </div>
+    <div class="hero-phone" data-anim="slide-left">
+      <div class="phone-mockup phone-float">
+        <img src="pictures_and_videos/map.jpg" alt="Sloto map showing Dublin parking locations"/>
+      </div>
+      <div class="phone-glow"></div>
     </div>
   </div>
+</section>
 
-  <div class="divider"></div>
-
-  <div class="coming-soon">
-    <span class="cs-label">Coming Soon</span>
-    <p class="cs-sub">We're putting the final touches on something great.</p>
+<!-- FEATURE 1: PLAN AHEAD -->
+<section class="feat-section" data-anim="fade-up">
+  <div class="feat-row">
+    <div class="feat-content">
+      <div class="feat-icon"><i class="ph-bold ph-magnifying-glass"></i></div>
+      <div class="feat-eyebrow">Plan ahead</div>
+      <h2>Know before you go.</h2>
+      <p>Search your destination. See every parking spot nearby before you leave home.</p>
+    </div>
+    <div class="feat-media" data-anim="reveal-left">
+      <video src="pictures_and_videos/video_search_location.MP4" autoplay muted loop playsinline></video>
+    </div>
   </div>
+</section>
 
-</main>
+<!-- FEATURE 2: COMPARE RATES -->
+<section class="feat-section feat-alt" data-anim="fade-up">
+  <div class="feat-row feat-flip">
+    <div class="feat-content">
+      <div class="feat-icon"><i class="ph-bold ph-coins"></i></div>
+      <div class="feat-eyebrow">Rates at a glance</div>
+      <h2>Compare rates instantly.</h2>
+      <p>Parking markers show rates as you zoom. Compare streets, save money!</p>
+    </div>
+    <div class="feat-media" data-anim="reveal-right">
+      <video src="pictures_and_videos/video_view_rates.MP4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
 
-<span class="footer">sloto.ie</span>
+<!-- FEATURE 3: SET A TIMER -->
+<section class="feat-section" data-anim="fade-up">
+  <div class="feat-row">
+    <div class="feat-content">
+      <div class="feat-icon"><i class="ph-bold ph-timer"></i></div>
+      <div class="feat-eyebrow">Stay on time</div>
+      <h2>Never get a ticket.</h2>
+      <p>Set a parking timer. Get notified before your time runs out.</p>
+    </div>
+    <div class="feat-media" data-anim="reveal-left">
+      <img src="pictures_and_videos/set_timer.jpg" alt="Parking timer showing time remaining"/>
+    </div>
+  </div>
+</section>
 
-<script>
-  const features = [
-    {
-      text: 'Street parking made easy',
-      sub: 'Find available spots near you instantly',
-      icon: `<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>`
-    },
-    {
-      text: 'Live accessible bay sensors',
-      sub: 'Real-time occupancy from smart sensors',
-      icon: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="white" stroke="none"/><path d="M7.5 7.5a6.5 6.5 0 0 0 0 9M16.5 7.5a6.5 6.5 0 0 1 0 9"/><path d="M4.5 4.5a11 11 0 0 0 0 15M19.5 4.5a11 11 0 0 1 0 15"/></svg>`
-    },
-    {
-      text: 'Navigate to a spot',
-      sub: 'Turn-by-turn directions to your bay',
-      icon: `<svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>`
-    },
-    {
-      text: 'Rates & operating hours',
-      sub: "Know exactly what you'll pay, upfront",
-      icon: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>`
-    },
-    {
-      text: 'Parking reminders',
-      sub: 'Never get a ticket again',
-      icon: `<svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`
-    },
-    {
-      text: 'Find your car',
-      sub: 'Always know where you parked',
-      icon: `<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`
-    },
-  ];
+<!-- FEATURE 4: WALK BACK -->
+<section class="feat-section feat-alt" data-anim="fade-up">
+  <div class="feat-row feat-flip">
+    <div class="feat-content">
+      <div class="feat-icon"><i class="ph-bold ph-navigation-arrow"></i></div>
+      <div class="feat-eyebrow">Never lose your car</div>
+      <h2>Find your way back.</h2>
+      <p>Forgot where you parked? We'll guide you back to your car.</p>
+    </div>
+    <div class="feat-media feat-media-duo" data-anim="reveal-right">
+      <img src="pictures_and_videos/my_car.jpg" alt="My car location on map"/>
+      <img src="pictures_and_videos/parking_details.jpg" alt="Parking location details"/>
+    </div>
+  </div>
+</section>
 
-  const track = document.getElementById('drumTrack');
-  const DRUM_H = 82;
-  let current = 0;
-  let isAnimating = false;
+<!-- ACCESSIBLE PARKING -->
+<section class="accessible" data-anim="fade-up">
+  <div class="accessible-inner">
+    <div class="accessible-content">
+      <div class="feat-icon acc-icon"><i class="ph-bold ph-wheelchair"></i></div>
+      <h2>Accessible parking, in real time.</h2>
+      <p>Sensor-equipped accessible spaces. See which space is available or occupied in real time.</p>
+    </div>
+    <div class="accessible-media">
+      <img src="pictures_and_videos/accessible_bays.jpg" alt="Accessible parking spaces on the map"/>
+    </div>
+  </div>
+</section>
 
-  // [ghost-last] + [6 features] + [ghost-first]
-  const allItems = [features[features.length - 1], ...features, features[0]];
-
-  allItems.forEach((f, i) => {
-    const el = document.createElement('div');
-    el.className = 'drum-item';
-    el.innerHTML = `
-      <div class="drum-icon" id="icon-${i}">${f.icon}</div>
-      <div>
-        <div class="drum-text">${f.text}</div>
-        <div class="drum-sub">${f.sub}</div>
+<!-- REVIEWS -->
+<section class="reviews" data-anim="fade-up">
+  <div class="reviews-header">
+    <div class="feat-eyebrow">What people are saying</div>
+    <h2>Early feedback.</h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card" data-anim="stagger" data-delay="0">
+      <div class="review-stars">★★★★★</div>
+      <p>"Finally an app that shows me exactly what parking costs on every street. No more guessing or driving around in circles."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#22C55E;">S</div>
+        <div><div class="review-name">Sarah M.</div><div class="review-loc">Dublin 2</div></div>
       </div>
-    `;
-    track.appendChild(el);
-  });
+    </div>
+    <div class="review-card" data-anim="stagger" data-delay="100">
+      <div class="review-stars">★★★★★</div>
+      <p>"The accessible parking feature is brilliant. Being able to see in real time if a space is free has been a game changer for me."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#3B82F6;">D</div>
+        <div><div class="review-name">David K.</div><div class="review-loc">Dublin 8</div></div>
+      </div>
+    </div>
+    <div class="review-card" data-anim="stagger" data-delay="200">
+      <div class="review-stars">★★★★★</div>
+      <p>"I use the timer every time I park. Got a notification just in time last week — saved me a fine for sure."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#F59E0B;">A</div>
+        <div><div class="review-name">Aoife R.</div><div class="review-loc">Dublin 4</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  function getY(c) {
-    return -c * DRUM_H;
+<!-- CONTACT -->
+<section class="contact" data-anim="fade-up">
+  <div class="contact-inner">
+    <i class="ph-bold ph-envelope-simple contact-icon"></i>
+    <h2>Get in touch.</h2>
+    <p>Questions, feedback, or partnership enquiries — we'd love to hear from you.</p>
+    <a href="mailto:hello@sloto.ie" class="contact-email">hello@sloto.ie</a>
+  </div>
+</section>
+
+<!-- LAUNCH -->
+<section class="launch" data-anim="fade-up">
+  <div class="launch-inner">
+    <h2>Launching April 2026.</h2>
+    <p class="launch-sub">Sloto is coming to iOS and Android. Dublin parking, finally fixed.</p>
+    <div class="badge badge-lg">
+      <span class="badge-dot"></span>
+      <span>Launching <strong>April 2026</strong> · iOS & Android</span>
+    </div>
+    <p class="launch-note">Free to download · No account required to browse</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <a href="index.html" class="footer-logo">sloto<span>.</span></a>
+    <p class="footer-built">Built in Dublin, Ireland 🇮🇪</p>
+  </div>
+  <div class="footer-center">
+    <a href="mailto:hello@sloto.ie" class="footer-email">hello@sloto.ie</a>
+  </div>
+  <div class="footer-right">
+    <a href="legal.html">Legal</a>
+    <a href="delete-account.html">Delete account</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Sloto Ltd.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>
+// ===== DOT FIELD =====
+(function(){
+  var f=document.getElementById('dotField');if(!f)return;
+  var palette=[
+    {c:'#22C55E',g:'0 0 12px 6px rgba(34,197,94,.35)'},
+    {c:'#22C55E',g:'0 0 12px 6px rgba(34,197,94,.35)'},
+    {c:'#22C55E',g:'0 0 12px 6px rgba(34,197,94,.35)'},
+    {c:'#EF4444',g:'0 0 10px 5px rgba(239,68,68,.3)'},
+    {c:'#9CA3AF',g:'0 0 10px 5px rgba(156,163,175,.25)'}
+  ];
+  var sizes=[4,5,6,8,10,12,14,16,20,24];
+  for(var i=0;i<60;i++){
+    var d=document.createElement('div');
+    var p=palette[Math.floor(Math.random()*palette.length)];
+    var s=sizes[Math.floor(Math.random()*sizes.length)];
+    d.className='dot';
+    d.style.cssText=
+      'width:'+s+'px;height:'+s+'px;background:'+p.c+';box-shadow:'+p.g+';'+
+      'left:'+(Math.random()*100)+'%;top:'+(5+Math.random()*90)+'%;'+
+      'animation-duration:'+(6+Math.random()*10)+'s;animation-delay:'+(Math.random()*12)+'s;';
+    f.appendChild(d);
   }
+})();
 
-  function highlightCentre() {
-    document.querySelectorAll('.drum-icon').forEach(el => el.classList.remove('active-icon'));
-    // Centre item DOM index = current + 1 (offset by ghost-last at index 0)
-    const el = document.getElementById(`icon-${current + 1}`);
-    if (el) el.classList.add('active-icon');
-  }
-
-  track.style.transform = `translateY(${getY(current)}px)`;
-  highlightCentre();
-
-  function advance() {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    current++;
-
-    track.style.transition = 'transform 0.48s cubic-bezier(0.4, 0, 0.2, 1)';
-    track.style.transform = `translateY(${getY(current)}px)`;
-    highlightCentre();
-
-    track.addEventListener('transitionend', function onEnd() {
-      track.removeEventListener('transitionend', onEnd);
-
-      if (current >= features.length) {
-        current = 0;
-        track.style.transition = 'none';
-        track.style.transform = `translateY(${getY(current)}px)`;
-        highlightCentre();
+// ===== SCROLL ANIMATIONS (spring-physics) =====
+(function(){
+  var els=document.querySelectorAll('[data-anim]');
+  if(!els.length)return;
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el=e.target;
+        var delay=parseInt(el.getAttribute('data-delay'))||0;
+        setTimeout(function(){el.classList.add('anim-in');},delay);
+        observer.unobserve(el);
       }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){observer.observe(el);});
+})();
 
-      isAnimating = false;
-    }, { once: true });
-  }
+// ===== PARALLAX BLOBS =====
+(function(){
+  var blobs=document.querySelectorAll('.blob');
+  if(!blobs.length||window.innerWidth<768)return;
+  window.addEventListener('scroll',function(){
+    var s=window.pageYOffset;
+    blobs[0].style.transform='translate(-50%,-50%) translateY('+s*0.15+'px)';
+    blobs[1].style.transform='translate(-50%,-50%) translateY('+s*0.08+'px)';
+    if(blobs[2])blobs[2].style.transform='translate(-50%,-50%) translateY('+s*0.12+'px)';
+  },{passive:true});
+})();
 
-  function loop() {
-    setTimeout(() => {
-      advance();
-      loop();
-    }, 2400);
-  }
-
-  setTimeout(loop, 2000);
+// ===== REVIEW CARD HOVER LIFT =====
+document.querySelectorAll('.review-card').forEach(function(c){
+  c.addEventListener('mouseenter',function(){this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(0,0,0,.1)';});
+  c.addEventListener('mouseleave',function(){this.style.transform='';this.style.boxShadow='';});
+});
 </script>
-
 </body>
 </html>
