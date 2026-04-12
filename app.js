@@ -1,31 +1,58 @@
-/* ============================================================
-   sloto. — Shared JavaScript
-   Applies to: investors.html, legal.html, delete-account.html
-   ============================================================ */
+// ── Nav scroll state ─────────────────────────────────────
+const nav = document.getElementById('nav');
+const onScroll = () => {
+  if (window.scrollY > 40) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
-/* REVEAL ANIMATION (investors.html — uses .reveal class)
-   Triggers .visible on .reveal elements as they scroll into view.
-   index.html uses AOS instead. */
-(function(){
-  var e = document.querySelectorAll('.reveal');
-  if (!e.length) return;
-  if (!('IntersectionObserver' in window)) {
-    e.forEach(function(x){ x.classList.add('visible'); });
-    return;
-  }
-  var o = new IntersectionObserver(function(en){
-    en.forEach(function(x){
-      if (x.isIntersecting){ x.target.classList.add('visible'); o.unobserve(x.target); }
+// ── Mobile menu ──────────────────────────────────────────
+const menuToggle = document.getElementById('menuToggle');
+const menuPanel = document.getElementById('menuPanel');
+menuToggle.addEventListener('click', () => {
+  const open = menuPanel.classList.toggle('open');
+  menuToggle.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', open);
+});
+menuPanel.querySelectorAll('a').forEach((a) => {
+  a.addEventListener('click', () => {
+    menuPanel.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// ── Scroll reveal (Intersection Observer) ────────────────
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
     });
-  }, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
-  e.forEach(function(x){ o.observe(x); });
-})();
-
-/* TAB SWITCHER (legal.html only)
-   Toggles between Privacy Policy and Terms & Conditions */
-function show(id, el){
-  document.querySelectorAll('.doc').forEach(function(d){ d.classList.remove('visible'); });
-  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
-  document.getElementById(id).classList.add('visible');
-  el.classList.add('active');
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach((el) => io.observe(el));
+} else {
+  reveals.forEach((el) => el.classList.add('visible'));
 }
+
+// ── FAQ accordion ────────────────────────────────────────
+document.querySelectorAll('.faq-item').forEach((item) => {
+  const btn = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    if (isOpen) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = '0';
+    }
+  });
+});
+
+// ── Year in footer ───────────────────────────────────────
+document.getElementById('year').textContent = new Date().getFullYear();

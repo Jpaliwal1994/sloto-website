@@ -1,258 +1,381 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>sloto. — Dublin parking, finally fixed</title>
-<meta name="description" content="Real-time on-street parking information across Dublin. Compare rates, check availability, set a timer, and find your way back. Launching April 2026."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css"/>
-<script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Sloto — find parking in Dublin, track where you parked, never overstay. Try free for 7 days." />
+<meta name="theme-color" content="#ffffff" />
+<title>Sloto — Parking, sorted.</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">sloto<span>.</span></a>
-  <div class="nav-pill"><span class="nav-pill-dot"></span> Launching April 2026</div>
+<!-- ── Navigation ─────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="wordmark" aria-label="Sloto home">sloto<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:hello@sloto.ie">Support</a>
+    </div>
+    <a href="#download" class="btn btn-primary btn-sm" style="height: 40px;">Download</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="menu-panel wrap" id="menuPanel">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:hello@sloto.ie">Support</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div id="dotField"></div>
-  <div class="hero-inner">
-    <div class="hero-text" data-anim="slide-right">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        <span>Launching April 2026 · iOS & Android</span>
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <h1 class="reveal">Parking,<br /><span class="accent">sorted.</span></h1>
+      <p class="subhead reveal reveal-delay-1">Find parking in Dublin, track where you parked, never overstay. Try Sloto free for 7 days.</p>
+      <div class="hero-ctas reveal reveal-delay-2">
+        <a href="#download" class="store-badge" aria-label="Download on the App Store">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <div class="store-badge-text">
+            <small>Download on the</small>
+            <strong>App Store</strong>
+          </div>
+        </a>
+        <a href="#download" class="store-badge" aria-label="Get it on Google Play">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.684 1.553a1 1 0 0 1 0 1.676l-2.685 1.553-2.606-2.606 2.607-2.176zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"/></svg>
+          <div class="store-badge-text">
+            <small>GET IT ON</small>
+            <strong>Google Play</strong>
+          </div>
+        </a>
       </div>
-      <h1>Stop circling.<br><em>Dublin parking, finally fixed.</em></h1>
-      <p class="hero-sub">Real-time on-street parking information across Dublin. Compare rates, check availability, set a timer, and find your way back.</p>
+      <p class="hero-note reveal reveal-delay-3">7-day free trial · Cancel anytime</p>
     </div>
-    <div class="hero-phone" data-anim="slide-left">
-      <div class="phone-mockup phone-float">
-        <img src="pictures_and_videos/map.jpg" alt="Sloto map showing Dublin parking locations"/>
+    <div class="hero-phone-wrap reveal reveal-delay-2">
+      <img class="screenshot" src="map.png" alt="Sloto map view showing parking spots across Dublin" />
+    </div>
+  </div>
+</header>
+
+<!-- ── Feature 1 ──────────────────────────────────────────── -->
+<section class="section-soft" id="features">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-text reveal">
+        <span class="section-kicker">Find parking</span>
+        <h2 class="section-title">See every spot in Dublin</h2>
+        <p class="section-subtitle">A live map of on-street parking across the city. Green pills mean free. Orange pills show the hourly rate. Cluster bubbles keep the map clean at a glance.</p>
+        <ul>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Free and paid spots, colour-coded</li>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Real-time status — updates every minute</li>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Search any address in seconds</li>
+        </ul>
       </div>
-      <div class="phone-glow"></div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE 1: PLAN AHEAD -->
-<section class="feat-section" data-anim="fade-up">
-  <div class="feat-row">
-    <div class="feat-content">
-      <div class="feat-icon"><i class="ph-bold ph-magnifying-glass"></i></div>
-      <div class="feat-eyebrow">Plan ahead</div>
-      <h2>Know before you go.</h2>
-      <p>Search your destination. See every parking spot nearby before you leave home.</p>
-    </div>
-    <div class="feat-media" data-anim="reveal-left">
-      <video src="pictures_and_videos/video_search_location.MP4" autoplay muted loop playsinline></video>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE 2: COMPARE RATES -->
-<section class="feat-section feat-alt" data-anim="fade-up">
-  <div class="feat-row feat-flip">
-    <div class="feat-content">
-      <div class="feat-icon"><i class="ph-bold ph-coins"></i></div>
-      <div class="feat-eyebrow">Rates at a glance</div>
-      <h2>Compare rates instantly.</h2>
-      <p>Parking markers show rates as you zoom. Compare streets, save money!</p>
-    </div>
-    <div class="feat-media" data-anim="reveal-right">
-      <video src="pictures_and_videos/video_view_rates.MP4" autoplay muted loop playsinline></video>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE 3: SET A TIMER -->
-<section class="feat-section" data-anim="fade-up">
-  <div class="feat-row">
-    <div class="feat-content">
-      <div class="feat-icon"><i class="ph-bold ph-timer"></i></div>
-      <div class="feat-eyebrow">Stay on time</div>
-      <h2>Never get a ticket.</h2>
-      <p>Set a parking timer. Get notified before your time runs out.</p>
-    </div>
-    <div class="feat-media" data-anim="reveal-left">
-      <img src="pictures_and_videos/set_timer.jpg" alt="Parking timer showing time remaining"/>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE 4: WALK BACK -->
-<section class="feat-section feat-alt" data-anim="fade-up">
-  <div class="feat-row feat-flip">
-    <div class="feat-content">
-      <div class="feat-icon"><i class="ph-bold ph-navigation-arrow"></i></div>
-      <div class="feat-eyebrow">Never lose your car</div>
-      <h2>Find your way back.</h2>
-      <p>Forgot where you parked? We'll guide you back to your car.</p>
-    </div>
-    <div class="feat-media feat-media-duo" data-anim="reveal-right">
-      <img src="pictures_and_videos/my_car.jpg" alt="My car location on map"/>
-      <img src="pictures_and_videos/parking_details.jpg" alt="Parking location details"/>
-    </div>
-  </div>
-</section>
-
-<!-- ACCESSIBLE PARKING -->
-<section class="accessible" data-anim="fade-up">
-  <div class="accessible-inner">
-    <div class="accessible-content">
-      <div class="feat-icon acc-icon"><i class="ph-bold ph-wheelchair"></i></div>
-      <h2>Accessible parking, in real time.</h2>
-      <p>Sensor-equipped accessible spaces. See which space is available or occupied in real time.</p>
-    </div>
-    <div class="accessible-media">
-      <img src="pictures_and_videos/accessible_bays.jpg" alt="Accessible parking spaces on the map"/>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="reviews" data-anim="fade-up">
-  <div class="reviews-header">
-    <div class="feat-eyebrow">What people are saying</div>
-    <h2>Early feedback.</h2>
-  </div>
-  <div class="reviews-grid">
-    <div class="review-card" data-anim="stagger" data-delay="0">
-      <div class="review-stars">★★★★★</div>
-      <p>"Finally an app that shows me exactly what parking costs on every street. No more guessing or driving around in circles."</p>
-      <div class="review-author">
-        <div class="review-avatar" style="background:#22C55E;">S</div>
-        <div><div class="review-name">Sarah M.</div><div class="review-loc">Dublin 2</div></div>
-      </div>
-    </div>
-    <div class="review-card" data-anim="stagger" data-delay="100">
-      <div class="review-stars">★★★★★</div>
-      <p>"The accessible parking feature is brilliant. Being able to see in real time if a space is free has been a game changer for me."</p>
-      <div class="review-author">
-        <div class="review-avatar" style="background:#3B82F6;">D</div>
-        <div><div class="review-name">David K.</div><div class="review-loc">Dublin 8</div></div>
-      </div>
-    </div>
-    <div class="review-card" data-anim="stagger" data-delay="200">
-      <div class="review-stars">★★★★★</div>
-      <p>"I use the timer every time I park. Got a notification just in time last week — saved me a fine for sure."</p>
-      <div class="review-author">
-        <div class="review-avatar" style="background:#F59E0B;">A</div>
-        <div><div class="review-name">Aoife R.</div><div class="review-loc">Dublin 4</div></div>
+      <div class="feature-phone-wrap reveal reveal-delay-1">
+        <img class="screenshot" src="map.png" alt="Map with parking spots" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" data-anim="fade-up">
-  <div class="contact-inner">
-    <i class="ph-bold ph-envelope-simple contact-icon"></i>
-    <h2>Get in touch.</h2>
-    <p>Questions, feedback, or partnership enquiries — we'd love to hear from you.</p>
-    <a href="mailto:hello@sloto.ie" class="contact-email">hello@sloto.ie</a>
-  </div>
-</section>
-
-<!-- LAUNCH -->
-<section class="launch" data-anim="fade-up">
-  <div class="launch-inner">
-    <h2>Launching April 2026.</h2>
-    <p class="launch-sub">Sloto is coming to iOS and Android. Dublin parking, finally fixed.</p>
-    <div class="badge badge-lg">
-      <span class="badge-dot"></span>
-      <span>Launching <strong>April 2026</strong> · iOS & Android</span>
+<!-- ── Feature 2 ──────────────────────────────────────────── -->
+<section>
+  <div class="wrap">
+    <div class="feature feature-reverse">
+      <div class="feature-text reveal">
+        <span class="section-kicker">Park confidently</span>
+        <h2 class="section-title">No surprises at the meter</h2>
+        <p class="section-subtitle">Tap any spot to see the hourly rate, max stay, operating hours and what other drivers are reporting. All the info you need before you park.</p>
+        <ul>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Hourly rates from every council zone</li>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Max stay limits and operating hours</li>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Live crowd reports on availability</li>
+        </ul>
+      </div>
+      <div class="feature-phone-wrap reveal reveal-delay-1">
+        <img class="screenshot" src="street-details.png" alt="Parking spot details sheet" />
+      </div>
     </div>
-    <p class="launch-note">Free to download · No account required to browse</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">
-    <a href="index.html" class="footer-logo">sloto<span>.</span></a>
-    <p class="footer-built">Built in Dublin, Ireland 🇮🇪</p>
+<!-- ── Feature 3 ──────────────────────────────────────────── -->
+<section class="section-soft">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-text reveal">
+        <span class="section-kicker">Never lose your car</span>
+        <h2 class="section-title">Park it. Track it. Find it.</h2>
+        <p class="section-subtitle">One tap to save where you parked. Sloto tracks your time, sends a reminder before you overstay, and gets you walking directions back to your car.</p>
+        <ul>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Live countdown timer</li>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Smart reminders before you overstay</li>
+          <li><span class="check">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>Walking directions back to your car</li>
+        </ul>
+      </div>
+      <div class="feature-phone-wrap reveal reveal-delay-1">
+        <img class="screenshot" src="parked-state.png" alt="My Car parked state with countdown" />
+      </div>
+    </div>
   </div>
-  <div class="footer-center">
-    <a href="mailto:hello@sloto.ie" class="footer-email">hello@sloto.ie</a>
+</section>
+
+<!-- ── How it works ──────────────────────────────────────── -->
+<section>
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="section-kicker reveal">How it works</span>
+      <h2 class="section-title reveal reveal-delay-1">Four steps to stress-free parking</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Open the map</h3>
+        <p class="step-desc">See every parking spot around you, colour-coded by status.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Tap a spot</h3>
+        <p class="step-desc">Check the rate, max stay, and what other drivers are reporting.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Park here</h3>
+        <p class="step-desc">One tap saves your location and starts the timer.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Get back</h3>
+        <p class="step-desc">Walking directions and a live countdown to your car.</p>
+      </div>
+    </div>
   </div>
-  <div class="footer-right">
-    <a href="legal.html">Legal</a>
-    <a href="delete-account.html">Delete account</a>
+</section>
+
+<!-- ── Pricing ────────────────────────────────────────────── -->
+<section class="section-soft" id="pricing">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="section-kicker reveal">Pricing</span>
+      <h2 class="section-title reveal reveal-delay-1">Simple pricing, 7-day free trial</h2>
+      <p class="section-subtitle reveal reveal-delay-2" style="margin: 0 auto;">Try every feature free for 7 days. No commitment, cancel anytime.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="plan reveal">
+        <p class="plan-name">Monthly</p>
+        <div class="plan-price">
+          <span class="amount">€X.XX</span>
+          <span class="period">/ month</span>
+        </div>
+        <p class="plan-sub">Billed monthly</p>
+        <ul>
+          <li>Unlimited parking searches</li>
+          <li>Park Here &amp; live timer</li>
+          <li>Walking directions back</li>
+          <li>Smart reminders</li>
+          <li>Save spots &amp; crowd reports</li>
+        </ul>
+        <a href="#download" class="btn btn-secondary">Start Free Trial</a>
+      </div>
+
+      <div class="plan plan-featured reveal reveal-delay-1">
+        <span class="plan-badge">Best Value</span>
+        <p class="plan-name">Annual</p>
+        <div class="plan-price">
+          <span class="amount">€X.XX</span>
+          <span class="period">/ year</span>
+        </div>
+        <p class="plan-sub">Billed annually — save vs monthly</p>
+        <ul>
+          <li>Everything in Monthly</li>
+          <li>Save vs monthly billing</li>
+          <li>Priority support</li>
+          <li>Early access to new features</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="#download" class="btn btn-primary">Start Free Trial</a>
+      </div>
+    </div>
+
+    <p class="plan-footnote">Cancel anytime. Charges begin after the 7-day free trial.</p>
   </div>
-  <p class="footer-copy">&copy; 2026 Sloto Ltd.</p>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section id="faq">
+  <div class="wrap wrap-narrow">
+    <div style="text-align:center">
+      <span class="section-kicker reveal">FAQ</span>
+      <h2 class="section-title reveal reveal-delay-1">Frequently asked questions</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is Sloto?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Sloto is a parking companion app for Dublin. It helps you find on-street parking, see rates and availability, track where you parked, and never overstay.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I start the free trial?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Download Sloto from the App Store or Google Play, sign in, and start the 7-day free trial. You won't be charged until the trial ends, and you can cancel at any time from your phone's subscription settings.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What cities are supported?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Sloto launches in Dublin first. Other Irish cities are planned. If you'd like to see Sloto in your city, <a href="mailto:hello@sloto.ie" style="color: var(--brand); text-decoration: underline;">let us know</a>.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Where does the parking data come from?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Sloto combines official council data with on-the-ground verification. Rates, zones, operating hours and clearway schedules are all based on public parking rules. Crowd reports from drivers keep availability information fresh.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I cancel anytime?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Yes. You can cancel from your phone's subscription settings (App Store on iOS, Google Play on Android). If you cancel during the 7-day trial, you won't be charged.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Does Sloto pay the parking for me?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          No — Sloto is an information app. You'll still need to pay at the meter or via your council's payment app. Sloto helps you find spots, understand rates, and never overstay.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is my location data private?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Your location is used only on your device to show nearby spots and remember where you parked. We don't track or share your location history. See our <a href="#" style="color: var(--brand); text-decoration: underline;">privacy policy</a> for details.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What's the difference between Monthly and Annual?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Both plans give you full access to every feature. Annual saves you money compared to paying monthly — if you use Sloto regularly, it's the better deal. Both include the 7-day free trial.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Final CTA ──────────────────────────────────────────── -->
+<section class="final-cta" id="download">
+  <div class="wrap">
+    <h2 class="reveal">Ready to park smarter?</h2>
+    <p class="reveal reveal-delay-1">Download Sloto and start your 7-day free trial. Parking in Dublin, sorted.</p>
+    <div class="store-badges reveal reveal-delay-2">
+      <a href="#" class="store-badge" aria-label="Download on the App Store">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        <div class="store-badge-text">
+          <small>Download on the</small>
+          <strong>App Store</strong>
+        </div>
+      </a>
+      <a href="#" class="store-badge" aria-label="Get it on Google Play">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.684 1.553a1 1 0 0 1 0 1.676l-2.685 1.553-2.606-2.606 2.607-2.176zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"/></svg>
+        <div class="store-badge-text">
+          <small>GET IT ON</small>
+          <strong>Google Play</strong>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="wordmark" aria-label="Sloto home">sloto<span class="dot">.</span></a>
+        <p>Parking, sorted. A better way to park on Dublin's streets.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download">Download</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="mailto:hello@sloto.ie">Support</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="mailto:hello@sloto.ie">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Sloto. All rights reserved.</span>
+      <span>Made in Dublin 🇮🇪</span>
+    </div>
+  </div>
 </footer>
 
 <script src="app.js"></script>
-<script>
-// ===== DOT FIELD =====
-(function(){
-  var f=document.getElementById('dotField');if(!f)return;
-  var palette=[
-    {c:'#22C55E',g:'0 0 12px 6px rgba(34,197,94,.35)'},
-    {c:'#22C55E',g:'0 0 12px 6px rgba(34,197,94,.35)'},
-    {c:'#22C55E',g:'0 0 12px 6px rgba(34,197,94,.35)'},
-    {c:'#EF4444',g:'0 0 10px 5px rgba(239,68,68,.3)'},
-    {c:'#9CA3AF',g:'0 0 10px 5px rgba(156,163,175,.25)'}
-  ];
-  var sizes=[4,5,6,8,10,12,14,16,20,24];
-  for(var i=0;i<60;i++){
-    var d=document.createElement('div');
-    var p=palette[Math.floor(Math.random()*palette.length)];
-    var s=sizes[Math.floor(Math.random()*sizes.length)];
-    d.className='dot';
-    d.style.cssText=
-      'width:'+s+'px;height:'+s+'px;background:'+p.c+';box-shadow:'+p.g+';'+
-      'left:'+(Math.random()*100)+'%;top:'+(5+Math.random()*90)+'%;'+
-      'animation-duration:'+(6+Math.random()*10)+'s;animation-delay:'+(Math.random()*12)+'s;';
-    f.appendChild(d);
-  }
-})();
-
-// ===== SCROLL ANIMATIONS (spring-physics) =====
-(function(){
-  var els=document.querySelectorAll('[data-anim]');
-  if(!els.length)return;
-  var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var el=e.target;
-        var delay=parseInt(el.getAttribute('data-delay'))||0;
-        setTimeout(function(){el.classList.add('anim-in');},delay);
-        observer.unobserve(el);
-      }
-    });
-  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){observer.observe(el);});
-})();
-
-// ===== PARALLAX BLOBS =====
-(function(){
-  var blobs=document.querySelectorAll('.blob');
-  if(!blobs.length||window.innerWidth<768)return;
-  window.addEventListener('scroll',function(){
-    var s=window.pageYOffset;
-    blobs[0].style.transform='translate(-50%,-50%) translateY('+s*0.15+'px)';
-    blobs[1].style.transform='translate(-50%,-50%) translateY('+s*0.08+'px)';
-    if(blobs[2])blobs[2].style.transform='translate(-50%,-50%) translateY('+s*0.12+'px)';
-  },{passive:true});
-})();
-
-// ===== REVIEW CARD HOVER LIFT =====
-document.querySelectorAll('.review-card').forEach(function(c){
-  c.addEventListener('mouseenter',function(){this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(0,0,0,.1)';});
-  c.addEventListener('mouseleave',function(){this.style.transform='';this.style.boxShadow='';});
-});
-</script>
 </body>
 </html>
