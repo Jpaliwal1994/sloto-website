@@ -599,6 +599,7 @@ section { padding: 96px 0; }
   margin-bottom: 32px;
 }
 .legal-section {
+  padding: 0;
   margin-bottom: 28px;
 }
 .legal-section h2 {
