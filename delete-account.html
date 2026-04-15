@@ -1,148 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>sloto. — Delete Your Account</title>
-<meta name="description" content="How to permanently delete your sloto. account and all associated data."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<style>
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--black:#0a0a0a;--white:#fff;--green:#22C55E;--gd:#228B22;--red:#EF4444;--gray:#6B7280;--gl:#F5F5F5;--ow:#FAF9F7;--border:#E5E7EB;--f:'Poppins',sans-serif;}
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{font-family:var(--f);overflow-x:hidden;}
-img{max-width:100%;display:block;}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.08);}
-.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;}
-.nav-logo span{color:var(--gd);}
-.nav-links{display:none;}
-.nav-launch{padding:7px 14px;border-radius:8px;font-size:0.75rem;font-weight:800;text-decoration:none;white-space:nowrap;}
-@media(min-width:768px){nav{padding:0 48px;height:68px;}.nav-logo{font-size:1.55rem;}.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}.nav-links a{text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s;}.nav-launch{font-size:0.875rem;padding:9px 20px;}}
-footer{border-top:1px solid rgba(0,0,0,0.07);padding:36px 20px;display:flex;flex-direction:column;gap:20px;}
-.footer-logo{font-size:1.3rem;font-weight:800;letter-spacing:-0.04em;text-decoration:none;}
-.footer-logo span{color:var(--gd);}
-.footer-links{display:flex;flex-wrap:wrap;gap:14px 18px;list-style:none;}
-.footer-links a{font-size:0.8rem;text-decoration:none;font-weight:500;transition:color 0.2s;}
-.footer-copy{font-size:0.75rem;}
-@media(min-width:768px){footer{flex-direction:row;align-items:center;justify-content:space-between;padding:44px 48px;gap:24px;}}
-
-body{background:var(--white);color:var(--black);min-height:100vh;display:flex;flex-direction:column;}
-nav{background:rgba(255,255,255,0.92);border-bottom:1px solid rgba(0,0,0,0.06);}
-.nav-links a{color:rgba(0,0,0,0.45);}
-.nav-links a:hover{color:var(--black);}
-
-.page-hero{padding:96px 20px 48px;background:var(--black);color:var(--white);position:relative;overflow:hidden;}
-.page-hero::after{content:'';position:absolute;bottom:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(239,68,68,.05) 0%,transparent 65%);pointer-events:none;}
-.ph-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block;}
-.ph-title{font-size:clamp(1.9rem,6vw,3rem);font-weight:900;letter-spacing:-.04em;line-height:1.02;margin-bottom:10px;}
-.ph-sub{font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.6;max-width:480px;}
-@media(min-width:768px){.page-hero{padding:120px 48px 56px;}}
-
-main{flex:1;padding:48px 20px 72px;max-width:680px;}
-@media(min-width:768px){main{padding:56px 48px 88px;}}
-@media(min-width:1024px){main{padding:64px 80px 96px;}}
-
-.warn-box{background:#FFF2F2;border:1px solid #FECACA;border-radius:12px;padding:16px 20px;margin-bottom:40px;display:flex;align-items:flex-start;gap:12px;}
-.warn-text{font-size:.86rem;color:#991B1B;line-height:1.6;}
-.warn-text strong{font-weight:700;}
-.method{margin-bottom:48px;}
-.method-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
-.mbadge{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:5px;flex-shrink:0;}
-.mbadge.rec{background:var(--green);color:var(--black);}
-.mbadge.alt{background:var(--black);color:var(--white);}
-.m-title{font-size:1.05rem;font-weight:800;color:var(--black);letter-spacing:-.02em;}
-.steps{display:flex;flex-direction:column;gap:2px;border-radius:14px;overflow:hidden;}
-.step{background:var(--ow);padding:16px 20px;display:flex;align-items:flex-start;gap:14px;}
-.step-n{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:800;flex-shrink:0;margin-top:1px;}
-.step-n.g{background:var(--green);color:var(--black);}
-.step-n.b{background:var(--black);color:var(--white);}
-.step-title{font-size:.9rem;font-weight:700;color:var(--black);margin-bottom:3px;}
-.step-body{font-size:.83rem;color:var(--gray);line-height:1.58;}
-.step-code{display:inline-block;background:var(--black);color:var(--green);font-family:monospace;font-size:.83rem;font-weight:700;padding:2px 8px;border-radius:5px;margin-top:4px;letter-spacing:.05em;}
-.divider{text-align:center;margin:36px 0;display:flex;align-items:center;gap:12px;}
-.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
-.divider span{font-size:.74rem;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.08em;}
-.what-del{background:var(--gl);border-radius:12px;padding:22px;margin-top:40px;}
-.wd-title{font-size:.86rem;font-weight:700;color:var(--black);margin-bottom:12px;}
-.wd-grid{display:grid;grid-template-columns:1fr;gap:8px;}
-.wd-item{display:flex;align-items:flex-start;gap:7px;font-size:.82rem;color:#374151;line-height:1.45;}
-.wd-dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:6px;}
-.contact-note{margin-top:36px;padding:16px 20px;border:1px solid var(--border);border-radius:10px;font-size:.84rem;color:var(--gray);line-height:1.62;}
-.contact-note a{color:var(--gd);font-weight:600;text-decoration:none;}
-.contact-note a:hover{text-decoration:underline;}
-@media(min-width:480px){.wd-grid{grid-template-columns:1fr 1fr;}}
-</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Sloto Account Deletion Guide — how to permanently delete your Sloto account and all associated data." />
+<meta name="theme-color" content="#ffffff" />
+<title>Delete Account — Sloto</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<nav style="background:rgba(255,255,255,0.92);">
-  <a href="index.html" class="nav-logo" style="color:var(--black);">sloto<span>.</span></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="legal.html">Legal</a></li></ul>
-  <a href="#" class="nav-launch" style="background:var(--black);color:var(--white);">Launching April 1st →</a>
+
+<!-- ── Navigation ─────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="wordmark" aria-label="Sloto home">sloto<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="mailto:hello@sloto.ie">Support</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="menu-panel wrap" id="menuPanel">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="mailto:hello@sloto.ie">Support</a>
+  </div>
 </nav>
 
-<div class="page-hero">
-  <span class="ph-eyebrow">Account management</span>
-  <h1 class="ph-title">Delete your account</h1>
-  <p class="ph-sub">Permanently remove your sloto. account and all associated data. This cannot be undone.</p>
-</div>
-
-<main>
-  <div class="warn-box">
-    <div style="font-size:1.1rem;flex-shrink:0;">⚠️</div>
-    <div class="warn-text"><strong>This is permanent.</strong> Deleting your account removes your profile, all reports you've submitted, feedback, and your badges. Your locally-saved parking state will remain on your device until you uninstall the app.</div>
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<header class="legal-hero">
+  <div class="wrap wrap-narrow">
+    <span class="section-kicker">Account</span>
+    <h1 class="section-title">Account Deletion Guide</h1>
+    <p class="section-subtitle">How to permanently remove your Sloto account and all associated data</p>
   </div>
+</header>
 
-  <div class="method">
-    <div class="method-header">
-      <span class="mbadge rec">Recommended</span>
-      <h2 class="m-title">Delete in the app</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="step-n g">1</div><div><div class="step-title">Open sloto. → Profile tab</div><div class="step-body">Tap the person icon in the bottom nav.</div></div></div>
-      <div class="step"><div class="step-n g">2</div><div><div class="step-title">Make sure you're signed in</div><div class="step-body">Tap "Continue with Google" if you're not already.</div></div></div>
-      <div class="step"><div class="step-n g">3</div><div><div class="step-title">Tap "Delete account" (red, bottom of screen)</div><div class="step-body">Appears below the Account section.</div></div></div>
-      <div class="step"><div class="step-n g">4</div><div><div class="step-title">Confirm in the first dialog</div><div class="step-body">Tap "Delete" to proceed.</div></div></div>
-      <div class="step"><div class="step-n g">5</div><div><div class="step-title">Type DELETE to confirm</div><div class="step-body">A second step prevents accidental deletion. Type exactly:<br><span class="step-code">DELETE</span></div></div></div>
-    </div>
-  </div>
+<!-- ── Content ────────────────────────────────────────────── -->
+<main class="legal-page">
+  <div class="wrap wrap-narrow">
+    <p class="legal-intro">This guide explains how to permanently remove your Sloto account and all associated data. <strong>This is permanent.</strong> Once deleted, your account and data cannot be recovered.</p>
 
-  <div class="divider"><span>or</span></div>
+    <section class="legal-section">
+      <h2>1. Two Ways to Delete Your Account</h2>
+      <h3>In-App (Recommended)</h3>
+      <p>The fastest way to delete your account is from inside the Sloto app:</p>
+      <ul>
+        <li>Open the Sloto app on your phone</li>
+        <li>Tap the <strong>Profile</strong> tab (person icon at the bottom)</li>
+        <li>Sign in with Google if you are not already signed in</li>
+        <li>Scroll to the bottom and tap <strong>Delete account</strong> (red button)</li>
+        <li>Confirm the deletion in the dialog</li>
+        <li>Type <strong>DELETE</strong> to verify</li>
+      </ul>
+      <p>Your account and all associated data will be removed immediately.</p>
 
-  <div class="method">
-    <div class="method-header">
-      <span class="mbadge alt">Via email</span>
-      <h2 class="m-title">Request by email</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="step-n b">1</div><div><div class="step-title">Email hello@sloto.ie</div><div class="step-body">Send from the address associated with your account. Subject: "Account deletion request".</div></div></div>
-      <div class="step"><div class="step-n b">2</div><div><div class="step-title">Include your account email</div><div class="step-body">So we can locate and delete the correct account.</div></div></div>
-      <div class="step"><div class="step-n b">3</div><div><div class="step-title">We'll process within 7 days</div><div class="step-body">You'll receive a confirmation once deletion is complete.</div></div></div>
-    </div>
-  </div>
+      <h3>Via Email</h3>
+      <p>If you cannot access the app, you can request deletion by email:</p>
+      <ul>
+        <li>Send an email to <a href="mailto:hello@sloto.ie?subject=Account%20deletion%20request">hello@sloto.ie</a></li>
+        <li>Use the subject line <strong>Account deletion request</strong></li>
+        <li>Send the email from the address registered to your Sloto account</li>
+        <li>Include your account email in the body of the message</li>
+      </ul>
+      <p>Email requests are processed within <strong>7 days</strong>.</p>
+    </section>
 
-  <div class="what-del">
-    <div class="wd-title">What gets permanently deleted</div>
-    <div class="wd-grid">
-      <div class="wd-item"><span class="wd-dot"></span>Your profile (name, email, avatar)</div>
-      <div class="wd-item"><span class="wd-dot"></span>All crowd reports you submitted</div>
-      <div class="wd-item"><span class="wd-dot"></span>All spot reports you submitted</div>
-      <div class="wd-item"><span class="wd-dot"></span>All wrong info reports</div>
-      <div class="wd-item"><span class="wd-dot"></span>Feedback messages</div>
-      <div class="wd-item"><span class="wd-dot"></span>Your badges and spots reported count</div>
-      <div class="wd-item"><span class="wd-dot"></span>Uploaded photos</div>
-      <div class="wd-item"><span class="wd-dot"></span>Google OAuth connection</div>
-    </div>
-  </div>
+    <section class="legal-section">
+      <h2>2. What Data is Permanently Removed</h2>
+      <p>When your account is deleted, the following data is removed from our servers:</p>
+      <ul>
+        <li>Profile information (name, email, avatar)</li>
+        <li>All submitted reports (crowd reports, spot reports, wrong info reports)</li>
+        <li>Feedback messages</li>
+        <li>Badges and reporting statistics</li>
+        <li>Uploaded photos</li>
+        <li>Google OAuth connection</li>
+      </ul>
+    </section>
 
-  <div class="contact-note">
-    Questions about data deletion or GDPR rights? Email <a href="mailto:hello@sloto.ie">hello@sloto.ie</a>. We respond within 24 hours and action deletion requests within 30 days as required by GDPR.
+    <section class="legal-section">
+      <h2>3. Locally-Saved Data</h2>
+      <p>Some data is saved only on your device and is not stored on our servers — for example, your most recently saved parked car location. This local data persists on your device until you uninstall the Sloto app.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>4. GDPR Compliance</h2>
+      <p>We process deletion requests within <strong>30 days</strong>, as required by the General Data Protection Regulation (GDPR). If you have any questions about data deletion or your rights under GDPR, contact us at <a href="mailto:hello@sloto.ie">hello@sloto.ie</a> — we aim to respond within 24 hours.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>5. Contact</h2>
+      <p>If you have any questions about deleting your account, please contact us at <a href="mailto:hello@sloto.ie">hello@sloto.ie</a>.</p>
+    </section>
   </div>
 </main>
 
-<footer style="background:var(--white);color:var(--black);">
-  <a href="index.html" class="footer-logo" style="color:var(--black);">sloto<span>.</span></a>
-  <ul class="footer-links"><li><a href="index.html" style="color:var(--gray);">Home</a></li><li><a href="legal.html" style="color:var(--gray);">Privacy &amp; Terms</a></li></ul>
-  <p class="footer-copy" style="color:rgba(0,0,0,0.3);">© 2026 Sloto Ltd. Dublin 🇮🇪</p>
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="wordmark" aria-label="Sloto home">sloto<span class="dot">.</span></a>
+        <p>Parking, sorted. A better way to park on Dublin's streets.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/slotoapp" target="_blank" rel="noopener" aria-label="Sloto on Instagram" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@slotoapp" target="_blank" rel="noopener" aria-label="Sloto on TikTok" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="delete-account.html">Delete account</a></li>
+        </ul>
+        <h4 class="footer-contact-heading">Get in touch</h4>
+        <p class="footer-contact-email">hello@sloto.ie</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Sloto Limited. All rights reserved.</span>
+      <span>Made in Dublin 🇮🇪</span>
+    </div>
+  </div>
 </footer>
-</body></html>
+
+<script src="app.js"></script>
+</body>
+</html>
