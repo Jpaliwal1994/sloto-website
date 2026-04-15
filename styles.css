@@ -243,10 +243,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-width: 300px;
   width: 100%;
   height: auto;
-  border-radius: 24px;
-  border-style: solid;
-  border-color: #1A1A18;
-  border-width: 2px 2px 8px 8px; /* top, right, bottom, left */
+  display: block;
+  border: 3px solid #1A1A18;
+  box-shadow: 14px 14px 0 #1A1A18;
 }
 
 /* ── Sections ───────────────────────────────────────────── */
