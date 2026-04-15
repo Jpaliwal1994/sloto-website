@@ -188,7 +188,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ── Hero ───────────────────────────────────────────────── */
 .hero {
   position: relative;
-  padding: 140px 0 80px;
+  padding: 140px 0 48px;
   background: #FFFFFF;
   overflow: hidden;
 }
@@ -249,7 +249,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ── Sections ───────────────────────────────────────────── */
-section { padding: 96px 0; }
+section { padding: 64px 0; }
 .section-soft { background: var(--bg-soft); }
 .section-kicker {
   display: inline-block;
@@ -817,6 +817,7 @@ section { padding: 96px 0; }
   .menu-toggle { display: none; }
   .menu-panel { display: none; }
   .hero { padding: 180px 0 100px; }
+  section { padding: 96px 0; }
   .feature { grid-template-columns: 1fr 1fr; gap: 80px; }
   .feature-reverse .feature-text { order: 2; }
   .feature-reverse .feature-phone-wrap { order: 1; }
