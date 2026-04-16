@@ -523,6 +523,37 @@ section { padding: 64px 0; }
   margin-top: 32px;
 }
 
+/* ── Single-card pricing with toggle ─────────────────────── */
+.pricing-single {
+  max-width: 480px;
+}
+.plan-toggle {
+  display: inline-flex;
+  padding: 4px;
+  background: var(--bg-soft);
+  border-radius: 999px;
+  margin: 0 0 24px;
+  gap: 4px;
+}
+.plan-toggle-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 8px 20px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-3);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+}
+.plan-toggle-btn.is-active {
+  background: #FFFFFF;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
 /* ── FAQ ────────────────────────────────────────────────── */
 .faq-list {
   margin-top: 56px;
@@ -847,6 +878,7 @@ section { padding: 64px 0; }
   .steps { grid-template-columns: repeat(4, 1fr); }
   .reviews-grid { grid-template-columns: repeat(3, 1fr); }
   .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-single { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 2fr 1fr 1fr; }
 }
 

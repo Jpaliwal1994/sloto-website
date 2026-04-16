@@ -54,5 +54,35 @@ document.querySelectorAll('.faq-item').forEach((item) => {
   });
 });
 
+// ── Pricing toggle (Monthly / Annual) ────────────────────
+const planToggleBtns = document.querySelectorAll('.plan-toggle-btn');
+const planAmount = document.getElementById('planAmount');
+const planPeriod = document.getElementById('planPeriod');
+const planSub = document.getElementById('planSub');
+const planBadge = document.getElementById('planBadge');
+
+const PLANS = {
+  monthly: { amount: '€2.99', period: '/ month', sub: 'Billed monthly', badge: false },
+  annual:  { amount: '€19.99', period: '/ year', sub: 'Save ~45% vs monthly', badge: true },
+};
+
+planToggleBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const plan = PLANS[btn.dataset.plan];
+    if (!plan) return;
+
+    planToggleBtns.forEach((b) => {
+      const active = b === btn;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-selected', active);
+    });
+
+    planAmount.textContent = plan.amount;
+    planPeriod.textContent = plan.period;
+    planSub.textContent = plan.sub;
+    planBadge.hidden = !plan.badge;
+  });
+});
+
 // ── Year in footer ───────────────────────────────────────
 document.getElementById('year').textContent = new Date().getFullYear();
