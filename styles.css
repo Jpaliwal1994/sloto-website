@@ -412,6 +412,13 @@ section { padding: 64px 0; }
   font-size: 15px;
   letter-spacing: 0.02em;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .review-avatar-orange { background: var(--brand); }
 .review-avatar-green { background: var(--accent-green); }
