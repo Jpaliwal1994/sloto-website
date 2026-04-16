@@ -209,6 +209,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
 }
 .hero-text { text-align: center; }
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+.hero-image img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+}
 .hero h1 {
   font-family: 'Jakarta', sans-serif;
   font-size: clamp(44px, 8vw, 88px);
@@ -824,6 +834,12 @@ section { padding: 64px 0; }
   .menu-toggle { display: none; }
   .menu-panel { display: none; }
   .hero { padding: 180px 0 100px; }
+  .hero-inner { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .hero-text { text-align: left; }
+  .hero .subhead { margin: 0 0 40px; }
+  .hero-ctas { justify-content: flex-start; }
+  .hero-image { justify-content: flex-start; }
+  .hero-image img { max-width: 560px; }
   section { padding: 96px 0; }
   .feature { grid-template-columns: 1fr 1fr; gap: 80px; }
   .feature-reverse .feature-text { order: 2; }
