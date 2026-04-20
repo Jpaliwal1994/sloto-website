@@ -6,59 +6,7 @@
 <title>Dublin Parking Data Review — Prepared by Sloto</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
-/* ACCESS GATE */
-#access-gate{
-  position:fixed;inset:0;z-index:10000;background:#f8f9fa;
-  display:flex;align-items:center;justify-content:center;
-  padding:20px;
-}
-#access-gate.hidden{display:none;}
-.gate-box{
-  width:100%;max-width:440px;text-align:center;
-}
-.gate-logo{font-size:1.8rem;font-weight:900;letter-spacing:-.04em;margin-bottom:6px;}
-.gate-logo span{color:#228B22;}
-.gate-tagline{font-size:.72rem;color:rgba(0,0,0,.4);margin-bottom:36px;font-weight:500;}
-.gate-title{font-size:1.1rem;font-weight:800;margin-bottom:8px;}
-.gate-desc{font-size:.8rem;color:rgba(0,0,0,.5);line-height:1.7;margin-bottom:28px;}
-.gate-form{display:flex;flex-direction:column;gap:12px;text-align:left;}
-.gate-label{font-size:.72rem;font-weight:600;color:rgba(0,0,0,.6);margin-bottom:2px;}
-.gate-input{
-  width:100%;padding:12px 16px;border-radius:10px;
-  background:#ffffff;border:1px solid rgba(0,0,0,.15);
-  color:#1a1a2e;font-family:var(--f);font-size:.85rem;outline:none;
-  transition:border-color .2s;
-}
-.gate-input:focus{border-color:#16a34a;}
-.gate-input::placeholder{color:rgba(0,0,0,.3);}
-.gate-btn{
-  width:100%;padding:14px;border:none;border-radius:10px;
-  background:#16a34a;color:#ffffff;font-family:var(--f);
-  font-size:.88rem;font-weight:700;cursor:pointer;
-  transition:opacity .2s;margin-top:4px;
-}
-.gate-btn:hover{opacity:.9;}
-.gate-btn:disabled{opacity:.5;cursor:not-allowed;}
-.gate-msg{
-  margin-top:16px;padding:14px 18px;border-radius:10px;
-  font-size:.8rem;line-height:1.6;display:none;
-}
-.gate-msg.success{display:block;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:rgba(0,0,0,.7);}
-.gate-msg.error{display:block;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:rgba(0,0,0,.7);}
-.gate-divider{
-  display:flex;align-items:center;gap:14px;margin:28px 0;
-  font-size:.7rem;color:rgba(0,0,0,.3);font-weight:600;
-}
-.gate-divider::before,.gate-divider::after{content:'';flex:1;height:1px;background:rgba(0,0,0,.1);}
-.gate-switch{
-  font-size:.78rem;color:rgba(0,0,0,.45);margin-top:20px;
-}
-.gate-switch a{
-  color:#16a34a;text-decoration:none;font-weight:600;cursor:pointer;
-}
-.gate-switch a:hover{text-decoration:underline;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --black:#ffffff;
@@ -326,65 +274,8 @@ footer{
 </head>
 <body>
 
-<!-- ACCESS GATE -->
-<div id="access-gate">
-  <div class="gate-box">
-    <div class="gate-logo">sloto<span>.</span></div>
-    <div class="gate-tagline">Dublin Parking Data Review</div>
-
-    <!-- REQUEST FORM -->
-    <div id="gate-request">
-      <div class="gate-title">Request Access</div>
-      <div class="gate-desc">This analysis is not publicly available. Please submit your details to request access. You will be notified once your request has been reviewed.</div>
-      <div class="gate-form" id="request-form">
-        <div>
-          <div class="gate-label">Full Name</div>
-          <input class="gate-input" type="text" id="req-name" placeholder="Your name" required />
-        </div>
-        <div>
-          <div class="gate-label">Email Address</div>
-          <input class="gate-input" type="email" id="req-email" placeholder="you@example.com" required />
-        </div>
-        <div>
-          <div class="gate-label">Organisation</div>
-          <input class="gate-input" type="text" id="req-org" placeholder="Company or council name" required />
-        </div>
-        <button class="gate-btn" type="button" id="req-btn" onclick="handleRequest()">Submit Request</button>
-      </div>
-      <div class="gate-msg" id="req-msg"></div>
-      <div class="gate-switch">Already have access? <a id="link-to-check">Check here</a></div>
-    </div>
-
-    <!-- CHECK ACCESS FORM -->
-    <div id="gate-check" style="display:none;">
-      <div class="gate-title">Check Your Access</div>
-      <div class="gate-desc">Enter the email address you used when requesting access. If approved, the dashboard will unlock.</div>
-      <div class="gate-form" id="check-form">
-        <div>
-          <div class="gate-label">Email Address</div>
-          <input class="gate-input" type="email" id="check-email" placeholder="you@example.com" required />
-        </div>
-        <button class="gate-btn" type="button" id="check-btn" onclick="handleCheck()">Check Access</button>
-      </div>
-      <div class="gate-msg" id="check-msg"></div>
-      <div class="gate-switch">Need access? <a id="link-to-request">Request here</a></div>
-    </div>
-  </div>
-</div>
-
-<script>
-document.getElementById('link-to-check').addEventListener('click', function() {
-  document.getElementById('gate-request').style.display = 'none';
-  document.getElementById('gate-check').style.display = 'block';
-});
-document.getElementById('link-to-request').addEventListener('click', function() {
-  document.getElementById('gate-request').style.display = 'block';
-  document.getElementById('gate-check').style.display = 'none';
-});
-</script>
-
-<!-- DASHBOARD CONTENT (hidden until access granted) -->
-<div id="dashboard-content" style="display:none;">
+<!-- DASHBOARD CONTENT -->
+<div id="dashboard-content">
 
 <!-- LOADING SCREEN -->
 <div id="loading-screen">
@@ -1156,108 +1047,8 @@ function buildRecommendations() {
   el.innerHTML = html;
 }
 
-// ===== SUPABASE & ACCESS GATE =====
-const SUPABASE_URL = 'https://ndnulyypymbpxxgwgszv.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5kbnVseXlweW1icHh4Z3dnc3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0ODkxNjYsImV4cCI6MjA5MDA2NTE2Nn0.K8oeXHXAH3yYT-25EXdnWgNjfjcRmh6f5CcfaxjTJ2U';
-
-const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-const gate = document.getElementById('access-gate');
-const dashboard = document.getElementById('dashboard-content');
-
-function showRequestForm() {
-  document.getElementById('gate-request').style.display = 'block';
-  document.getElementById('gate-check').style.display = 'none';
-}
-function showCheckForm() {
-  document.getElementById('gate-request').style.display = 'none';
-  document.getElementById('gate-check').style.display = 'block';
-}
-
-async function handleRequest() {
-  const btn = document.getElementById('req-btn');
-  const msg = document.getElementById('req-msg');
-  btn.disabled = true;
-  btn.textContent = 'Submitting...';
-  msg.className = 'gate-msg';
-  msg.style.display = 'none';
-
-  const name = document.getElementById('req-name').value.trim();
-  const email = document.getElementById('req-email').value.trim().toLowerCase();
-  const org = document.getElementById('req-org').value.trim();
-
-  try {
-    const { error } = await sb.from('access_requests').insert({
-      name: name,
-      email: email,
-      organisation: org,
-      status: 'pending'
-    });
-
-    if (error) throw error;
-
-    msg.className = 'gate-msg success';
-    msg.innerHTML = '<strong>Request submitted.</strong> You will receive access once your request has been reviewed. Come back and check using your email address.';
-    msg.style.display = 'block';
-    document.getElementById('req-name').value = '';
-    document.getElementById('req-email').value = '';
-    document.getElementById('req-org').value = '';
-  } catch (err) {
-    msg.className = 'gate-msg error';
-    msg.innerHTML = 'Something went wrong. Please try again or contact <strong>hello@sloto.ie</strong>.';
-    msg.style.display = 'block';
-    console.error(err);
-  }
-  btn.disabled = false;
-  btn.textContent = 'Submit Request';
-  return false;
-}
-
-async function handleCheck() {
-  const btn = document.getElementById('check-btn');
-  const msg = document.getElementById('check-msg');
-  btn.disabled = true;
-  btn.textContent = 'Checking...';
-  msg.className = 'gate-msg';
-  msg.style.display = 'none';
-
-  const email = document.getElementById('check-email').value.trim().toLowerCase();
-
-  try {
-    const { data, error } = await sb
-      .from('access_requests')
-      .select('id, name, email, status')
-      .eq('email', email)
-      .eq('status', 'approved')
-      .limit(1);
-
-    if (error) throw error;
-
-    if (data && data.length > 0) {
-      unlockDashboard();
-    } else {
-      msg.className = 'gate-msg error';
-      msg.innerHTML = 'Access not yet approved. If you have submitted a request, please allow some time for it to be reviewed. For questions, contact <strong>hello@sloto.ie</strong>.';
-      msg.style.display = 'block';
-    }
-  } catch (err) {
-    msg.className = 'gate-msg error';
-    msg.innerHTML = 'Something went wrong. Please try again.';
-    msg.style.display = 'block';
-    console.error(err);
-  }
-  btn.disabled = false;
-  btn.textContent = 'Check Access';
-  return false;
-}
-
-function unlockDashboard() {
-  gate.classList.add('hidden');
-  document.getElementById('dashboard-content').style.display = 'block';
-  loadData();
-}
-
 // ===== INIT =====
+loadData();
 </script>
 </body>
 </html>
