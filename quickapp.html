@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="theme-color" content="#1f2937">
+<title>Field Check Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  #map { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+  .legend {
+    position: absolute; bottom: 16px; left: 16px; z-index: 500;
+    background: rgba(255,255,255,0.95); padding: 8px 10px; border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); font-size: 12px; line-height: 1.6;
+  }
+  .legend .row { display: flex; align-items: center; gap: 6px; }
+  .legend .swatch { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.3); }
+  .popup-title { font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+  .popup-zone { display: inline-block; padding: 2px 8px; border-radius: 999px; color: #fff; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+  .popup-notes { font-size: 13px; color: #374151; margin-bottom: 10px; line-height: 1.4; }
+  .popup-notes.empty { color: #9ca3af; font-style: italic; }
+  .nav-btn {
+    display: block; width: 100%; box-sizing: border-box;
+    background: #1a73e8; color: #fff; text-decoration: none;
+    padding: 10px 14px; border-radius: 8px; text-align: center;
+    font-weight: 600; font-size: 14px;
+  }
+  .nav-btn:active { background: #1558b8; }
+  .leaflet-popup-content { margin: 12px 14px; min-width: 200px; }
+  .locate-btn {
+    position: absolute; top: 12px; right: 12px; z-index: 500;
+    background: #fff; border: none; border-radius: 8px;
+    width: 44px; height: 44px; font-size: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer;
+  }
+  .locate-btn:active { background: #e5e7eb; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<button class="locate-btn" id="locate" title="Find me">📍</button>
+<div class="legend" id="legend"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+const ZONE_COLORS = {
+  "dcc-red":    "#e53935",
+  "dcc-orange": "#fb8c00",
+  "dcc-yellow": "#fdd835",
+  "dcc-green":  "#43a047",
+  "dcc-blue":   "#1e88e5",
+  "free":       "#6b7280"
+};
+const ZONE_LABELS = {
+  "dcc-red":    "Red zone",
+  "dcc-orange": "Orange zone",
+  "dcc-yellow": "Yellow zone",
+  "dcc-green":  "Green zone",
+  "dcc-blue":   "Blue zone",
+  "free":       "Free"
+};
+
+const POINTS = [
+  {"id":"51a083e2-ca26-452e-8e4a-c9d3767794ba","zone_id":"dcc-red","street_name":"Amiens Street","latitude":53.3519302,"longitude":-6.2496779,"field_check_notes":"might need to split the street, check north side"},
+  {"id":"9261542a-67b6-4e42-83aa-028934217503","zone_id":"dcc-green","street_name":"Annamoe Rd","latitude":53.3597272,"longitude":-6.2886778,"field_check_notes":"not sure if there is street parking here or not"},
+  {"id":"0c89fe36-97ee-4eb0-a051-fbfa8a9e0e67","zone_id":"dcc-orange","street_name":"Annesley Bridge Rd","latitude":53.3617767,"longitude":-6.2376951,"field_check_notes":null},
+  {"id":"9c8b297c-3d3c-401c-8af6-6d5b54525579","zone_id":"dcc-red","street_name":"Ashfield Avenue","latitude":53.3233293,"longitude":-6.2520538,"field_check_notes":"google image is from 2018"},
+  {"id":"5add4670-6fd4-4ede-af1f-eb0048047270","zone_id":"dcc-orange","street_name":"Balcurris Rd","latitude":53.3988469,"longitude":-6.2651879,"field_check_notes":null},
+  {"id":"3f693d74-3662-4824-9400-124f40ce147c","zone_id":"dcc-blue","street_name":"Ballymun Car Park","latitude":53.395632,"longitude":-6.264716,"field_check_notes":"cant see on maps"},
+  {"id":"132370d0-2cec-43c8-88e4-676b296cd59c","zone_id":"dcc-red","street_name":"Barrow Street","latitude":53.339997,"longitude":-6.2364792,"field_check_notes":"construction view"},
+  {"id":"28276862-8047-4057-901c-ac299ec9729e","zone_id":"dcc-red","street_name":"Clontarf Rd (1)","latitude":53.3595600634709,"longitude":-6.19794902893058,"field_check_notes":null},
+  {"id":"f77d4b91-3e33-4493-aa29-c1eabc572e63","zone_id":"dcc-red","street_name":"Clontarf Rd (2)","latitude":53.3586033732554,"longitude":-6.19511905922745,"field_check_notes":null},
+  {"id":"aa4fde56-a46d-464f-bd3d-1c8cb7b79093","zone_id":"dcc-red","street_name":"Clontarf Rd (3)","latitude":53.3583098623657,"longitude":-6.19205531628351,"field_check_notes":null},
+  {"id":"980bad41-75e2-48de-87d5-b13d72202bd7","zone_id":"dcc-red","street_name":"Clontarf Rd (4)","latitude":53.3625238698368,"longitude":-6.17897037464231,"field_check_notes":null},
+  {"id":"78b6146d-3dde-49d2-8b9c-2d0c9ddc00c8","zone_id":"dcc-red","street_name":"Clontarf Rd (5)","latitude":53.3630599969763,"longitude":-6.17821090787648,"field_check_notes":null},
+  {"id":"95b32a4f-77cf-48f7-9fd7-10478c57c893","zone_id":"dcc-red","street_name":"Clontarf Rd (6)","latitude":53.3636169069775,"longitude":-6.17743183459851,"field_check_notes":null},
+  {"id":"b466dc48-14ad-4302-8525-e1e547b9120f","zone_id":"dcc-red","street_name":"Clontarf Rd (7)","latitude":53.3640447329386,"longitude":-6.17684880302356,"field_check_notes":null},
+  {"id":"6443dfc5-d02e-41d1-b0d3-87bdd87bb445","zone_id":"dcc-orange","street_name":"Clontarf Road","latitude":53.363656,"longitude":-6.224315,"field_check_notes":null},
+  {"id":"0dce37e5-dbf6-494d-9a1b-feb8d270b008","zone_id":"dcc-orange","street_name":"Clontarf Road","latitude":53.3601595,"longitude":-6.2024344,"field_check_notes":null},
+  {"id":"096e37c0-8ea6-43c2-97ed-bb63a8e1bcde","zone_id":"dcc-blue","street_name":"Clontarf Road Car Park","latitude":53.3593,"longitude":-6.197719,"field_check_notes":null},
+  {"id":"2cb37b69-f1af-4251-aa13-2d62367ee40e","zone_id":"dcc-blue","street_name":"Clontarf Road Car Park 1","latitude":53.36331,"longitude":-6.223872,"field_check_notes":null},
+  {"id":"0d38a52e-ca59-4b77-84f7-1e5f2e6e6cdf","zone_id":"dcc-blue","street_name":"Clontarf Road Car Park 2","latitude":53.35818,"longitude":-6.1909,"field_check_notes":null},
+  {"id":"37e75bd9-fd38-413d-9ec0-dcfc5a76eab9","zone_id":"dcc-yellow","street_name":"Francis Street","latitude":53.3411149,"longitude":-6.2746918,"field_check_notes":null},
+  {"id":"04f1cb04-5911-44fe-a790-f1dfdd5d01c3","zone_id":"dcc-red","street_name":"Haymarket","latitude":53.3476823,"longitude":-6.2793849,"field_check_notes":null},
+  {"id":"0c4ceb83-d316-4d22-b84d-20ce716559ca","zone_id":"dcc-red","street_name":"Herbert Park","latitude":53.327142,"longitude":-6.2360559,"field_check_notes":null},
+  {"id":"24cae074-08c9-46ee-a6fb-74d180575037","zone_id":"dcc-red","street_name":"Herbert Park (1)","latitude":53.3252434275305,"longitude":-6.24018930797226,"field_check_notes":null},
+  {"id":"fed39531-3e8f-4d83-9de3-22be15f2cfed","zone_id":"dcc-red","street_name":"Herbert Park (2)","latitude":53.328668844221,"longitude":-6.23362683391356,"field_check_notes":null},
+  {"id":"52edf65b-f141-4793-a0cd-a2e94b82a7a4","zone_id":"free","street_name":"James Larkin Rd","latitude":53.3730358094359,"longitude":-6.16577889758963,"field_check_notes":null},
+  {"id":"c8800138-b4ef-4285-a101-b2ae5a311631","zone_id":"free","street_name":"Mt Prospect Ave","latitude":53.3694192762113,"longitude":-6.17933857071389,"field_check_notes":null},
+  {"id":"e0fecda7-cbf7-4409-b0b8-839b25ae12a0","zone_id":"free","street_name":"Mt Prospect Car Park","latitude":53.3694568551424,"longitude":-6.18796078474101,"field_check_notes":null},
+  {"id":"0c657126-0a6e-44b1-b54c-936eb99f8540","zone_id":"free","street_name":"Red Stables Car Park","latitude":53.3689246428501,"longitude":-6.17608303080759,"field_check_notes":null},
+  {"id":"c2feff9f-108c-404f-a5d4-3ec92daa5bd8","zone_id":"free","street_name":"St Anne's Park 1","latitude":53.3725835742983,"longitude":-6.16635124467541,"field_check_notes":null},
+  {"id":"52781ebe-d3c4-450f-a24e-b2290d84eeb2","zone_id":"free","street_name":"St Anne's Park 2","latitude":53.375074491352,"longitude":-6.18045824145913,"field_check_notes":null},
+  {"id":"031453e5-78d8-407b-8ceb-dd6ac32fdb1c","zone_id":"free","street_name":"Watermill Rd","latitude":53.3770091737114,"longitude":-6.17071610048742,"field_check_notes":null}
+];
+
+const escapeHtml = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const map = L.map('map', { zoomControl: true, tap: true }).setView([53.355, -6.24], 12);
+L.control.zoom({ position: 'bottomright' }).remove();
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+const markers = [];
+POINTS.forEach(p => {
+  const color = ZONE_COLORS[p.zone_id] || '#6b7280';
+  const marker = L.circleMarker([p.latitude, p.longitude], {
+    radius: 9,
+    fillColor: color,
+    color: '#fff',
+    weight: 2,
+    opacity: 1,
+    fillOpacity: 0.95
+  }).addTo(map);
+
+  const notes = p.field_check_notes
+    ? `<div class="popup-notes">${escapeHtml(p.field_check_notes)}</div>`
+    : `<div class="popup-notes empty">No field check notes</div>`;
+
+  const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${p.latitude},${p.longitude}`;
+  const zoneLabel = ZONE_LABELS[p.zone_id] || p.zone_id;
+
+  marker.bindPopup(`
+    <div class="popup-title">${escapeHtml(p.street_name)}</div>
+    <span class="popup-zone" style="background:${color}">${escapeHtml(zoneLabel)}</span>
+    ${notes}
+    <a class="nav-btn" href="${navUrl}" target="_blank" rel="noopener">▶ Navigate in Google Maps</a>
+  `, { maxWidth: 280, autoPanPadding: [20, 20] });
+
+  markers.push(marker);
+});
+
+const group = L.featureGroup(markers);
+map.fitBounds(group.getBounds().pad(0.1));
+
+const legend = document.getElementById('legend');
+const zonesPresent = [...new Set(POINTS.map(p => p.zone_id))];
+legend.innerHTML = zonesPresent.map(z =>
+  `<div class="row"><span class="swatch" style="background:${ZONE_COLORS[z] || '#6b7280'}"></span>${escapeHtml(ZONE_LABELS[z] || z)}</div>`
+).join('');
+
+let userMarker = null;
+document.getElementById('locate').addEventListener('click', () => {
+  map.locate({ setView: true, maxZoom: 15, enableHighAccuracy: true });
+});
+map.on('locationfound', (e) => {
+  if (userMarker) map.removeLayer(userMarker);
+  userMarker = L.circleMarker(e.latlng, {
+    radius: 8, fillColor: '#1a73e8', color: '#fff', weight: 3, fillOpacity: 1
+  }).addTo(map).bindPopup('You are here').openPopup();
+});
+map.on('locationerror', () => alert('Could not get your location. Check permissions.'));
+</script>
+</body>
+</html>
